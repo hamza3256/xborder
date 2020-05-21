@@ -1,4 +1,4 @@
-![alt text](https://github.com/hamza3256/xborder/blob/master/client/public/cover.png)
+![alt text](https://github.com/hamza3256/xborder/blob/master/client/public/cover.png){:height="50%" width="50%"}
 
 # XBORDER — Cross-border value transfer gateway system
 
