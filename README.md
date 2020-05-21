@@ -1,6 +1,6 @@
 <img src="https://github.com/hamza3256/xborder/blob/master/client/public/cover.png" width="350" height="144">
 
-# XBORDER — Cross-border value transfer gateway system
+# Cross-border value transfer gateway system
 
 ## Problem
 
