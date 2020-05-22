@@ -11,12 +11,12 @@ import Fingerprint from "@material-ui/icons/Fingerprint";
 import CreditCard from "@material-ui/icons/CreditCard";
 import Public from "@material-ui/icons/Public";
 // core components
-import GridContainer from "../../../components/Grid/GridContainer.js";
-import GridItem from "../../../components/Grid/GridItem.js";
-import InfoArea from "../../../components/InfoArea/InfoArea.js";
+import GridContainer from "components/Grid/GridContainer.js";
+import GridItem from "components/Grid/GridItem.js";
+import InfoArea from "components/InfoArea/InfoArea.js";
 import CardMedia from '@material-ui/core/CardMedia';
-import banner from "../../../assets/img/banner3.png";
-import styles from "../../../assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
+import banner from "assets/img/banner3.png";
+import styles from "assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
 
 //import { Card } from "rebass";
 
