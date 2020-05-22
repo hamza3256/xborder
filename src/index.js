@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import registerServiceWorker from './registerServiceWorker';
-import LandingPage from "views/LandingPage/LandingPage.js";
+import LandingPage from "./views/LandingPage/LandingPage.js";
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch } from "react-router-dom";
 
