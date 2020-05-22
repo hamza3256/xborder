@@ -16,7 +16,7 @@ import NavPills from "components/NavPills/NavPills.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-import CenteredTabs from 'tabs'
+
 
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
