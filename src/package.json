@@ -1,9 +1,6 @@
 {
   "name": "@chainlink/box",
   "version": "0.6.0",
-  "engines": {
-    "node": "10.16.0"
-  },
   "description": "A Chainlink example in a Truffle box",
   "scripts": {
     "compile": "npx truffle compile",
