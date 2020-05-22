@@ -8,6 +8,7 @@
     "classnames": "^2.2.6",
     "emotion": "^10.0.27",
     "history": "^4.10.1",
+    "material-kit-react": "^1.8.0",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
