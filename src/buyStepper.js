@@ -16,8 +16,8 @@ import StepConnector from "@material-ui/core/StepConnector";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import BuyerStepper from './buyerVStepper'
-import BuyerInteraction from 'views/Components/BuyerInteraction.js'
-import ContractSearch from 'views/Components/ContractSearch.js'
+import BuyerInteraction from './views/Components/BuyerInteraction.js'
+import ContractSearch from './views/Components/ContractSearch.js'
 //import styles from "assets/jss/material-kit-react/views/landingPageSections/productStyle.js";
 
 const useQontoStepIconStyles = makeStyles({
