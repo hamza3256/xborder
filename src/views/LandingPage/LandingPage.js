@@ -18,7 +18,7 @@ import Parallax from "../../components/Parallax/Parallax.js";
 
 
 
-import styles from "../assets/jss/material-kit-react/views/landingPage.js";
+//import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
 import ProductSection from "./Sections/ProductSection.js";
@@ -31,11 +31,11 @@ import SellSteppers from "../../sellStepper";
 
 const dashboardRoutes = [];
 
-const useStyles = makeStyles(styles);
+//const useStyles = makeStyles(styles);
 
 export default function LandingPage(props) {
-  const classes = useStyles();
-  const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+ // const classes = useStyles();
+  //const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   const { ...rest } = props;
   return (
     <div>
