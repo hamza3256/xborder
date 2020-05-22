@@ -15,8 +15,8 @@ import InteractContract from "views/Components/InteractContract.js";
 import StepConnector from "@material-ui/core/StepConnector";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Input2 from "boxes"
-import styles from "assets/jss/material-kit-react/components/typographyStyle.js";
+//import Input2 from "boxes"
+//import styles from "assets/jss/material-kit-react/components/typographyStyle.js";
 import { Link } from 'react-router-dom';
 import PaypalInvoiceStepper from './verticalStepper'
 import Paper from '@material-ui/core/Paper';

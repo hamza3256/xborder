@@ -26,8 +26,8 @@ import ProductSection from "./Sections/ProductSection.js";
 // @material-ui/icons
 import Camera from "@material-ui/icons/Camera";
 import Palette from "@material-ui/icons/Palette";
-import BuySteppers from "buyStepper";
-import SellSteppers from "sellStepper";
+import BuySteppers from "../../buyStepper";
+import SellSteppers from "../../sellStepper";
 
 const dashboardRoutes = [];
 
