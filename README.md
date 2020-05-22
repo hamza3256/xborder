@@ -1,7 +1,6 @@
 ![alt text](https://github.com/hamza3256/xborder/blob/master/client/public/cover2.png?raw=true)
-<img src="https://github.com/hamza3256/xborder/blob/master/client/public/cover.png" width="350" height="144">
 
-# Cross-border value transfer gateway system
+# Cross-border value transfer system
 
 ## Problem
 
