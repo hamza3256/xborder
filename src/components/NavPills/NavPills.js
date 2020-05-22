@@ -14,11 +14,11 @@ import Tab from "@material-ui/core/Tab";
 import GridContainer from "../../components/Grid/GridContainer.js";
 import GridItem from "../../components/Grid/GridItem.js";
 
-import styles from "assets/material-kit-react/components/navPillsStyle.js";
+import styles from "assets/jss/material-kit-react/components/navPillsStyle.js";
 
 const useStyles = makeStyles(styles);
 
-export default function NavPills(props) {
+export default function NavSPills(props) {
   const [active, setActive] = React.useState(props.active);
   const handleChange = (event, active) => {
     setActive(active);
