@@ -53,7 +53,7 @@ export default function ProductSection() {
         <GridItem xs={12} sm={12} md={8}>
           <h2 id="how" className={classes.title}>How It Works</h2>
           <h5 className={classes.description}>
-            XBORDER is powered by a smart contract deployed on the Ethereum blockchain, which creates ETH escrow smart contracts for ETH traders to be able transact trustlessly between ETH and PayPal.
+            XBorder works by enabling fiat currency conversion to Ether, which is then processed for peer-to-peer transaction, subsequently reconverting it to receiver's fiat currency. The smart contracts work with maximum efficiency and reliability by utilising Chainlink's decentralised oracle network providing the same security as a smart contract.
             </h5><br/>
         <CardMedia className={cardClasses.media} image={banner}/>
              
@@ -63,8 +63,8 @@ export default function ProductSection() {
         <GridContainer>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Trustless"
-              description="Locked up ETH is held in a newly created smart contract on the Ethereum blockchain. Invoice payment confirmation is queried from Chainlink's network of decentralised oracles using the XBORDER Chainlink adapter."
+              title="Trustless transactions"
+              description="Fiat currency is converted to ETH which is held in a smart contract on the Ethereum blockchain. Cross-border payment using Chainlink's network of decentralised oracles functions using several niche-specificniche-specific external adapters."
               icon={Public}
               iconColor="info"
               vertical
@@ -72,7 +72,7 @@ export default function ProductSection() {
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="No Sign-Ups"
+              title="Decentralised platform requires no registration"
               description="No need to sign up with personal information or undergo KYC verification."
               icon={Fingerprint}
               iconColor="success"
@@ -82,7 +82,7 @@ export default function ProductSection() {
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
               title="Credit Card Payments"
-              description="Using PayPal as a payment processor, ETH/FIAT trades may be completed using Visa, MasterCard, Amex, Discover and Paypal Credit."
+              description="Using PayPal as a payment processor, Fiat transfer may be completed using Visa, MasterCard, Amex, Discover and Paypal Credit."
               icon={CreditCard}
               iconColor="danger"
               vertical

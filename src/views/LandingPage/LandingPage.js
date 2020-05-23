@@ -16,8 +16,6 @@ import NavPills from "components/NavPills/NavPills.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 
-
-
 import styles from "assets/jss/material-kit-react/views/landingPage.js";
 
 // Sections for this page
@@ -28,7 +26,7 @@ import Camera from "@material-ui/icons/Camera";
 import Palette from "@material-ui/icons/Palette";
 import BuySteppers from "../../buyStepper";
 import SellSteppers from "../../sellStepper";
-
+import logo from './cover.png';
 const dashboardRoutes = [];
 
 const useStyles = makeStyles(styles);
@@ -37,12 +35,13 @@ export default function LandingPage(props) {
  const classes = useStyles();
   //const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
   const { ...rest } = props;
+  
   return (
     <div>
       <Header
         color="transparent"
         routes={dashboardRoutes}
-        brand="XBORDER"
+        brand={<img src={logo} width="30%" height="30%"/>}
         rightLinks={<HeaderLinks />}
         fixed
         changeColorOnScroll={{
@@ -55,9 +54,9 @@ export default function LandingPage(props) {
         <div className={classes.container}>
           <GridContainer>
             <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}>Transfer money without trust</h1>
+              <h1 className={classes.title}> The distinguished decentralized platform for cross-border transfers</h1>
               <h4>
-                Decentralized ETH escrow for ETH/FIAT trading using PayPal or credit/debit card. <br /> Ethereum smart contract data provided by Chainlink oracles.
+                Money transfer across the border using paypal or credit card. <br /> Sophisticated Chainlink oracles providing data for Ethereum smart contracts.
               </h4>
               <br />
               <Button

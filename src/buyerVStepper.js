@@ -34,8 +34,7 @@ function getSteps() {
 function getStepContent(step,classes) {
   switch (step) {
     case 0:
-      return <div><h5>Find a trader looking to sell ETH through Paypal on: <ul><li><a href="http://www.reddit.com/r/XBORDER/">XBORDER subreddit</a></li><li><a href="https://t.me/joinchat/E8SAPEUVQHSiKjSyGWkf9g">XBORDER Telegram group</a></li></ul></h5></div> 
-      case 1:
+
       return <div><h5><ol><li>Your ETH address to receive purchased ETH</li><li>ETH amount</li></ol></h5></div> 
      
     default:

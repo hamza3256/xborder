@@ -33,25 +33,17 @@ export default function Footer(props) {
            <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.twitter.com/XBORDER_io"
+                href="https://www.twitter.com/XBORDER5"
                 className={classes.block}
                 target="_blank"
               >
                 Twitter
               </a>
             </ListItem>
+           
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://t.me/joinchat/E8SAPEUVQHSiKjSyGWkf9g"
-                className={classes.block}
-                target="_blank"
-              >
-                Telegram
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a
-                href="https://github.com/vvoluom/XBORDER"
+                href="https://github.com/hamza3256/xborder"
                 className={classes.block}
                 target="_blank"
               >
@@ -80,7 +72,7 @@ export default function Footer(props) {
         </div>
         <div className={classes.right}>          
         be <a
-            href="http://XBORDER.io"
+            href="https://xborder.herokuapp.com/"
             className={aClasses}
             target="_blank"
           > <b>XBORDER</b>
