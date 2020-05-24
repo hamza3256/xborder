@@ -1,0 +1,480 @@
+
+Compiling your contracts...
+===========================
+> Compiling @ensdomains/buffer/contracts/Buffer.sol
+> Compiling .\contracts\Escrow.sol
+> Compiling .\contracts\HoldingDeposit.sol
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\MyContract.sol
+> Compiling .\contracts\Verifier.sol
+> Compiling .\contracts\XBORDER.sol
+> Compiling .\contracts\interfaces\AggregatorInterface.sol
+> Compiling .\contracts\lib\LinkToken.sol
+> Compiling .\contracts\lib\Oracle.sol
+> Compiling .\contracts\v0.4\Aggregator.sol
+> Compiling .\contracts\v0.4\AggregatorProxy.sol
+> Compiling .\contracts\v0.4\Chainlink.sol
+> Compiling .\contracts\v0.4\ChainlinkClient.sol
+> Compiling .\contracts\v0.4\Chainlinked.sol
+> Compiling .\contracts\v0.4\ConversionProxy.sol
+> Compiling .\contracts\v0.4\ERC677Token.sol
+> Compiling .\contracts\v0.4\LinkToken.sol
+> Compiling .\contracts\v0.4\Migrations.sol
+> Compiling .\contracts\v0.4\Oracle.sol
+> Compiling .\contracts\v0.4\Pointer.sol
+> Compiling .\contracts\v0.4\interfaces\AggregatorInterface.sol
+> Compiling .\contracts\v0.4\interfaces\ChainlinkRequestInterface.sol
+> Compiling .\contracts\v0.4\interfaces\ENSInterface.sol
+> Compiling .\contracts\v0.4\interfaces\ERC20.sol
+> Compiling .\contracts\v0.4\interfaces\ERC20Basic.sol
+> Compiling .\contracts\v0.4\interfaces\ERC677.sol
+> Compiling .\contracts\v0.4\interfaces\ERC677Receiver.sol
+> Compiling .\contracts\v0.4\interfaces\LinkTokenInterface.sol
+> Compiling .\contracts\v0.4\interfaces\OracleInterface.sol
+> Compiling .\contracts\v0.4\interfaces\PointerInterface.sol
+> Compiling .\contracts\v0.4\tests\BasicConsumer.sol
+> Compiling .\contracts\v0.4\tests\ConcreteChainlink.sol
+> Compiling .\contracts\v0.4\tests\ConcreteChainlinked.sol
+> Compiling .\contracts\v0.4\tests\Consumer.sol
+> Compiling .\contracts\v0.4\tests\EmptyOracle.sol
+> Compiling .\contracts\v0.4\tests\GetterSetter.sol
+> Compiling .\contracts\v0.4\tests\MaliciousChainlink.sol
+> Compiling .\contracts\v0.4\tests\MaliciousChainlinked.sol
+> Compiling .\contracts\v0.4\tests\MaliciousConsumer.sol
+> Compiling .\contracts\v0.4\tests\MaliciousRequester.sol
+> Compiling .\contracts\v0.4\tests\UpdatableConsumer.sol
+> Compiling .\contracts\v0.4\vendor\BasicToken.sol
+> Compiling .\contracts\v0.4\vendor\Buffer.sol
+> Compiling .\contracts\v0.4\vendor\CBOR.sol
+> Compiling .\contracts\v0.4\vendor\ENS.sol
+> Compiling .\contracts\v0.4\vendor\ENSRegistry.sol
+> Compiling .\contracts\v0.4\vendor\ENSResolver.sol
+> Compiling .\contracts\v0.4\vendor\Ownable.sol
+> Compiling .\contracts\v0.4\vendor\PublicResolver.sol
+> Compiling .\contracts\v0.4\vendor\SafeMath.sol
+> Compiling .\contracts\v0.4\vendor\SignedSafeMath.sol
+> Compiling .\contracts\v0.4\vendor\StandardToken.sol
+> Compiling chainlink/contracts/ChainlinkClient.sol
+> Compiling chainlink/contracts/Oracle.sol
+> Compiling chainlink\contracts\Chainlink.sol
+> Compiling chainlink\contracts\ENSResolver.sol
+> Compiling chainlink\contracts\interfaces\ChainlinkRequestInterface.sol
+> Compiling chainlink\contracts\interfaces\ENSInterface.sol
+> Compiling chainlink\contracts\interfaces\LinkTokenInterface.sol
+> Compiling chainlink\contracts\interfaces\OracleInterface.sol
+> Compiling chainlink\contracts\interfaces\PointerInterface.sol
+> Compiling link_token/contracts/LinkToken.sol
+> Compiling link_token\contracts\ERC677Token.sol
+> Compiling link_token\contracts\math\linkSafeMath.sol
+> Compiling link_token\contracts\token\ERC677.sol
+> Compiling link_token\contracts\token\ERC677Receiver.sol
+> Compiling link_token\contracts\token\linkBasicToken.sol
+> Compiling link_token\contracts\token\linkERC20.sol
+> Compiling link_token\contracts\token\linkERC20Basic.sol
+> Compiling link_token\contracts\token\linkStandardToken.sol
+> Compiling openzeppelin-solidity/contracts/math/SafeMath.sol
+> Compiling openzeppelin-solidity/contracts/ownership/Ownable.sol
+> Compiling solidity-cborutils/contracts/CBOR.sol
+> Compilation warnings encountered:
+
+    /D/xborder/xborder/src/contracts/XBORDER.sol:2:1: Warning: Experimental features are turned on. Do not use experimental features on live deployments.
+pragma experimental ABIEncoderV2;
+^-------------------------------^
+,link_token/contracts/token/linkStandardToken.sol:27:5: Warning: Use of the "var" keyword is deprecated.
+    var _allowance = allowed[_from][msg.sender];
+    ^------------^
+,link_token/contracts/LinkToken.sol:15:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function LinkToken()
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/D/xborder/xborder/src/contracts/v0.4/vendor/StandardToken.sol:27:5: Warning: Use of the "var" keyword is deprecated.
+    var _allowance = allowed[_from][msg.sender];
+    ^------------^
+,/D/xborder/xborder/src/contracts/v0.4/LinkToken.sol:15:3: Warning: Defining constructors as functions with the same name as the contract is deprecated. Use "constructor(...) { ... }" instead.
+  function LinkToken()
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/ERC677Token.sol:21:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value, _data);
+    ^--------------------------------------^
+,link_token/contracts/token/linkBasicToken.sol:25:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+,link_token/contracts/token/linkStandardToken.sol:35:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+,link_token/contracts/token/linkStandardToken.sol:46:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+,link_token/contracts/token/linkStandardToken.sol:69:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    ^-----------------------------------------------------------^
+,link_token/contracts/token/linkStandardToken.sol:81:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    ^-----------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/ERC677Token.sol:21:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value, _data);
+    ^--------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/BasicToken.sol:25:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(msg.sender, _to, _value);
+    ^-------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/StandardToken.sol:35:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Transfer(_from, _to, _value);
+    ^--------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/StandardToken.sol:46:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, _value);
+    ^------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/StandardToken.sol:69:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    ^-----------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/StandardToken.sol:81:5: Warning: Invoking events without "emit" prefix is deprecated.
+    Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
+    ^-----------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/ENS.sol:18:3: Warning: Functions in interfaces should be declared external.
+  function setSubnodeOwner(bytes32 node, bytes32 label, address owner) public;
+  ^--------------------------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/ENS.sol:19:3: Warning: Functions in interfaces should be declared external.
+  function setResolver(bytes32 node, address resolver) public;
+  ^----------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/ENS.sol:20:3: Warning: Functions in interfaces should be declared external.
+  function setOwner(bytes32 node, address owner) public;
+  ^----------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/ENS.sol:21:3: Warning: Functions in interfaces should be declared external.
+  function setTTL(bytes32 node, uint64 ttl) public;
+  ^-----------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/ENS.sol:22:3: Warning: Functions in interfaces should be declared external.
+  function owner(bytes32 node) public view returns (address);
+  ^---------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/ENS.sol:23:3: Warning: Functions in interfaces should be declared external.
+  function resolver(bytes32 node) public view returns (address);
+  ^------------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/ENS.sol:24:3: Warning: Functions in interfaces should be declared external.
+  function ttl(bytes32 node) public view returns (uint64);
+  ^------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/Escrow.sol:101:11: Warning: "msg.value" used in non-payable function. Do you want to add the "payable" modifier to this function?
+		funds = msg.value;
+		        ^-------^
+,/D/xborder/xborder/src/contracts/HoldingDeposit.sol:87:13: Warning: "msg.value" used in non-payable function. Do you want to add the "payable" modifier to this function?
+		deposit = msg.value;
+		          ^-------^
+,/D/xborder/xborder/src/contracts/HoldingDeposit.sol:90:36: Warning: "msg.value" used in non-payable function. Do you want to add the "payable" modifier to this function?
+		emit funds_deposited(msg.sender, msg.value);
+		                                 ^-------^
+,link_token/contracts/token/linkERC20Basic.sol:11:3: Warning: No visibility specified. Defaulting to "public". 
+  function balanceOf(address who) constant returns (uint256);
+  ^---------------------------------------------------------^
+,link_token/contracts/token/linkERC20Basic.sol:12:3: Warning: No visibility specified. Defaulting to "public". 
+  function transfer(address to, uint256 value) returns (bool);
+  ^----------------------------------------------------------^
+,link_token/contracts/token/linkERC20.sol:12:3: Warning: No visibility specified. Defaulting to "public". 
+  function allowance(address owner, address spender) constant returns (uint256);
+  ^----------------------------------------------------------------------------^
+,link_token/contracts/token/linkERC20.sol:13:3: Warning: No visibility specified. Defaulting to "public". 
+  function transferFrom(address from, address to, uint256 value) returns (bool);
+  ^----------------------------------------------------------------------------^
+,link_token/contracts/token/linkERC20.sol:14:3: Warning: No visibility specified. Defaulting to "public". 
+  function approve(address spender, uint256 value) returns (bool);
+  ^--------------------------------------------------------------^
+,link_token/contracts/token/ERC677.sol:6:3: Warning: No visibility specified. Defaulting to "public". 
+  function transferAndCall(address to, uint value, bytes data) returns (bool success);
+  ^----------------------------------------------------------------------------------^
+,link_token/contracts/token/ERC677Receiver.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function onTokenTransfer(address _sender, uint _value, bytes _data);
+  ^------------------------------------------------------------------^
+,link_token/contracts/token/linkBasicToken.sol:22:3: Warning: No visibility specified. Defaulting to "public". 
+  function transfer(address _to, uint256 _value) returns (bool) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/token/linkBasicToken.sol:34:3: Warning: No visibility specified. Defaulting to "public". 
+  function balanceOf(address _owner) constant returns (uint256 balance) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/token/linkStandardToken.sol:26:3: Warning: No visibility specified. Defaulting to "public". 
+  function transferFrom(address _from, address _to, uint256 _value) returns (bool) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/token/linkStandardToken.sol:44:3: Warning: No visibility specified. Defaulting to "public". 
+  function approve(address _spender, uint256 _value) returns (bool) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/token/linkStandardToken.sol:56:3: Warning: No visibility specified. Defaulting to "public". 
+  function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/token/linkStandardToken.sol:66:3: Warning: No visibility specified. Defaulting to "public". 
+  function increaseApproval (address _spender, uint _addedValue) 
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/token/linkStandardToken.sol:73:3: Warning: No visibility specified. Defaulting to "public". 
+  function decreaseApproval (address _spender, uint _subtractedValue) 
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/D/xborder/xborder/src/contracts/v0.4/interfaces/ERC20Basic.sol:11:3: Warning: No visibility specified. Defaulting to "public". 
+  function balanceOf(address who) constant returns (uint256);
+  ^---------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/interfaces/ERC20Basic.sol:12:3: Warning: No visibility specified. Defaulting to "public". 
+  function transfer(address to, uint256 value) returns (bool);
+  ^----------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/interfaces/ERC20.sol:12:3: Warning: No visibility specified. Defaulting to "public". 
+  function allowance(address owner, address spender) constant returns (uint256);
+  ^----------------------------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/interfaces/ERC20.sol:13:3: Warning: No visibility specified. Defaulting to "public". 
+  function transferFrom(address from, address to, uint256 value) returns (bool);
+  ^----------------------------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/interfaces/ERC20.sol:14:3: Warning: No visibility specified. Defaulting to "public". 
+  function approve(address spender, uint256 value) returns (bool);
+  ^--------------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/interfaces/ERC677.sol:6:3: Warning: No visibility specified. Defaulting to "public". 
+  function transferAndCall(address to, uint value, bytes data) returns (bool success);
+  ^----------------------------------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/interfaces/ERC677Receiver.sol:5:3: Warning: No visibility specified. Defaulting to "public". 
+  function onTokenTransfer(address _sender, uint _value, bytes _data);
+  ^------------------------------------------------------------------^
+,/D/xborder/xborder/src/contracts/v0.4/vendor/BasicToken.sol:22:3: Warning: No visibility specified. Defaulting to "public". 
+  function transfer(address _to, uint256 _value) returns (bool) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/D/xborder/xborder/src/contracts/v0.4/vendor/BasicToken.sol:34:3: Warning: No visibility specified. Defaulting to "public". 
+  function balanceOf(address _owner) constant returns (uint256 balance) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/D/xborder/xborder/src/contracts/v0.4/vendor/StandardToken.sol:26:3: Warning: No visibility specified. Defaulting to "public". 
+  function transferFrom(address _from, address _to, uint256 _value) returns (bool) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/D/xborder/xborder/src/contracts/v0.4/vendor/StandardToken.sol:44:3: Warning: No visibility specified. Defaulting to "public". 
+  function approve(address _spender, uint256 _value) returns (bool) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/D/xborder/xborder/src/contracts/v0.4/vendor/StandardToken.sol:56:3: Warning: No visibility specified. Defaulting to "public". 
+  function allowance(address _owner, address _spender) constant returns (uint256 remaining) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/D/xborder/xborder/src/contracts/v0.4/vendor/StandardToken.sol:66:3: Warning: No visibility specified. Defaulting to "public". 
+  function increaseApproval (address _spender, uint _addedValue) 
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/D/xborder/xborder/src/contracts/v0.4/vendor/StandardToken.sol:73:3: Warning: No visibility specified. Defaulting to "public". 
+  function decreaseApproval (address _spender, uint _subtractedValue) 
+  ^ (Relevant source part starts here and spans across multiple lines).
+,/D/xborder/xborder/src/contracts/v0.4/ERC677Token.sol:38:3: Warning: Function state mutability can be restricted to view
+  function isContract(address _addr)
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/ERC677Token.sol:38:3: Warning: Function state mutability can be restricted to view
+  function isContract(address _addr)
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/math/linkSafeMath.sol:9:3: Warning: Function state mutability can be restricted to pure
+  function mul(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/math/linkSafeMath.sol:15:3: Warning: Function state mutability can be restricted to pure
+  function div(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/math/linkSafeMath.sol:22:3: Warning: Function state mutability can be restricted to pure
+  function sub(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+,link_token/contracts/math/linkSafeMath.sol:27:3: Warning: Function state mutability can be restricted to pure
+  function add(uint256 a, uint256 b) internal constant returns (uint256) {
+  ^ (Relevant source part starts here and spans across multiple lines).
+
+> Artifacts written to C:\Users\hamza\AppData\Local\Temp\test-2020424-12912-1obk5bg.7mha
+> Compiled successfully using:
+   - solc: 0.4.24+commit.e67f0147.Emscripten.clang
+
+Wrote contract address to file
+Wrote contract address to file
+Wrote contract address to file
+
+[0m[0m
+[0m  Contract: EscrowFactory[0m
+[0m    Escrow Factory[0m
+    [32m  √[0m[90m deploys an escrow contract[0m
+    [32m  √[0m[90m emits an event when the escrow contract is deployed[0m
+    [32m  √[0m[90m sets the caller of open_escrow to be the seller on the escrow contract[0m[31m (108ms)[0m
+    [32m  √[0m[90m creates a mapping entry for the newly created escrow under a session id[0m[31m (100ms)[0m
+[0m    Escrow[0m
+    [31m  1) should allow a buyer to deposit funds[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    EscrowFactory.escrow_opened(
+      session_id_hash: [33m0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c[39m (type: bytes32),
+      escrow_contract: [33m0x77499376d6Be02A7762e99d3E3FAb9C77F27Dd82[39m (type: address)
+    )
+
+
+    ---------------------------
+    [32m  √[0m[90m should prevent the seller from depositing funds[0m[31m (254ms)[0m
+    [31m  2) should prevent the buyer from depositing twice[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    EscrowFactory.escrow_opened(
+      session_id_hash: [33m0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c[39m (type: bytes32),
+      escrow_contract: [33m0xfB35E324FCB2Dd58E72a0a41338908353d94B138[39m (type: address)
+    )
+
+
+    ---------------------------
+    [32m  √[0m[90m should emit an event when a title transfer is requested[0m[31m (254ms)[0m
+    [32m  √[0m[90m should prevent anyone but the seller from requesting a title transfer[0m[31m (197ms)[0m
+
+[0m  Contract: HoldingDepositFactory[0m
+[0m    Holding Deposit Factory[0m
+    [32m  √[0m[90m deploys a holding deposit contract[0m
+    [32m  √[0m[90m emits an event when the holding contract is deployed[0m
+    [32m  √[0m[90m sets the caller of open_holding deposit to be the seller on the holding contract[0m[33m (66ms)[0m
+    [32m  √[0m[90m creates a mapping entry for the newly created holding contract under a session id[0m[33m (70ms)[0m
+[0m    Holding Deposit[0m
+[0m      Constructor[0m
+      [32m  √[0m[90m Sets the seller, status and opens the holding[0m[31m (201ms)[0m
+[0m      Depositing Funds[0m
+      [31m  3) sets up the buyer, their deposit and status in the holding contract[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    HoldingDepositFactory.holding_deposit_created(
+      session_id_hash: [33m0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c[39m (type: bytes32),
+      holding_deposit_contract: [33m0x158ef9cF5B7FCd2d703bD5570ac063a95Cc6540A[39m (type: address)
+    )
+
+
+    ---------------------------
+      [32m  √[0m[90m prevents the seller from depositing into their own holding[0m[31m (155ms)[0m
+      [31m  4) emits an event when the deposit is complete[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    HoldingDepositFactory.holding_deposit_created(
+      session_id_hash: [33m0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c[39m (type: bytes32),
+      holding_deposit_contract: [33m0x9eeF92748AD2CAF462a7285F527F164C2A0b509B[39m (type: address)
+    )
+
+
+    ---------------------------
+[0m      Updating status[0m
+      [31m  5) lets the buyer update their status, refunding them the deposit[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    HoldingDepositFactory.holding_deposit_created(
+      session_id_hash: [33m0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c[39m (type: bytes32),
+      holding_deposit_contract: [33m0x2dcb82d6692A005016847EcAA44e57609782F410[39m (type: address)
+    )
+
+
+    ---------------------------
+      [32m  √[0m[90m emits an event when the status is updated[0m[31m (173ms)[0m
+[0m      Handles a Complete Holding Deposit from start to finish[0m
+      [31m  6) forfeits deposit[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    HoldingDepositFactory.holding_deposit_created(
+      session_id_hash: [33m0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c[39m (type: bytes32),
+      holding_deposit_contract: [33m0x89b4F6Db686F9721e9cb288111E33249f00b619b[39m (type: address)
+    )
+
+
+    ---------------------------
+      [31m  7) refunds deposit[0m
+
+    Events emitted during test:
+    ---------------------------
+
+    HoldingDepositFactory.holding_deposit_created(
+      session_id_hash: [33m0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c[39m (type: bytes32),
+      holding_deposit_contract: [33m0x494A7D854f523CcA21b0dd2fE29C9B5562AF1154[39m (type: address)
+    )
+
+
+    ---------------------------
+
+[0m  Contract: MyContract[0m
+[0m    #createRequest[0m
+[0m      without LINK[0m
+      [32m  √[0m[90m reverts[0m[31m (317ms)[0m
+[0m      with LINK[0m
+[0m        sending a request to a specific oracle contract address[0m
+        [32m  √[0m[90m triggers a log event in the new Oracle contract[0m[31m (389ms)[0m
+[0m    #fulfill[0m
+    [32m  √[0m[90m records the data given to it by the oracle[0m[31m (77ms)[0m
+[0m      when my contract does not recognize the request ID[0m
+      [32m  √[0m[90m does not accept the data provided[0m[31m (246ms)[0m
+[0m      when called by anyone other than the oracle contract[0m
+      [32m  √[0m[90m does not accept the data provided[0m[31m (152ms)[0m
+[0m    #cancelRequest[0m
+[0m      before the expiration time[0m
+      [32m  √[0m[90m cannot cancel a request[0m[31m (208ms)[0m
+[0m      after the expiration time[0m
+[0m        when called by a non-owner[0m
+        [32m  √[0m[90m cannot cancel a request[0m[31m (153ms)[0m
+[0m        when called by an owner[0m
+        [32m  √[0m[90m can cancel a request[0m[31m (242ms)[0m
+[0m    #withdrawLink[0m
+[0m      when called by a non-owner[0m
+      [32m  √[0m[90m cannot withdraw[0m[31m (148ms)[0m
+[0m      when called by the owner[0m
+      [32m  √[0m[90m transfers LINK to the owner[0m[31m (318ms)[0m
+
+[0m  Contract: Verifier[0m
+  [32m  √[0m[90m should emit an event when verification is requested[0m[31m (111ms)[0m
+  [32m  √[0m[90m should emit the property_uid as part of the event[0m[31m (100ms)[0m
+
+
+[92m [0m[32m 26 passing[0m[90m (35s)[0m
+[31m  7 failing[0m
+
+[0m  1) Contract: EscrowFactory
+       Escrow
+         should allow a buyer to deposit funds:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+     at PromiEvent (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\promievent.js:9:1)
+      at TruffleContract.deposit (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\execute.js:169:1)
+      at Context.it (test\escrow_test.js:54:35)
+[0m
+[0m  2) Contract: EscrowFactory
+       Escrow
+         should prevent the buyer from depositing twice:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+     at PromiEvent (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\promievent.js:9:1)
+      at TruffleContract.deposit (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\execute.js:169:1)
+      at Context.it (test\escrow_test.js:81:36)
+[0m
+[0m  3) Contract: HoldingDepositFactory
+       Holding Deposit
+         Depositing Funds
+           sets up the buyer, their deposit and status in the holding contract:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+     at PromiEvent (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\promievent.js:9:1)
+      at TruffleContract.deposit_funds (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\execute.js:169:1)
+      at Context.it (test\holding_deposit_test.js:67:23)
+[0m
+[0m  4) Contract: HoldingDepositFactory
+       Holding Deposit
+         Depositing Funds
+           emits an event when the deposit is complete:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+     at PromiEvent (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\promievent.js:9:1)
+      at TruffleContract.deposit_funds (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\execute.js:169:1)
+      at Context.it (test\holding_deposit_test.js:95:23)
+[0m
+[0m  5) Contract: HoldingDepositFactory
+       Holding Deposit
+         Updating status
+           lets the buyer update their status, refunding them the deposit:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+     at PromiEvent (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\promievent.js:9:1)
+      at TruffleContract.deposit_funds (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\execute.js:169:1)
+      at Context.it (test\holding_deposit_test.js:107:23)
+[0m
+[0m  6) Contract: HoldingDepositFactory
+       Holding Deposit
+         Handles a Complete Holding Deposit from start to finish
+           forfeits deposit:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+     at PromiEvent (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\promievent.js:9:1)
+      at TruffleContract.deposit_funds (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\execute.js:169:1)
+      at Context.it (test\holding_deposit_test.js:138:24)
+[0m
+[0m  7) Contract: HoldingDepositFactory
+       Holding Deposit
+         Handles a Complete Holding Deposit from start to finish
+           refunds deposit:
+[0m[31m     Error: Returned error: VM Exception while processing transaction: revert[0m[90m
+     at PromiEvent (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\promievent.js:9:1)
+      at TruffleContract.deposit_funds (C:\Users\hamza\AppData\Roaming\npm\node_modules\truffle\build\webpack:\packages\contract\lib\execute.js:169:1)
+      at Context.it (test\holding_deposit_test.js:171:24)
+[0m
+
+

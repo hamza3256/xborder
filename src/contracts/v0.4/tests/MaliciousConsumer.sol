@@ -8,12 +8,12 @@ contract MaliciousConsumer is Chainlinked {
   uint256 constant private ORACLE_PAYMENT = 1 * LINK;
   uint256 private expiration;
 
-  constructor(address _link, address _oracle) public payable {
+  constructor(address _link, address _oracle) public  {
     setLinkToken(_link);
     setOracle(_oracle);
   }
 
-  function () public payable {} // solhint-disable-line no-empty-blocks
+  function () public  {} // solhint-disable-line no-empty-blocks
 
   function requestData(bytes32 _id, bytes _callbackFunc) public {
     Chainlink.Request memory req = newRequest(_id, this, bytes4(keccak256(_callbackFunc)));
