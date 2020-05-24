@@ -43,7 +43,6 @@ const CreditsText = styled.p`
     color: #9e9ea7;
   }
 `;
-
 export default function Introduction() {
   return (
     <IntroJumbotron fluid>
