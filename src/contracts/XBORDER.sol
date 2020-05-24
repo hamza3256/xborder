@@ -14,8 +14,8 @@ contract XBORDER is ChainlinkClient{
     
     //These must all be set on creation
     string public invoiceID;
-    address public sellerAddress;
-    address public buyerAddress;
+    address public payerAddress;
+    address public payeeAddress;
     uint256 public amount;
     uint256 public deploymentTime;
 
@@ -30,8 +30,8 @@ contract XBORDER is ChainlinkClient{
     constructor(
         
         string _invoiceID,
-        address  _sellerAddress,
-        address  _buyerAddress,
+        address  _payerAddress,
+        address  _payeeAddress,
         uint256  _amount,
         string[] _jobIds,
         address[] _oracles
@@ -42,8 +42,8 @@ contract XBORDER is ChainlinkClient{
         falseCount = 0;
         released = false;
         invoiceID = _invoiceID;
-        sellerAddress = _sellerAddress;
-        buyerAddress = _buyerAddress;
+        payerAddress = _payerAddress;
+        payeeAddress = _payeeAddress;
         amount = _amount;
         jobIds = _jobIds;
         oracles = _oracles;
@@ -59,9 +59,9 @@ contract XBORDER is ChainlinkClient{
     }
     
     
-    //modifier to only allow buyers to access functions
-    modifier buyerSellerContract(){
-        require(address(this) == msg.sender || sellerAddress == msg.sender || buyerAddress == msg.sender,"Unauthorised , must be buyer or seller");
+    //modifier to only allow payees to access functions
+    modifier payeepayerContract(){
+        require(address(this) == msg.sender || payerAddress == msg.sender || payeeAddress == msg.sender,"Unauthorised , must be payee or payer");
         _;
     }
 
@@ -69,7 +69,7 @@ contract XBORDER is ChainlinkClient{
     //Needs more testing
     function requestConfirmations()
     public
-    buyerSellerContract
+    payeepayerContract
     {
         //Reset them to 0 to be able to safely re-run the oracles
         trueCount = 0;
@@ -90,7 +90,7 @@ contract XBORDER is ChainlinkClient{
     recordChainlinkFulfillment(_requestId)
     {
         //emit NodeRequestFulfilled(_requestId, _output);
-        //Append to these to calculate if the funds should be released 0.2704
+        //Append to these to calculate if the deposit_amount should be released 0.2704
         if(paid == true) {
             //Invoice Paid
             trueCount += 1;
@@ -110,18 +110,18 @@ contract XBORDER is ChainlinkClient{
     }
 
     //Withdraw ETH from contract
-    //Checks on who can withdraw should only be accessible by buyer and seller
-    //If enough time has passed seller can withdraw the eth 
-    //If the checks pass then the buyer can withdraw the eth 
-    //Maybe modifications that the seller can send the ETH to the buyer.
-    function withdrawETH() public buyerSellerContract {
-        if(msg.sender == sellerAddress && deploymentTime <= block.timestamp + 1 days && (trueCount != 0 || falseCount != 0)){
+    //Checks on who can withdraw should only be accessible by payee and payer
+    //If enough time has passed payer can withdraw the eth 
+    //If the checks pass then the payee can withdraw the eth 
+    //Maybe modifications that the payer can send the ETH to the payee.
+    function withdrawETH() public payeepayerContract {
+        if(msg.sender == payerAddress && deploymentTime <= block.timestamp + 1 days && (trueCount != 0 || falseCount != 0)){
             if(released == false){
-                //If a day has passed then the seller can take back his ETH
+                //If a day has passed then the payer can take back his ETH
                 address(msg.sender).transfer(amount);
                 amount = 0;
             }
-        }else if (msg.sender == buyerAddress && released == true){
+        }else if (msg.sender == payeeAddress && released == true){
             //Withdraw the ETH from the contract
             address(msg.sender).transfer(amount);
             amount = 0;
@@ -131,7 +131,7 @@ contract XBORDER is ChainlinkClient{
     }
 
     //Withdraw Link from contract
-    function withdrawLink() public buyerSellerContract{
+    function withdrawLink() public payeepayerContract{
         LinkTokenInterface link = LinkTokenInterface(chainlinkTokenAddress());
         require(link.transfer(msg.sender, link.balanceOf(address(this))), "Unable to transfer");
     }
@@ -151,8 +151,8 @@ contract XBORDER is ChainlinkClient{
 
 //XBORDERFactory, Produces the XBORDER agreements between users.
 contract XBORDERFactory{
-    mapping (address => address[]) public XBORDERAddressesSeller;
-    mapping (address => address[]) public XBORDERAddressesBuyer;
+    mapping (address => address[]) public XBORDERAddressespayer;
+    mapping (address => address[]) public XBORDERAddressespayee;
     
     //address public XBORDERAddress;
     event contractDeployed(
@@ -165,7 +165,7 @@ contract XBORDERFactory{
     function createXBORDER(
     
         string _invoiceID,
-        address  _buyerAddress,
+        address  _payeeAddress,
         string[] _jobIds,
         address[] _oracles
         
@@ -176,25 +176,25 @@ contract XBORDERFactory{
         address XBORDERAddress = (new XBORDER).value(address(this).balance)(
              _invoiceID,
             msg.sender,
-            _buyerAddress,
+            _payeeAddress,
             msg.value,
             _jobIds,
             _oracles
         );
         
         //If it didn't fail Lock that much into a balance
-        XBORDERAddressesSeller[msg.sender].push(XBORDERAddress);
-        XBORDERAddressesBuyer[_buyerAddress].push(XBORDERAddress);
+        XBORDERAddressespayer[msg.sender].push(XBORDERAddress);
+        XBORDERAddressespayee[_payeeAddress].push(XBORDERAddress);
     
         //Emit an event here\
         emit contractDeployed(XBORDERAddress);
     }
     
-    function getXBORDERAddressesSeller() public constant returns(uint) {
-        return XBORDERAddressesSeller[msg.sender].length;
+    function getXBORDERAddressespayer() public constant returns(uint) {
+        return XBORDERAddressespayer[msg.sender].length;
     }
     
-    function getXBORDERAddressesBuyer() public constant returns(uint) {
-      return XBORDERAddressesBuyer[msg.sender].length;
+    function getXBORDERAddressespayee() public constant returns(uint) {
+      return XBORDERAddressespayee[msg.sender].length;
     }
 }

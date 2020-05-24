@@ -107,9 +107,9 @@ contract('MyContract', accounts => {
     })
 
     it('records the data given to it by the oracle', async () => {
-      const currentPrice = await cc.data.call()
+      const currPrice = await cc.data.call()
       assert.equal(
-        web3.utils.toHex(currentPrice),
+        web3.utils.toHex(currPrice),
         web3.utils.padRight(expected, 64),
       )
     })

@@ -48,13 +48,13 @@
                     },
                     {
                         "indexed": false,
-                        "name": "holding_deposit_contract",
+                        "name": "check_hold_deposit_contract",
                         "type": "address"
                     }
                 ],
-                "name": "holding_deposit_created",
+                "name": "check_hold_deposit_created",
                 "type": "event",
-                "signature": "0x46a9a9c9589c0b30c880e480e042c74cbcf20b5949ac62a75bb1f7c3aa1d4719"
+                "signature": "0x04074edfed0f227d34d79456711d182688ac897acf24a4db519b409f4f946b04"
             },
             {
                 "constant": false,
@@ -64,12 +64,12 @@
                         "type": "bytes32"
                     }
                 ],
-                "name": "open_holding_deposit",
+                "name": "open_check_hold_deposit",
                 "outputs": [],
                 "payable": false,
                 "stateMutability": "nonpayable",
                 "type": "function",
-                "signature": "0xdb0fe4e5"
+                "signature": "0x18cf7553"
             },
             {
                 "constant": true,
@@ -79,7 +79,7 @@
                         "type": "bytes32"
                     }
                 ],
-                "name": "get_holding_deposit_contract",
+                "name": "get_check_hold_deposit_contract",
                 "outputs": [
                     {
                         "name": "",
@@ -89,7 +89,7 @@
                 "payable": false,
                 "stateMutability": "view",
                 "type": "function",
-                "signature": "0x36caad55"
+                "signature": "0xda3bd04a"
             }
         ],
         "escrow_factory": [
@@ -107,15 +107,15 @@
                         "type": "address"
                     }
                 ],
-                "name": "escrow_opened",
+                "name": "escrow_activated",
                 "type": "event",
-                "signature": "0xf3f9f1914b513fe09823b581ac7bf3b7d4d4327e8f6ccb4ff08376a224331d41"
+                "signature": "0x18cc92924fe076d00e47abd8bf0e91e99d62065bea1a1da3e85d8e58a6ea6ab9"
             },
             {
                 "constant": false,
                 "inputs": [
                     {
-                        "name": "_title_transfer_hash",
+                        "name": "_no_transfer_hash",
                         "type": "bytes32"
                     },
                     {

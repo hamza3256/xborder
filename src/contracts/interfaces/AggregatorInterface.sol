@@ -13,7 +13,7 @@ interface AggregatorInterface {
       uint256 roundId,
       int256 answer,
       uint256 startedAt,
-      uint256 updatedAt,
+      uint256 checkdAt,
       uint256 answeredInRound
     );
   function latestRoundData()
@@ -22,10 +22,10 @@ interface AggregatorInterface {
       uint256 roundId,
       int256 answer,
       uint256 startedAt,
-      uint256 updatedAt,
+      uint256 checkdAt,
       uint256 answeredInRound
     );
 
-  event AnswerUpdated(int256 indexed current, uint256 indexed roundId, uint256 timestamp);
+  event Answercheckd(int256 indexed curr, uint256 indexed roundId, uint256 timestamp);
   event NewRound(uint256 indexed roundId, address indexed startedBy, uint256 startedAt);
 }

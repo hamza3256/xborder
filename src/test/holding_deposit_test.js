@@ -11,60 +11,60 @@ contract("HoldingDepositFactory", accounts => {
 		hd_factory = await HoldingDepositFactory.new();
 
 		let session_id_hash = "0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c";
-		let result = await hd_factory.open_holding_deposit(session_id_hash);
+		let result = await hd_factory.open_check_hold_deposit(session_id_hash);
 
-		hd_address = result.logs[0].args.holding_deposit_contract;
+		hd_address = result.logs[0].args.check_hold_deposit_contract;
 		hd = await HoldingDeposit.at(hd_address);
 	});
 
-	describe("Holding Deposit Factory", () => {
+	describe("check_hold Deposit Factory", () => {
 
-		it("deploys a holding deposit contract", async () => {
+		it("deploys a check_hold deposit contract", async () => {
 			assert.ok(hd_factory.contract.options.address);
 			assert.ok(hd.contract.options.address);
 		});
 
-		it('emits an event when the holding contract is deployed', () => {
-			hd_factory.getPastEvents('holding_deposit_created', (err, events) => {
-				assert.notEqual(0, events.length, "No holding_deposit_created events were found");
+		it('emits an event when the check_hold contract is deployed', () => {
+			hd_factory.getPastEvents('check_hold_deposit_created', (err, events) => {
+				assert.notEqual(0, events.length, "No check_hold_deposit_created events were found");
 			});
 		});
 
-		it('sets the caller of open_holding deposit to be the seller on the holding contract', async () => {
+		it('sets the caller of open_check_hold deposit to be the payer on the check_hold contract', async () => {
 			let participants = await hd.get_participants();
-			assert.equal(participants[0], accounts[0], "The seller was not properly set");
+			assert.equal(participants[0], accounts[0], "The payer was not properly set");
 		});
 
-		it('creates a mapping entry for the newly created holding contract under a session id',
+		it('creates a mapping entry for the newly created check_hold contract under a session id',
 			async () => {
 			let session_id_hash = "0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c";
-			let result = await hd_factory.get_holding_deposit_contract(session_id_hash);
+			let result = await hd_factory.get_check_hold_deposit_contract(session_id_hash);
 			assert.equal(result, hd.contract.options.address);
 		});
 	});
 
 
-	describe("Holding Deposit", () => {
+	describe("check_hold Deposit", () => {
 
 		describe("Constructor", () => {
-			it("Sets the seller, status and opens the holding", async () => {
+			it("Sets the payer, status and opens the check_hold", async () => {
 				let participants = await hd.get_participants();
-				let seller = participants[0];
-				assert.equal(seller, accounts[0]);
+				let payer = participants[0];
+				assert.equal(payer, accounts[0]);
 
-				let seller_status = await hd.get_seller_status();
-				assert.equal(seller_status, true);
+				let payer_curr_status = await hd.get_payer_curr_status();
+				assert.equal(payer_curr_status, true);
 
 				let open = await hd.is_open();
 				assert.equal(open, true);
 			});
 		});
 
-		describe("Depositing Funds", () => {
-			it("sets up the buyer, their deposit and status in the holding contract",
+		describe("Depositing deposit_amount", () => {
+			it("sets up the payee, their deposit and status in the check_hold contract",
 				async () => {
 
-				let tx = await hd.deposit_funds({
+				let tx = await hd.deposit_amount({
 					from: accounts[1],
 					value: web3.utils.toWei('1', 'ether')
 				});
@@ -72,16 +72,16 @@ contract("HoldingDepositFactory", accounts => {
 				let participants = await hd.get_participants();
 				assert.equal(participants[1], accounts[1]);
 
-				let buyer_status = await hd.get_buyer_status();
-				assert.equal(buyer_status, true);
+				let payee_curr_status = await hd.get_payee_curr_status();
+				assert.equal(payee_curr_status, true);
 
 				let deposit = await hd.get_deposit_amount();
 				assert.equal(Number(deposit), Number(web3.utils.toWei('1', 'ether')));
 			});
 
-			it("prevents the seller from depositing into their own holding", async () => {
+			it("prevents the payer from depositing into their own check_hold", async () => {
 				try {
-					await hd.deposit_funds({
+					await hd.deposit_amount({
 						from: accounts[0],
 						value: 10
 					});
@@ -92,26 +92,26 @@ contract("HoldingDepositFactory", accounts => {
 			});
 
 			it("emits an event when the deposit is complete", async () => {
-				let tx = await hd.deposit_funds({
+				let tx = await hd.deposit_amount({
 					from: accounts[1],
 					value: 10
 				});
-				assert.equal("funds_deposited", tx.logs[0].event);
+				assert.equal("deposit_amount_deposited", tx.logs[0].event);
 			});
 		});
 
 
 		describe("Updating status", () => {
 
-			it("lets the buyer update their status, refunding them the deposit", async () => {
-				let tx = await hd.deposit_funds({
+			it("lets the payee chec_curr their status, refunding them the deposit", async () => {
+				let tx = await hd.deposit_amount({
 					from: accounts[1],
 					value: web3.utils.toWei('5', 'ether')
 				});
 
 				let pre_balance = Number(await web3.eth.getBalance(accounts[1]));
 
-				let tx2 = await hd.update_status(false, {
+				let tx2 = await hd.check_curr_status(false, {
 					from: accounts[1]
 				});
 
@@ -122,66 +122,66 @@ contract("HoldingDepositFactory", accounts => {
 				assert.isAbove(post_balance, pre_balance);
 			});
 
-			it("emits an event when the status is updated", async () => {
-				let tx = await hd.update_status(false, {
+			it("emits an event when the status is chec_currd", async () => {
+				let tx = await hd.check_curr_status(false, {
 					from: accounts[0]
 				});
 
-				assert.equal("status_updated", tx.logs[0].event);
+				assert.equal("curr_status_checkd", tx.logs[0].event);
 			});
 		});
 
 
-		describe("Handles a Complete Holding Deposit from start to finish", () => {
+		describe("Handles a Complete check_hold Deposit from start to finish", () => {
 			it("forfeits deposit", async () => {
-				// Buyer deposits funds
-				let tx1 = await hd.deposit_funds({
+				// payee deposits deposit_amount
+				let tx1 = await hd.deposit_amount({
 					from: accounts[1],
 					value: web3.utils.toWei('5', 'ether')
 				});
 
-				let deposit_refundable_1 = await hd.is_refundable();
-				assert.equal(true, deposit_refundable_1);
+				let deposit_refund_checker_1 = await hd.is_refund_checker();
+				assert.equal(true, deposit_refund_checker_1);
 
-				// Seller updates deposit status
-				let tx3 = await hd.update_deposit_status(false, {
+				// payer chec_currs deposit status
+				let tx3 = await hd.chec_curr_deposit_curr_status(false, {
 					from: accounts[0]
 				});
 
-				let deposit_refundable_2 = await hd.is_refundable();
-				assert.equal(false, deposit_refundable_2);
-				assert.equal("deposit_status_updated", tx3.logs[0].event);
+				let deposit_refund_checker_2 = await hd.is_refund_checker();
+				assert.equal(false, deposit_refund_checker_2);
+				assert.equal("deposit_curr_status_checkd", tx3.logs[0].event);
 
-				let pre_seller_balance = Number(await web3.eth.getBalance(accounts[0]));
+				let pre_payer_balance = Number(await web3.eth.getBalance(accounts[0]));
 
-				// Buyer updates their status
-				let tx4 = await hd.update_status(false, {
+				// payee chec_currs their status
+				let tx4 = await hd.check_curr_status(false, {
 					from: accounts[1]
 				});
 
-				let post_seller_balance = Number(await web3.eth.getBalance(accounts[0]));
-				assert.isAbove(post_seller_balance, pre_seller_balance);
+				let post_payer_balance = Number(await web3.eth.getBalance(accounts[0]));
+				assert.isAbove(post_payer_balance, pre_payer_balance);
 
 				let deposit = await hd.get_deposit_amount();
 				assert.equal(0, deposit);
 			});
 
-			it("refunds deposit", async () => {
-				// Buyer deposits funds
-				let tx1 = await hd.deposit_funds({
+			it("redeposit_amount deposit", async () => {
+				// payee deposits deposit_amount
+				let tx1 = await hd.deposit_amount({
 					from: accounts[1],
 					value: web3.utils.toWei('5', 'ether')
 				});
 
-				let pre_buyer_balance = Number(await web3.eth.getBalance(accounts[1]));
+				let pre_payee_balance = Number(await web3.eth.getBalance(accounts[1]));
 
-				// Buyer updates their status
-				let tx4 = await hd.update_status(false, {
+				// payee chec_currs their status
+				let tx4 = await hd.check_curr_status(false, {
 					from: accounts[1]
 				});
 
-				let post_buyer_balance = Number(await web3.eth.getBalance(accounts[1]));
-				assert.isAbove(post_buyer_balance, pre_buyer_balance);
+				let post_payee_balance = Number(await web3.eth.getBalance(accounts[1]));
+				assert.isAbove(post_payee_balance, pre_payee_balance);
 
 				let deposit = await hd.get_deposit_amount();
 				assert.equal(0, deposit);

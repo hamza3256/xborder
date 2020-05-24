@@ -1,0 +1,468 @@
+{
+  "contractName": "Verifier",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "property_uid",
+          "type": "bytes32"
+        }
+      ],
+      "name": "verification_requested",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_property_uid",
+          "type": "bytes32"
+        }
+      ],
+      "name": "verify",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_property_uid\",\"type\":\"bytes32\"}],\"name\":\"verify\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"name\":\"property_uid\",\"type\":\"bytes32\"}],\"name\":\"verification_requested\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/xborder/xborder/src/contracts/Verifier.sol\":\"Verifier\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/xborder/xborder/src/contracts/Verifier.sol\":{\"keccak256\":\"0x78fb7fe12594f0619cf2c0a2c326b0b6a5f193e21d90d22f224ca27307bafa85\",\"urls\":[\"bzzr://420d4341eaf92c61adb18b596e4588416d00ed8879738f5c18cffb1d072b77df\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060e08061001f6000396000f300608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806375e36616146044575b600080fd5b348015604f57600080fd5b50607060048036038101908080356000191690602001909291905050506072565b005b7fe67ea319ad509472f8fe19f76c94905173d83826e5405408a0f4f22aa90934c98160405180826000191660001916815260200191505060405180910390a1505600a165627a7a723058208b0b11e052762e962e59a66159a1562eb68c5ebe7b1d1032bf3fd1c9d2c1cb8f0029",
+  "deployedBytecode": "0x608060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806375e36616146044575b600080fd5b348015604f57600080fd5b50607060048036038101908080356000191690602001909291905050506072565b005b7fe67ea319ad509472f8fe19f76c94905173d83826e5405408a0f4f22aa90934c98160405180826000191660001916815260200191505060405180910390a1505600a165627a7a723058208b0b11e052762e962e59a66159a1562eb68c5ebe7b1d1032bf3fd1c9d2c1cb8f0029",
+  "sourceMap": "27:212:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;27:212:4;;;;;;;",
+  "deployedSourceMap": "27:212:4:-;;;;;;;;;;;;;;;;;;;;;;;;134:102;;8:9:-1;5:2;;;30:1;27;20:12;5:2;134:102:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;194:37;217:13;194:37;;;;;;;;;;;;;;;;;;;;;;;;134:102;:::o",
+  "source": "pragma solidity 0.4.24;\r\n\r\ncontract Verifier {\r\n\r\n\t// Events\r\n\tevent verification_requested(bytes32 property_uid);\r\n\r\n\t// Functions\r\n\tfunction verify(bytes32 _property_uid)\r\n\tpublic\r\n\t{\r\n\t\temit verification_requested(_property_uid);\r\n\t}\r\n}\r\n",
+  "sourcePath": "D:\\xborder\\xborder\\src\\contracts\\Verifier.sol",
+  "ast": {
+    "absolutePath": "/D/xborder/xborder/src/contracts/Verifier.sol",
+    "exportedSymbols": {
+      "Verifier": [
+        1089
+      ]
+    },
+    "id": 1090,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1074,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1089,
+        "linearizedBaseContracts": [
+          1089
+        ],
+        "name": "Verifier",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 1078,
+            "name": "verification_requested",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1077,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1076,
+                  "indexed": false,
+                  "name": "property_uid",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1078,
+                  "src": "92:20:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1075,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "92:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "91:22:4"
+            },
+            "src": "63:51:4"
+          },
+          {
+            "body": {
+              "id": 1087,
+              "nodeType": "Block",
+              "src": "184:52:4",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1084,
+                        "name": "_property_uid",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1080,
+                        "src": "217:13:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 1083,
+                      "name": "verification_requested",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1078,
+                      "src": "194:22:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32)"
+                      }
+                    },
+                    "id": 1085,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "194:37:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1086,
+                  "nodeType": "EmitStatement",
+                  "src": "189:42:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1088,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "verify",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1081,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1080,
+                  "name": "_property_uid",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1088,
+                  "src": "150:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1079,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "150:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "149:23:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1082,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "184:0:4"
+            },
+            "scope": 1089,
+            "src": "134:102:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1090,
+        "src": "27:212:4"
+      }
+    ],
+    "src": "0:241:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/D/xborder/xborder/src/contracts/Verifier.sol",
+    "exportedSymbols": {
+      "Verifier": [
+        1089
+      ]
+    },
+    "id": 1090,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1074,
+        "literals": [
+          "solidity",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:4"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1089,
+        "linearizedBaseContracts": [
+          1089
+        ],
+        "name": "Verifier",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 1078,
+            "name": "verification_requested",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 1077,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1076,
+                  "indexed": false,
+                  "name": "property_uid",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1078,
+                  "src": "92:20:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1075,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "92:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "91:22:4"
+            },
+            "src": "63:51:4"
+          },
+          {
+            "body": {
+              "id": 1087,
+              "nodeType": "Block",
+              "src": "184:52:4",
+              "statements": [
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 1084,
+                        "name": "_property_uid",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 1080,
+                        "src": "217:13:4",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 1083,
+                      "name": "verification_requested",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 1078,
+                      "src": "194:22:4",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_bytes32_$returns$__$",
+                        "typeString": "function (bytes32)"
+                      }
+                    },
+                    "id": 1085,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "194:37:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 1086,
+                  "nodeType": "EmitStatement",
+                  "src": "189:42:4"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 1088,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "verify",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1081,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1080,
+                  "name": "_property_uid",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1088,
+                  "src": "150:21:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1079,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "150:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "149:23:4"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 1082,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "184:0:4"
+            },
+            "scope": 1089,
+            "src": "134:102:4",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 1090,
+        "src": "27:212:4"
+      }
+    ],
+    "src": "0:241:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0xe67ea319ad509472f8fe19f76c94905173d83826e5405408a0f4f22aa90934c9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "property_uid",
+              "type": "bytes32"
+            }
+          ],
+          "name": "verification_requested",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xBA9Ecc40FbC592D2DC3A63c43525Ace1538B41BF",
+      "transactionHash": "0x03b3b7da4d9798a79b521ac3f6096ed5107d920e01ffd925b01e1ed8f3ed36d7"
+    }
+  },
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-05-24T16:02:15.484Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

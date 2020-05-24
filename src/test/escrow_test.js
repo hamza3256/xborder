@@ -27,14 +27,14 @@ contract("EscrowFactory", accounts => {
 		});
 
 		it('emits an event when the escrow contract is deployed', () => {
-			escrow_factory.getPastEvents('escrow_opened', (err, events) => {
-				assert.notEqual(0, events.length, "No escrow_opened events were found");
+			escrow_factory.getPastEvents('escrow_activated', (err, events) => {
+				assert.notEqual(0, events.length, "No escrow_activated events were found");
 			});
 		});
 
-		it('sets the caller of open_escrow to be the seller on the escrow contract', async () => {
+		it('sets the caller of open_escrow to be the payer on the escrow contract', async () => {
 			let participants = await escrow_contract.get_participants();
-			assert.equal(participants[0], accounts[0], "The seller was not properly set");
+			assert.equal(participants[0], accounts[0], "The payer was not properly set");
 		});
 
 		it('creates a mapping entry for the newly created escrow under a session id',
@@ -49,23 +49,24 @@ contract("EscrowFactory", accounts => {
 	// Escrow tests
 	describe("Escrow", () => {
 
-		it('should allow a buyer to deposit funds', async () => {
-			let title_transfer_hash = "0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c";
-			let tx = await escrow_contract.deposit(title_transfer_hash, {
+		it('should allow a payee to deposit deposit_amount', async () => {
+			let no_transfer_hash = "0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c";
+			const escrow_contract = await Escrow.deployed();
+			let tx = await escrow_contract.deposit(no_transfer_hash, {
 				from: accounts[1],
 				value: web3.utils.toWei('5', 'ether')
 			});
 			console.log(tx.logs[0].event);
-			assert.equal("buyer_deposit_complete", tx.logs[0].event);
+			assert.equal("payee_deposit_complete", tx.logs[0].event);
 
 			let participants = await escrow_contract.get_participants();
 			assert.equal(participants[1], accounts[1]);
 		});
 
-		it('should prevent the seller from depositing funds', async () => {
+		it('should prevent the payer from depositing deposit_amount', async () => {
 			try {
-				let title_transfer_hash = "0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c";
-				let result = await escrow_contract.deposit(title_transfer_hash, {
+				let no_transfer_hash = "0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c";
+				let result = await escrow_contract.deposit(no_transfer_hash, {
 					from: accounts[0],
 					value: web3.utils.toWei('10', 'ether')
 				});
@@ -76,15 +77,15 @@ contract("EscrowFactory", accounts => {
 			}
 		});
 
-		it('should prevent the buyer from depositing twice', async () => {
-			let title_transfer_hash = "0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c";
-			let tx1 = await escrow_contract.deposit(title_transfer_hash, {
+		it('should prevent the payee from depositing twice', async () => {
+			let no_transfer_hash = "0xdc345837d24517858368a28c2022936404ae5a64e78dcac16331108d53eeca9c";
+			let tx1 = await escrow_contract.deposit(no_transfer_hash, {
 				from: accounts[1],
 				value: web3.utils.toWei('5', 'ether')
 			});
 
 			try {
-				let tx2 = await escrow_contract.deposit(title_transfer_hash, {
+				let tx2 = await escrow_contract.deposit(no_transfer_hash, {
 					from: accounts[1],
 					value: web3.utils.toWei('7', 'ether')
 				});
@@ -97,23 +98,23 @@ contract("EscrowFactory", accounts => {
 			}
 		});
 
-		it('should emit an event when a title transfer is requested', async () => {
-			let tx = await escrow_contract.request_title_transfer({
+		it('should emit an event when a no transfer is requested', async () => {
+			let tx = await escrow_contract.request_no_transfer({
 				from: accounts[0]
 			});
-			assert.equal("title_transfer_requested", tx.logs[0].event);
+			assert.equal("no_transfer_requested", tx.logs[0].event);
 		});
 
-		it('should prevent anyone but the seller from requesting a title transfer',
+		it('should prevent anyone but the payer from requesting a no transfer',
 			async () => {
 
 				try {
-					let tx = await escrow_contract.request_title_transfer({
+					let tx = await escrow_contract.request_no_transfer({
 						from: accounts[1]
 					});
 				}
 				catch (err) {
-					assert.include(err.message, "Only the seller can request a title transfer.",
+					assert.include(err.message, "Only the payer can request a no transfer.",
 						"The error msg doesn't contain the require() error message");
 				}
 		});

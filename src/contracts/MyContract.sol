@@ -4,7 +4,7 @@ import "chainlink/contracts/ChainlinkClient.sol";
 import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
 
 /**
- * @title MyContract is an example contract which requests data from
+ *  MyContract is an example contract which requests data from
  * the Chainlink network
  * @dev This contract is designed to work on multiple networks, including
  * local test networks
@@ -13,7 +13,7 @@ contract MyContract is ChainlinkClient, Ownable {
   uint256 public data;
 
   /**
-   * @notice Deploy the contract with a specified address for the LINK
+   *  Deploy the contract with a specified address for the LINK
    * and Oracle contract addresses
    * @dev Sets the storage for the specified addresses
    * @param _link The address of the LINK token contract
@@ -27,7 +27,7 @@ contract MyContract is ChainlinkClient, Ownable {
   }
 
   /**
-   * @notice Returns the address of the LINK token
+   *  Returns the address of the LINK token
    * @dev This is the public implementation for chainlinkTokenAddress, which is
    * an internal method of the ChainlinkClient contract
    */
@@ -36,7 +36,7 @@ contract MyContract is ChainlinkClient, Ownable {
   }
 
   /**
-   * @notice Creates a request to the specified Oracle contract address
+   *  Creates a request to the specified Oracle contract address
    * @dev This function ignores the stored Oracle contract address and
    * will instead send the request to the address specified
    * @param _oracle The Oracle contract address to send the request to
@@ -65,7 +65,7 @@ contract MyContract is ChainlinkClient, Ownable {
   }
 
   /**
-   * @notice The fulfill method from requests created by this contract
+   *  The fulfill method from requests created by this contract
    * @dev The recordChainlinkFulfillment protects this function from being called
    * by anyone other than the oracle address that the request was sent to
    * @param _requestId The ID that was generated for the request
@@ -79,7 +79,7 @@ contract MyContract is ChainlinkClient, Ownable {
   }
 
   /**
-   * @notice Allows the owner to withdraw any LINK balance on the contract
+   *  Allows the owner to withdraw any LINK balance on the contract
    */
   function withdrawLink() public onlyOwner {
     LinkTokenInterface link = LinkTokenInterface(chainlinkTokenAddress());
@@ -87,7 +87,7 @@ contract MyContract is ChainlinkClient, Ownable {
   }
 
   /**
-   * @notice Call this method if no response is received within 5 minutes
+   *  Call this method if no response is received within 5 minutes
    * @param _requestId The ID that was generated for the request to cancel
    * @param _payment The payment specified for the request to cancel
    * @param _callbackFunctionId The bytes4 callback function ID specified for

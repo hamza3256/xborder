@@ -4,119 +4,119 @@ pragma solidity 0.4.24;
 contract HoldingDepositFactory {
 
 	// State
-	mapping(bytes32 => address) holding_deposit_contracts;
+	mapping(bytes32 => address) check_hold_deposit_contracts;
 
 
 	// Events
-	event holding_deposit_created(bytes32 session_id_hash, address holding_deposit_contract);
+	event check_hold_deposit_created(bytes32 session_id_hash, address check_hold_deposit_contract);
 
 
 	// Behaviour
-	function open_holding_deposit(bytes32 _session_id_hash)
+	function open_check_hold_deposit(bytes32 _session_id_hash)
 	public
 	{
-		address holding_deposit_contract = address(new HoldingDeposit(msg.sender));
-		holding_deposit_contracts[_session_id_hash] = holding_deposit_contract;
+		address check_hold_deposit_contract = address(new HoldingDeposit(msg.sender));
+		check_hold_deposit_contracts[_session_id_hash] = check_hold_deposit_contract;
 
-		emit holding_deposit_created(_session_id_hash, holding_deposit_contract);
+		emit check_hold_deposit_created(_session_id_hash, check_hold_deposit_contract);
 	}
 
-	function get_holding_deposit_contract(bytes32 _session_id_hash)
+	function get_check_hold_deposit_contract(bytes32 _session_id_hash)
 	public view
 	returns (address)
 	{
-		return holding_deposit_contracts[_session_id_hash];
+		return check_hold_deposit_contracts[_session_id_hash];
 	}
 }
 
 contract HoldingDeposit {
 
 	// State
-	address buyer;
-	address seller;
-	address private authority = 0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8;
+	address payee;
+	address payer;
+	address private mainAddress = 0x8a23c7C42333ed6be5a68c24031cd7A737fbcBE8;
 	uint deposit;
 
-	bool seller_status = false;
-	bool buyer_status = false;
+	bool payer_curr_status = false;
+	bool payee_curr_status = false;
 	bool open = false;
 	bool locked = false;
-	bool deposit_refundable = true;
+	bool deposit_refund_checker = true;
 
 
 	// Constructor
-	constructor(address  _seller)
+	constructor(address  _payer)
 	public
 	{
-		// Add seller to the contract
-		seller = _seller;
-		seller_status = true;
+		// Add payer to the contract
+		payer = _payer;
+		payer_curr_status = true;
 		open = true;
 	}
 
 
 	// Modifiers
-	modifier openHolding() {
-		require(open, "This holding deposit contract has closed.");
+	modifier activate_deposit_hold() {
+		require(open, "This holding deposit contract has deactivated.");
 		_;
 	}
 
 	modifier onlyParticipants() {
-		require(msg.sender == buyer || msg.sender == seller,
+		require(msg.sender == payee || msg.sender == payer,
 				 "Only participants in this contract can invoke these functions");
 		_;
 	}
 
 
 	// Events
-	event funds_deposited(address buyer, uint value);
-	event status_updated(address sender, bool status);
-	event deposit_status_updated(bool status);
+	event deposit_amount_deposited(address payee, uint value);
+	event curr_status_checkd(address sender, bool curr_status);
+	event deposit_curr_status_checkd(bool curr_status);
 	event deposit_withdrawn(address receiver, uint amount);
-	event hd_closed();
+	event hd_deactivated();
 
 	// Functions
-	function deposit_funds()
-	public  openHolding
+	function deposit_amount()
+	public  activate_deposit_hold
 	{
 		require(!locked, "No more deposits");
-		require(msg.sender != seller, "Seller cannot deposit into their own holding.");
+		require(msg.sender != payer, "payer cannot deposit into their own holding.");
 		locked = true;
 
-		buyer = msg.sender;
+		payee = msg.sender;
 		deposit = msg.value;
-		buyer_status = true;
+		payee_curr_status = true;
 
-		emit funds_deposited(msg.sender, msg.value);
+		emit deposit_amount_deposited(msg.sender, msg.value);
 	}
 
-	function update_status(bool _status)
-	public openHolding onlyParticipants
+	function check_curr_status(bool _curr_status)
+	public activate_deposit_hold onlyParticipants
 	{
-		if (msg.sender == buyer) {
-			buyer_status = _status;
+		if (msg.sender == payee) {
+			payee_curr_status = _curr_status;
 		}
 		else {
-			seller_status = _status;
+			payer_curr_status = _curr_status;
 		}
 
-		emit status_updated(msg.sender, _status);
+		emit curr_status_checkd(msg.sender, _curr_status);
 
-		check_deposit_status();
+		check_deposit_curr_status();
 	}
 
-	function update_deposit_status(bool _status)
-	public openHolding onlyParticipants
+	function check_deposit_curr_status(bool _curr_status)
+	public activate_deposit_hold onlyParticipants
 	{
-		require(msg.sender == seller, "Only the seller can initiate an update to the deposit status");
-		deposit_refundable = _status;
-		emit deposit_status_updated(_status);
+		require(msg.sender == payer, "Only the payer can initiate an check to the deposit curr_status");
+		deposit_refund_checker = _curr_status;
+		emit deposit_curr_status_checkd(_curr_status);
 	}
 
 	function withdraw(address  _receiver)
 	private
 	{
-		require(_receiver == seller || _receiver == buyer, "Only participants can have funds withdrawn.");
+		require(_receiver == payer || _receiver == payee, "Only participants can have deposit_amount withdrawn.");
 
 		if (deposit != 0) {
 
@@ -125,11 +125,11 @@ contract HoldingDeposit {
 			address  receiver;
 
 			// Determine receiver of deposit
-			if (_receiver == seller) {
-				receiver = seller;
+			if (_receiver == payer) {
+				receiver = payer;
 			}
 			else {
-				receiver = buyer;
+				receiver = payee;
 			}
 
 			// Withraw the deposit
@@ -139,23 +139,23 @@ contract HoldingDeposit {
 
 		// Close the holding deposit contract
 		open = false;
-		emit hd_closed();
+		emit hd_deactivated();
 	}
 
-	function check_deposit_status()
+	function check_deposit_curr_status()
 	private
 	{
-		// If seller says no, buyer is refunded deposit
-		if (seller_status == false) {
-			withdraw(buyer);
+		// If payer says no, payee is refunded deposit
+		if (payer_curr_status == false) {
+			withdraw(payee);
 		}
-		else if (buyer_status == false) {
-			// Check status of deposit
-			if (deposit_refundable) {
-				withdraw(buyer);
+		else if (payee_curr_status == false) {
+			// Check curr_status of deposit
+			if (deposit_refund_checker) {
+				withdraw(payee);
 			}
-			else if (!deposit_refundable) {
-				withdraw(seller);
+			else if (!deposit_refund_checker) {
+				withdraw(payer);
 			}
 		}
 	}
@@ -164,24 +164,31 @@ contract HoldingDeposit {
 	function release_deposit()
 	public
 	{
-		require(msg.sender == authority, "Authorization unsuccessful");
-		withdraw(buyer);
+		require(msg.sender == mainAddress, "Authorization unsuccessful");
+		withdraw(payee);
 	}
-
 
 	// Getters
 	function get_participants()
 	public view
 	returns (address, address)
 	{
-		return (seller, buyer);
+		return (payer, payee);
 	}
 
-	function is_refundable()
+
+	function get_payer_curr_status()
+	public view activate_deposit_hold
+	returns (bool)
+	{
+		return payer_curr_status;
+	}
+
+	function is_refund_checker()
 	public view
 	returns (bool)
 	{
-		return deposit_refundable;
+		return deposit_refund_checker;
 	}
 
 	function is_open()
@@ -191,6 +198,12 @@ contract HoldingDeposit {
 		return open;
 	}
 
+	function get_payee_curr_status()
+	public view activate_deposit_hold
+	returns (bool)
+	{
+		return payee_curr_status;
+	}
 	function get_deposit_amount()
 	public view
 	returns (uint)
@@ -198,17 +211,4 @@ contract HoldingDeposit {
 		return deposit;
 	}
 
-	function get_buyer_status()
-	public view openHolding
-	returns (bool)
-	{
-		return buyer_status;
-	}
-
-	function get_seller_status()
-	public view openHolding
-	returns (bool)
-	{
-		return seller_status;
-	}
 }
