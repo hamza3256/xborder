@@ -9,15 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smartcontractkit/paypal-adapter.git"
+    "url": "git+https://github.com/hamza3256/xborder.git"
   },
-  "author": "Jonas Hals <contact@jonashals.me>",
-  "license": "MIT",
+  "author": "Muhammad Hamza",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/smartcontractkit/paypal-adapter/issues"
+    "url": "https://github.com/hamza3256/xborder/issues"
   },
-  "homepage": "https://github.com/smartcontractkit/paypal-adapter#readme",
-  "devDependencies": {
+ "devDependencies": {
     "@types/body-parser": "^1.17.1",
     "@types/chai": "^4.1.7",
     "@types/express": "^4.17.1",
