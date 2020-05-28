@@ -44,11 +44,11 @@ class InitializeProfile extends Component {
           <div class="has-text-centered">
           <b>Step 3*</b>
           <br/><br/>
-          <p>Setup ERCPay Profile</p>
+          <p>Setup XBORDER Profile</p>
           </div>
           <br/>
           
-          <p>Add name and information to your ERCPay profile for your customers and merchants to identify you.</p>
+          <p>Add name and information to your XBORDER profile for your customers and merchants to identify you.</p>
           <br/>
           <div class="field is-horizontal">
     <div class="field-label is-normal">
