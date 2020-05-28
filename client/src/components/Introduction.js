@@ -65,7 +65,7 @@ export default function Introduction() {
           />
           <CreditsText className="text-center text-lg-right my-3">
             Source{" "}
-            <a href="https://chain.link/" target="_blank">
+            <a href="https://chain.link/" target="_blank" rel="noopener noreferrer" >
               <u>Chainlink</u>
             </a>
           </CreditsText>
