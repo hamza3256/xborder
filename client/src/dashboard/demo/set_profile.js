@@ -3,7 +3,7 @@ import '../App.css';
 
 import Header from '../common/header.js'
 
-class Start extends Component {
+class SetProfile extends Component {
 
   render() {
 
@@ -13,16 +13,15 @@ class Start extends Component {
         <Header/>
         <br/>
         <div className="container" style={{width:800}}>
-        <h1 className="is-size-3 has-text-centered">Activate your account</h1>
-        <p className="has-text-left">* Required</p>
+        <h1 className="is-size-3 has-text-centered">Setup XBORDER Profile</h1>
         </div>
         <br/>
-        <MetamaskPermission/>
-        <Authorize/>
         <InitializeProfile/>
         <br/>
+        
+        <br/>
         <div class="has-text-centered">
-          <button className="button is-primary is-large">Finish Setup</button><br/><br/>
+          <a className="button is-primary" href="/dashboard">Back to Dashboard</a><br/><br/>
         </div>
        
         </div>
@@ -31,7 +30,7 @@ class Start extends Component {
   }
 }
 
-export default Start;
+export default SetProfile;
 
 class InitializeProfile extends Component {
 
@@ -42,9 +41,9 @@ class InitializeProfile extends Component {
          
           <div className="container box" style={{width:800}}>
           <div class="has-text-centered">
-          <b>Step 3*</b>
-          <br/><br/>
-          <p>Setup XBORDER Profile</p>
+          
+          
+          <b>Setup</b>
           </div>
           <br/>
           
@@ -69,7 +68,7 @@ class InitializeProfile extends Component {
     <div class="field-body">
       <div class="field">
         <p class="control">
-          <input class="input" type="text" placeholder=""></input>
+          <input class="input" type="text" placeholder="*Required"></input>
         </p>
       </div>
     </div>
@@ -82,7 +81,7 @@ class InitializeProfile extends Component {
     <div class="field-body">
       <div class="field">
         <p class="control">
-        <textarea class="textarea" placeholder="Place contact information here, such as a link to your forum profile."></textarea>
+        <textarea class="textarea" placeholder="Optional. More about yourself. You may place contact information here, such as a link to your forum profile."></textarea>
         </p>
       </div>
     </div>
@@ -108,7 +107,7 @@ class InitializeProfile extends Component {
         
         <div className="container box" style={{width:800}}>
         <div class="has-text-centered">
-        <b>Step 2</b>
+        <b>Authorize DAI payments</b>
         </div>
         <br/>
         <p>DAI Stablecoin requires an authorization before an address can send DAI to a smart contract. 
@@ -131,29 +130,4 @@ class InitializeProfile extends Component {
   }
 
     
-  class MetamaskPermission extends Component {
-
-    render() {
-
-      return (
-        
   
-        <div className="container box" style={{width:800}}>
-        <div class="has-text-centered">
-        <b>Step 1*</b>
-        </div>
-        <br/>
-        <p>Allow XBORDER to read your Metamask address</p>
-        <br/>
-        <div class="has-text-centered">
-        <a class="button is-primary">
-      
-        <span>Grant Permission</span>
-        </a>
-      
-        </div>
-        </div>
-          
-      );
-    }
-  }

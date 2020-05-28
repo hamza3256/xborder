@@ -14,11 +14,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .btn-primary {
-    background-color: #d1b22e;
+    background-color: #002C73;
   }
 
   .btn-primary:hover, .btn-primary:focus, .btn-primary.focus {
-    background-color: #f082ac;
+    background-color: #d1b22e;
     box-shadow: none;
   }
 

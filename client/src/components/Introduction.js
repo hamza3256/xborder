@@ -5,11 +5,11 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import Container from "react-bootstrap/Container";
 
-const IntroJumbotron = styled(Jumbotron)`
+const MainJumbotron = styled(Jumbotron)`
   background: #f9f8fd;
 `;
 
-const IntroContainer = styled(Container)`
+const MainContainer = styled(Container)`
   display: flex;
   flex-flow: column-reverse;
   align-items: center;
@@ -21,7 +21,7 @@ const IntroContainer = styled(Container)`
   }
 `;
 
-const IntroImage = styled(Image)`
+const MainImage = styled(Image)`
   @media (max-width: 576px) {
     max-width: 100%;
   }
@@ -45,8 +45,8 @@ const CreditsText = styled.p`
 `;
 export default function Introduction() {
   return (
-    <IntroJumbotron fluid>
-      <IntroContainer className="d-flex align-items-center text-center text-lg-left">
+    <MainJumbotron fluid>
+      <MainContainer className="d-flex align-items-center text-center text-lg-left">
         <div id="text-container">
           <h1 className="display-4 font-weight-bold">
           The distinguished decentralized platform for cross-border transfers
@@ -59,7 +59,7 @@ export default function Introduction() {
           </Button>
         </div>
         <div id="image-container" className="ml-md-5">
-          <IntroImage
+          <MainImage
             src="https://chain.link/assets/images/payments-api-diagram-e6ec6879.png"
             alt="diagram"
           />
@@ -70,7 +70,7 @@ export default function Introduction() {
             </a>
           </CreditsText>
         </div>
-      </IntroContainer>
-    </IntroJumbotron>
+      </MainContainer>
+    </MainJumbotron>
   );
 }

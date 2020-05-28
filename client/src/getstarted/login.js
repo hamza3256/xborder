@@ -1,9 +1,3 @@
-// import React from "react";
-
-// export default function Login() {
-//   return <a href="/auth/login">Log in</a>;
-// }
-
 import React, { Component } from 'react';
 import '../App.css';
 import { Link } from "react-router-dom";
@@ -79,7 +73,7 @@ class Login extends Component {
     return (
         <div>
             
-        <section class="hero is-fullheight">
+        <section class="hero is-fullheight"><Header/>
         <div class="hero-body">
             <div class="container has-text-centered">
                 <div class="column is-6 is-offset-3">

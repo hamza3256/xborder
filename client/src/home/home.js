@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
@@ -18,7 +19,7 @@ const HomeContainer = styled(Navbar)`
   @media (min-width: 992px) {
     & {
       position: static;
-      height: 80px;
+      height: 55px;
     }
   }
 `;
@@ -68,7 +69,7 @@ const CreditsText = styled.p`
 `;
 
 
-export default function Navigation() {
+export default function Home() {
   
   return (
     <section >
@@ -78,14 +79,15 @@ export default function Navigation() {
           <Logo src={require("../assets/cover.png")} alt="logo"/>
         </Navbar.Brand>
         <Nav>
-          <Nav.Link className="navbar-nav" href="/login" >Sign in</Nav.Link>
-          <Button
+          <ButtonGroup
             className="d-none d-lg-block d-xl-block ml-3 navbar"
             variant="primary"
-            href="/login"
           >
-            Sign up
-          </Button>
+            <Button href="/">Home</Button>
+            <Button href="/info">Info</Button>
+            <Button href="/login">Connect</Button>
+          </ButtonGroup>
+          
         </Nav>
       </Container>
     </HomeContainer>
@@ -284,8 +286,8 @@ return (
     <div className="column is-7">
     <h1 className="title is-2">Intuitive dashboard</h1>
   
-    <figure className="image">
-                <img src="https://user-images.githubusercontent.com/24837709/56896130-87219900-6abd-11e9-87db-c79b5642e21b.png" alt=""/>
+    <figure  className="ml-md-5">
+                <img width="100%" src="https://chain.link/assets/images/sub-hero-chainlink-diagram-3fb7d8e9.png" alt=""/>
             </figure><br/>
             <p>  XBORDER is designed to be simple and intuitive for users familar with traditional payment processors, such as Paypal and Stripe. 
         Currently we support ETH payments, and stablecoin payments are coming soon.<br/><br/>
