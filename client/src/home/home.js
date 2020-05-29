@@ -1,100 +1,63 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Jumbotron from "react-bootstrap/Jumbotron";
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
-import { Link } from "react-router-dom";
-import Jumbotron from "react-bootstrap/Jumbotron";
-
-const HomeContainer = styled(Navbar)`
-  box-shadow: inset 0px -1px 0px #f3f3f4;
-  background: #002C73;
-  height: 60px;
-  color: #6e6d7a;
-  position: sticky;
-
-  @media (min-width: 992px) {
-    & {
-      position: static;
-      height: 55px;
-    }
-  }
-`;
-
-const Logo = styled(Image)`
-  width: 10rem;
-  height: auto;
-`;
-
+import '../App.css';
 const MainJumbotron = styled(Jumbotron)`
-  background: #f9f8fd;
+background: #f9f8fd;
 `;
 
 const MainContainer = styled(Container)`
-  display: flex;
-  flex-flow: column-reverse;
-  align-items: center;
+display: flex;
+flex-flow: column-reverse;
+align-items: center;
 
-  @media (min-width: 992px) {
-    & {
-      flex-flow: row;
-    }
+@media (min-width: 992px) {
+  & {
+    flex-flow: row;
   }
+}
 `;
 
 const MainImage = styled(Image)`
-  @media (max-width: 576px) {
-    max-width: 100%;
-  }
-  @media (min-width: 576px) {
-    width: 400px;
-  }
-  @media (min-width: 768px) {
-    width: 450px;
-  }
-  @media (min-width: 1200px) {
-    width: 500px;
-  }
+@media (max-width: 576px) {
+  max-width: 100%;
+}
+@media (min-width: 576px) {
+  width: 400px;
+}
+@media (min-width: 768px) {
+  width: 450px;
+}
+@media (min-width: 1200px) {
+  width: 500px;
+}
 `;
 
 const CreditsText = styled.p`
-  color: #9e9ea7;
+color: #9e9ea7;
 
-  & a {
-    color: #9e9ea7;
-  }
+& a {
+  color: #9e9ea7;
+}
 `;
+
 
 
 export default function Home() {
   
   return (
-    <section >
-    <HomeContainer expand="lg">
-      <Container>
-        <Navbar.Brand className="mr-auto" href="/">
-          <Logo src={require("../assets/cover.png")} alt="logo"/>
-        </Navbar.Brand>
-        <Nav>
-          <ButtonGroup
-            className="d-none d-lg-block d-xl-block ml-3 navbar"
-            variant="primary"
-          >
-            <Button href="/">Home</Button>
-            <Button href="/info">Info</Button>
-            <Button href="/login">Connect</Button>
-          </ButtonGroup>
-          
-        </Nav>
-      </Container>
-    </HomeContainer>
+    
+   
+
+
+<section >
+  
     <Section1/>
-  
-       
-  
+
   <Section3/>
   <Section4/>
   <Section2/>
@@ -105,7 +68,7 @@ export default function Home() {
 
 
 </section>
-  
+
 );
 }
 
@@ -128,7 +91,7 @@ return (
             XBORDER enables international money transfer through the use of decentralized Chainlink oracles providing data for Ethereum smart contracts.
           </p>
           <Button variant="primary" size="lg" role="button" href="/login">
-            Sign up
+            Connect using Metamask
           </Button>
         </div>
         <div id="image-container" className="ml-md-5">

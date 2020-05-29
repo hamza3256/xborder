@@ -11,10 +11,10 @@ import { GlobalStyle } from "./utilities/GlobalStyle";
 
 ReactDOM.render(
   <React.StrictMode>
-   
+    <Provider store={store}>
       <GlobalStyle />
       <App />
-
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );

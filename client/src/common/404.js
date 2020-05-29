@@ -29,16 +29,10 @@ class Page404 extends Component {
             <div className="columns is-vcentered">
                 <div className="column is-5">
                     <figure className="image">
-                        <img src="https://user-images.githubusercontent.com/24837709/57173766-65caff00-6e67-11e9-9060-52b7a65e5dce.jpg" alt="Description"/>
+                        <img src="https://i1.wp.com/saedx.com/blog/wp-content/uploads/2019/01/saedx-blog-featured-70.jpg?zoom=1.25&fit=1200%2C500&ssl=1" alt="Description"/>
                     </figure>
                 </div>
-                <div className="column is-6 is-offset-1">
-            
-                    <h1 className="subtitle is-3">
-                        404
-                    </h1>
-                
-                </div>
+               
             </div>
         </div>
     </div>

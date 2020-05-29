@@ -7,15 +7,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .btn {
-    padding: 10px 16px;
-    border-radius: 8px;
+    padding: 10px 20px;
+    border-radius: 5px ;
     border: none;
     font-weight: 500;
   }
+ 
 
   .btn-primary {
     background-color: #002C73;
   }
+  
 
   .btn-primary:hover, .btn-primary:focus, .btn-primary.focus {
     background-color: #d1b22e;
@@ -27,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
-    background-color: #bb3d6e;
+    background-color: #6259ff;
     outline: none;
     box-shadow: none;
   }

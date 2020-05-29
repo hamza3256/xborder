@@ -55,7 +55,7 @@ export default function Introduction() {
             XBORDER enables international money transfer through the use of decentralized Chainlink oracles providing data for Ethereum smart contracts.
           </p>
           <Button variant="primary" size="lg" role="button" href="/login">
-            Sign up
+            Connect with Metamask
           </Button>
         </div>
         <div id="image-container" className="ml-md-5">

@@ -5,15 +5,17 @@ import Navigation from "./components/Navigation";
 
 import Landing from "./pages/Landing";
 //import Login from "./pages/Login";
+import Dashboard from './dashboard/body.js'
 
 import TransactionDetails from './transaction/tx_details'
 import Home from './home/home';
+import MainNav from './home/MainNav'
 import Fees from './pages/fees';
 import Faq from './pages/faq';
 import Login from './getstarted/login';
 
 import CreateInvoice from './transaction/create_invoice';
-
+import 'bulma'
 import SendPayment from './transaction/send_payment';
 import SendPaymentConfirm from './transaction/send_payment_confirm';
 import ProfilePage from './profile/profile_page';
@@ -26,14 +28,19 @@ class App extends Component {
   }
   render() {
   return (
+   
+
     <BrowserRouter>
-      
+       
+       <MainNav/>
+
       <Switch>
+      
      
       <Route path="/" exact component={Home} />
 
        
-      <Route path="/dashboard" exact component={App} />
+      <Route path="/dashboard" exact component={Dashboard} />
   
       <Route path="/info" exact component={Fees} />
       <Route path="/faq" exact component={Faq} />

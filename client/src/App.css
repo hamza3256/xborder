@@ -23,3 +23,5 @@
 .nodeco{
   text-decoration: none !important   
 }
+
+.ignore-css{all:unset;}
