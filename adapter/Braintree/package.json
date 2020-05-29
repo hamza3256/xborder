@@ -1,0 +1,28 @@
+{
+  "name": "xborder",
+  "version": "1.0.0",
+  "description": "Final year project",
+  "scripts": {
+    "test": "./node_modules/.bin/_mocha --timeout 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamza3256/xborder.git"
+  },
+  "author": "Muhammad Hamza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamza3256/xborder/issues"
+  },
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "express": "^4.17.0",
+    "mocha": "^6.1.4"
+  },
+  "homepage": "https://github.com/hamza3256/xborder#readme",
+  "dependencies": {
+    "binance-api-node": "^0.9.2",
+    "dotenv": "^8.2.0"
+  }
+}

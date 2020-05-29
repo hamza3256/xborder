@@ -1,0 +1,155 @@
+{
+    "addresses": {
+        "verifier_oracle": "0xFB88dE099e13c3ED21F80a7a1E49f8CAEcF10df6",
+        "holding_deposit_factory": "0xf204a4Ef082f5c04bB89F7D5E6568B796096735a",
+        "escrow": "0x239092aD5Cc71675C6bbEDFb32D9106983ef95Bb",
+        "buyer": "0x952284dc87db754eb2449c95ba60fac77be57a7b",
+        "escrow_factory": "0x345cA3e014Aaf5dcA488057592ee47305D9B3e10"
+    },
+    "abi": {
+        "verifier_oracle": [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "name": "property_uid",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "verification_requested",
+                "type": "event",
+                "signature": "0xe67ea319ad509472f8fe19f76c94905173d83826e5405408a0f4f22aa90934c9"
+            },
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "_property_uid",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "verify",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function",
+                "signature": "0x75e36616"
+            }
+        ],
+        "holding_deposit_factory": [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "name": "session_id_hash",
+                        "type": "bytes32"
+                    },
+                    {
+                        "indexed": false,
+                        "name": "check_hold_deposit_contract",
+                        "type": "address"
+                    }
+                ],
+                "name": "check_hold_deposit_created",
+                "type": "event",
+                "signature": "0x04074edfed0f227d34d79456711d182688ac897acf24a4db519b409f4f946b04"
+            },
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "_session_id_hash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "open_check_hold_deposit",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function",
+                "signature": "0x18cf7553"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "name": "_session_id_hash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "get_check_hold_deposit_contract",
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function",
+                "signature": "0xda3bd04a"
+            }
+        ],
+        "escrow_factory": [
+            {
+                "anonymous": false,
+                "inputs": [
+                    {
+                        "indexed": false,
+                        "name": "session_id_hash",
+                        "type": "bytes32"
+                    },
+                    {
+                        "indexed": false,
+                        "name": "escrow_contract",
+                        "type": "address"
+                    }
+                ],
+                "name": "escrow_activated",
+                "type": "event",
+                "signature": "0x18cc92924fe076d00e47abd8bf0e91e99d62065bea1a1da3e85d8e58a6ea6ab9"
+            },
+            {
+                "constant": false,
+                "inputs": [
+                    {
+                        "name": "_no_transfer_hash",
+                        "type": "bytes32"
+                    },
+                    {
+                        "name": "_session_id_hash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "open_escrow",
+                "outputs": [],
+                "payable": false,
+                "stateMutability": "nonpayable",
+                "type": "function",
+                "signature": "0xdbbf0708"
+            },
+            {
+                "constant": true,
+                "inputs": [
+                    {
+                        "name": "_session_id_hash",
+                        "type": "bytes32"
+                    }
+                ],
+                "name": "get_escrow",
+                "outputs": [
+                    {
+                        "name": "",
+                        "type": "address"
+                    }
+                ],
+                "payable": false,
+                "stateMutability": "view",
+                "type": "function",
+                "signature": "0xe94b2c5a"
+            }
+        ]
+    }
+}

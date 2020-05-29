@@ -1,0 +1,3338 @@
+{
+  "contractName": "Chainlinked",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "id",
+          "type": "bytes32"
+        }
+      ],
+      "name": "ChainlinkRequested",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "id",
+          "type": "bytes32"
+        }
+      ],
+      "name": "ChainlinkFulfilled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "id",
+          "type": "bytes32"
+        }
+      ],
+      "name": "ChainlinkCancelled",
+      "type": "event"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.4.24+commit.e67f0147\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"id\",\"type\":\"bytes32\"}],\"name\":\"ChainlinkRequested\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"id\",\"type\":\"bytes32\"}],\"name\":\"ChainlinkFulfilled\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"name\":\"id\",\"type\":\"bytes32\"}],\"name\":\"ChainlinkCancelled\",\"type\":\"event\"}],\"devdoc\":{\"methods\":{},\"title\":\"The Chainlinked contract\\r\"},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/xborder/xborder/src/contracts/v0.4/Chainlinked.sol\":\"Chainlinked\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/xborder/xborder/src/contracts/v0.4/Chainlink.sol\":{\"keccak256\":\"0xac1eceea4745ca47bd81b24b26f4feed26cbb197b56aa1a1d7149a8d7eb9cad4\",\"urls\":[\"bzzr://06c3543e54c313576a1aea85fa87911b7cedb5deea11788792a3e8ac78bde6c6\"]},\"/D/xborder/xborder/src/contracts/v0.4/ChainlinkClient.sol\":{\"keccak256\":\"0x030003a102a8d549b5023b761bb8a286a234d5c6966c8c6e0bcef80ef5b24c76\",\"urls\":[\"bzzr://b0e202b719aea8e3fe9e3bb261c5b6402b7d65f6d04ec607bcd5e4181db36436\"]},\"/D/xborder/xborder/src/contracts/v0.4/Chainlinked.sol\":{\"keccak256\":\"0xeb4d392d960327a5952e6c6556ccccfd42f154a48cc19745e1bd31a746f0768c\",\"urls\":[\"bzzr://35d9fe26a091e09c8114fca2cde4c0272889e9fbd9719d811b75098dfe1e2dc8\"]},\"/D/xborder/xborder/src/contracts/v0.4/interfaces/ChainlinkRequestInterface.sol\":{\"keccak256\":\"0xcb74dcde0480467019bdd16e969e6601ba5e8e4bdb62a44770a3104c249a5d29\",\"urls\":[\"bzzr://c3dce608583781edd61e6de4476830a044b08ca0c36359a6bb379620314d3deb\"]},\"/D/xborder/xborder/src/contracts/v0.4/interfaces/ENSInterface.sol\":{\"keccak256\":\"0xfef925545b149165f36ccf48a90ce77a993c7c76489def1afb17d54dc18190a2\",\"urls\":[\"bzzr://9469d9bec8e5aa9cf6a0873d0ffe510454c699730be221312e1756deefca48c5\"]},\"/D/xborder/xborder/src/contracts/v0.4/interfaces/LinkTokenInterface.sol\":{\"keccak256\":\"0x275ab6a39ab066b9f8f4d37606241562066e3d765664f8e7af49b4ab9e3ee8c8\",\"urls\":[\"bzzr://02e79789e11d273f7dfa7a3367eefd14fd5756bb7f6d3d40dbb7a5c48870c051\"]},\"/D/xborder/xborder/src/contracts/v0.4/interfaces/PointerInterface.sol\":{\"keccak256\":\"0x60c58bc1a98dafa1fbb7746f82d48c3acc91b10db1b2316a621232d5abef47cd\",\"urls\":[\"bzzr://fbbc42d166a03e99d500b9d9fa8b56865b6478d15952a17f4d2c8a3b6118bacb\"]},\"/D/xborder/xborder/src/contracts/v0.4/vendor/Buffer.sol\":{\"keccak256\":\"0x1898f63bb15d572a02d47bf34964e1dccad0ef3e95c2e768a3a138cfa36146c6\",\"urls\":[\"bzzr://7c024aae7e1553039e8041a95fb3942c64f889a89fd7875d649e031f43369b09\"]},\"/D/xborder/xborder/src/contracts/v0.4/vendor/CBOR.sol\":{\"keccak256\":\"0x470ebfdee28f3013f0f0b1d46b9314a1d8faf8447c058ed4d8644756737abdff\",\"urls\":[\"bzzr://e032e6304b8f221f1b608af0a24ed5fd96847f72462816d8b19f0a089a1d41b4\"]},\"/D/xborder/xborder/src/contracts/v0.4/vendor/ENSResolver.sol\":{\"keccak256\":\"0x3787de5c3f330f260a0916796a6c868767d8be510498cfca1b935ffb8441dddd\",\"urls\":[\"bzzr://6cc58a63186cf0f8c26ee88d3cf2293596cd135540dc7ed2adf6c346e69e79e2\"]},\"/D/xborder/xborder/src/contracts/v0.4/vendor/SafeMath.sol\":{\"keccak256\":\"0xf0dbcdec191b6d948f7554b386fcd7d46ecd7da295a92f7ab33e3ffbf045dc79\",\"urls\":[\"bzzr://5001f41cd3914676e55444169acad83f5f7088b7c3e7fc8efc7482b3ec540ff8\"]}},\"version\":1}",
+  "bytecode": "0x60806040526001600455348015601457600080fd5b5060358060226000396000f3006080604052600080fd00a165627a7a72305820597539fd7cf8a90ed89ed796c57dd35f1d0c1b8992bc01649569a3eff00513030029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820597539fd7cf8a90ed89ed796c57dd35f1d0c1b8992bc01649569a3eff00513030029",
+  "sourceMap": "280:4329:13:-;;;1264:1:12;1237:28;;280:4329:13;8:9:-1;5:2;;;30:1;27;20:12;5:2;280:4329:13;;;;;;;",
+  "deployedSourceMap": "280:4329:13:-;;;;;",
+  "source": "pragma solidity ^0.4.24;\r\n\r\nimport \"./ChainlinkClient.sol\";\r\n\r\n/**\r\n * @title The Chainlinked contract\r\n * @notice Contract writers can inherit this contract in order to create requests for the\r\n * Chainlink network. ChainlinkClient is an alias of the Chainlinked contract.\r\n */\r\ncontract Chainlinked is ChainlinkClient {\r\n  /**\r\n   * @notice Creates a request that can hold additional parameters\r\n   * @param _specId The Job Specification ID that the request will be created for\r\n   * @param _callbackAddress The callback address that the response will be sent to\r\n   * @param _callbackFunctionSignature The callback function signature to use for the callback address\r\n   * @return A Chainlink Request struct in memory\r\n   */\r\n  function newRequest(\r\n    bytes32 _specId,\r\n    address _callbackAddress,\r\n    bytes4 _callbackFunctionSignature\r\n  ) internal pure returns (Chainlink.Request memory) {\r\n    return buildChainlinkRequest(_specId, _callbackAddress, _callbackFunctionSignature);\r\n  }\r\n\r\n  /**\r\n   * @notice Creates a Chainlink request to the stored oracle address\r\n   * @dev Calls `sendChainlinkRequestTo` with the stored oracle address\r\n   * @param _req The initialized Chainlink Request\r\n   * @param _payment The amount of LINK to send for the request\r\n   * @return The request ID\r\n   */\r\n  function chainlinkRequest(Chainlink.Request memory _req, uint256 _payment)\r\n    internal\r\n    returns (bytes32)\r\n  {\r\n    return sendChainlinkRequest(_req, _payment);\r\n  }\r\n\r\n  /**\r\n   * @notice Creates a Chainlink request to the specified oracle address\r\n   * @dev Generates and stores a request ID, increments the local nonce, and uses `transferAndCall` to\r\n   * send LINK which creates a request on the target oracle contract.\r\n   * Emits ChainlinkRequested event.\r\n   * @param _oracle The address of the oracle for the request\r\n   * @param _req The initialized Chainlink Request\r\n   * @param _payment The amount of LINK to send for the request\r\n   * @return The request ID\r\n   */\r\n  function chainlinkRequestTo(address _oracle, Chainlink.Request memory _req, uint256 _payment)\r\n    internal\r\n    returns (bytes32 requestId)\r\n  {\r\n    return sendChainlinkRequestTo(_oracle, _req, _payment);\r\n  }\r\n\r\n  /**\r\n   * @notice Sets the stored oracle address\r\n   * @param _oracle The address of the oracle contract\r\n   */\r\n  function setOracle(address _oracle) internal {\r\n    setChainlinkOracle(_oracle);\r\n  }\r\n\r\n  /**\r\n   * @notice Sets the LINK token address\r\n   * @param _link The address of the LINK token contract\r\n   */\r\n  function setLinkToken(address _link) internal {\r\n    setChainlinkToken(_link);\r\n  }\r\n\r\n  /**\r\n   * @notice Retrieves the stored address of the LINK token\r\n   * @return The address of the LINK token\r\n   */\r\n  function chainlinkToken()\r\n    internal\r\n    view\r\n    returns (address)\r\n  {\r\n    return chainlinkTokenAddress();\r\n  }\r\n\r\n  /**\r\n   * @notice Retrieves the stored address of the oracle contract\r\n   * @return The address of the oracle contract\r\n   */\r\n  function oracleAddress()\r\n    internal\r\n    view\r\n    returns (address)\r\n  {\r\n    return chainlinkOracleAddress();\r\n  }\r\n\r\n  /**\r\n   * @notice Ensures that the fulfillment is valid for this contract\r\n   * @dev Use if the contract developer prefers methods instead of modifiers for validation\r\n   * @param _requestId The request ID for fulfillment\r\n   */\r\n  function fulfillChainlinkRequest(bytes32 _requestId)\r\n    internal\r\n    recordChainlinkFulfillment(_requestId)\r\n    // solhint-disable-next-line no-empty-blocks\r\n  {}\r\n\r\n  /**\r\n   * @notice Sets the stored oracle and LINK token contracts with the addresses resolved by ENS\r\n   * @dev Accounts for subnodes having different resolvers\r\n   * @param _ens The address of the ENS contract\r\n   * @param _node The ENS node hash\r\n   */\r\n  function setChainlinkWithENS(address _ens, bytes32 _node)\r\n    internal\r\n  {\r\n    useChainlinkWithENS(_ens, _node);\r\n  }\r\n\r\n  /**\r\n   * @notice Sets the stored oracle contract with the address resolved by ENS\r\n   * @dev This may be called on its own as long as `setChainlinkWithENS` has been called previously\r\n   */\r\n  function setOracleWithENS()\r\n    internal\r\n  {\r\n    updateChainlinkOracleWithENS();\r\n  }\r\n\r\n  /**\r\n   * @notice Allows for a request which was created on another contract to be fulfilled\r\n   * on this contract\r\n   * @param _oracle The address of the oracle contract that will fulfill the request\r\n   * @param _requestId The request ID used for the response\r\n   */\r\n  function addExternalRequest(address _oracle, bytes32 _requestId)\r\n    internal\r\n  {\r\n    addChainlinkExternalRequest(_oracle, _requestId);\r\n  }\r\n}\r\n",
+  "sourcePath": "D:\\xborder\\xborder\\src\\contracts\\v0.4\\Chainlinked.sol",
+  "ast": {
+    "absolutePath": "/D/xborder/xborder/src/contracts/v0.4/Chainlinked.sol",
+    "exportedSymbols": {
+      "Chainlinked": [
+        3448
+      ]
+    },
+    "id": 3449,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3313,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:13"
+      },
+      {
+        "absolutePath": "/D/xborder/xborder/src/contracts/v0.4/ChainlinkClient.sol",
+        "file": "./ChainlinkClient.sol",
+        "id": 3314,
+        "nodeType": "ImportDirective",
+        "scope": 3449,
+        "sourceUnit": 3312,
+        "src": "28:31:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3315,
+              "name": "ChainlinkClient",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3311,
+              "src": "304:15:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ChainlinkClient_$3311",
+                "typeString": "contract ChainlinkClient"
+              }
+            },
+            "id": 3316,
+            "nodeType": "InheritanceSpecifier",
+            "src": "304:15:13"
+          }
+        ],
+        "contractDependencies": [
+          3311
+        ],
+        "contractKind": "contract",
+        "documentation": "@title The Chainlinked contract\r\n@notice Contract writers can inherit this contract in order to create requests for the\r\nChainlink network. ChainlinkClient is an alias of the Chainlinked contract.\r",
+        "fullyImplemented": true,
+        "id": 3448,
+        "linearizedBaseContracts": [
+          3448,
+          3311
+        ],
+        "name": "Chainlinked",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 3333,
+              "nodeType": "Block",
+              "src": "897:96:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3328,
+                        "name": "_specId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3318,
+                        "src": "933:7:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3329,
+                        "name": "_callbackAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3320,
+                        "src": "942:16:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3330,
+                        "name": "_callbackFunctionSignature",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3322,
+                        "src": "960:26:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes4",
+                          "typeString": "bytes4"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes4",
+                          "typeString": "bytes4"
+                        }
+                      ],
+                      "id": 3327,
+                      "name": "buildChainlinkRequest",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2970,
+                      "src": "911:21:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_address_$_t_bytes4_$returns$_t_struct$_Request_$2647_memory_ptr_$",
+                        "typeString": "function (bytes32,address,bytes4) pure returns (struct Chainlink.Request memory)"
+                      }
+                    },
+                    "id": 3331,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "911:76:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                      "typeString": "struct Chainlink.Request memory"
+                    }
+                  },
+                  "functionReturnParameters": 3326,
+                  "id": 3332,
+                  "nodeType": "Return",
+                  "src": "904:83:13"
+                }
+              ]
+            },
+            "documentation": "@notice Creates a request that can hold additional parameters\r\n@param _specId The Job Specification ID that the request will be created for\r\n@param _callbackAddress The callback address that the response will be sent to\r\n@param _callbackFunctionSignature The callback function signature to use for the callback address\r\n@return A Chainlink Request struct in memory\r",
+            "id": 3334,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "newRequest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3323,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3318,
+                  "name": "_specId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3334,
+                  "src": "756:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3317,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "756:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3320,
+                  "name": "_callbackAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3334,
+                  "src": "778:24:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3319,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "778:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3322,
+                  "name": "_callbackFunctionSignature",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3334,
+                  "src": "809:33:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 3321,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "809:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "749:98:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3326,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3325,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3334,
+                  "src": "871:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                    "typeString": "struct Chainlink.Request"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3324,
+                    "name": "Chainlink.Request",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2647,
+                    "src": "871:17:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Request_$2647_storage_ptr",
+                      "typeString": "struct Chainlink.Request"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "870:26:13"
+            },
+            "scope": 3448,
+            "src": "730:263:13",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3348,
+              "nodeType": "Block",
+              "src": "1418:56:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3344,
+                        "name": "_req",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3336,
+                        "src": "1453:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                          "typeString": "struct Chainlink.Request memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3345,
+                        "name": "_payment",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3338,
+                        "src": "1459:8:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                          "typeString": "struct Chainlink.Request memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 3343,
+                      "name": "sendChainlinkRequest",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2986,
+                      "src": "1432:20:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Request_$2647_memory_ptr_$_t_uint256_$returns$_t_bytes32_$",
+                        "typeString": "function (struct Chainlink.Request memory,uint256) returns (bytes32)"
+                      }
+                    },
+                    "id": 3346,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1432:36:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 3342,
+                  "id": 3347,
+                  "nodeType": "Return",
+                  "src": "1425:43:13"
+                }
+              ]
+            },
+            "documentation": "@notice Creates a Chainlink request to the stored oracle address\r\n@dev Calls `sendChainlinkRequestTo` with the stored oracle address\r\n@param _req The initialized Chainlink Request\r\n@param _payment The amount of LINK to send for the request\r\n@return The request ID\r",
+            "id": 3349,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "chainlinkRequest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3339,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3336,
+                  "name": "_req",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3349,
+                  "src": "1329:29:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                    "typeString": "struct Chainlink.Request"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3335,
+                    "name": "Chainlink.Request",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2647,
+                    "src": "1329:17:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Request_$2647_storage_ptr",
+                      "typeString": "struct Chainlink.Request"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3338,
+                  "name": "_payment",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3349,
+                  "src": "1360:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3337,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1360:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1328:49:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3342,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3341,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3349,
+                  "src": "1406:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3340,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1406:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1405:9:13"
+            },
+            "scope": 3448,
+            "src": "1303:171:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3366,
+              "nodeType": "Block",
+              "src": "2134:67:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3361,
+                        "name": "_oracle",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3351,
+                        "src": "2171:7:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3362,
+                        "name": "_req",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3353,
+                        "src": "2180:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                          "typeString": "struct Chainlink.Request memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3363,
+                        "name": "_payment",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3355,
+                        "src": "2186:8:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                          "typeString": "struct Chainlink.Request memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 3360,
+                      "name": "sendChainlinkRequestTo",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3042,
+                      "src": "2148:22:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_struct$_Request_$2647_memory_ptr_$_t_uint256_$returns$_t_bytes32_$",
+                        "typeString": "function (address,struct Chainlink.Request memory,uint256) returns (bytes32)"
+                      }
+                    },
+                    "id": 3364,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2148:47:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 3359,
+                  "id": 3365,
+                  "nodeType": "Return",
+                  "src": "2141:54:13"
+                }
+              ]
+            },
+            "documentation": "@notice Creates a Chainlink request to the specified oracle address\r\n@dev Generates and stores a request ID, increments the local nonce, and uses `transferAndCall` to\r\nsend LINK which creates a request on the target oracle contract.\r\nEmits ChainlinkRequested event.\r\n@param _oracle The address of the oracle for the request\r\n@param _req The initialized Chainlink Request\r\n@param _payment The amount of LINK to send for the request\r\n@return The request ID\r",
+            "id": 3367,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "chainlinkRequestTo",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3356,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3351,
+                  "name": "_oracle",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3367,
+                  "src": "2018:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3350,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2018:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3353,
+                  "name": "_req",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3367,
+                  "src": "2035:29:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                    "typeString": "struct Chainlink.Request"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3352,
+                    "name": "Chainlink.Request",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2647,
+                    "src": "2035:17:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Request_$2647_storage_ptr",
+                      "typeString": "struct Chainlink.Request"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3355,
+                  "name": "_payment",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3367,
+                  "src": "2066:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3354,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2066:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2017:66:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3359,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3358,
+                  "name": "requestId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3367,
+                  "src": "2112:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3357,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2112:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2111:19:13"
+            },
+            "scope": 3448,
+            "src": "1990:211:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3376,
+              "nodeType": "Block",
+              "src": "2367:40:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3373,
+                        "name": "_oracle",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3369,
+                        "src": "2393:7:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3372,
+                      "name": "setChainlinkOracle",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3092,
+                      "src": "2374:18:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 3374,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2374:27:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3375,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2374:27:13"
+                }
+              ]
+            },
+            "documentation": "@notice Sets the stored oracle address\r\n@param _oracle The address of the oracle contract\r",
+            "id": 3377,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setOracle",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3370,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3369,
+                  "name": "_oracle",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3377,
+                  "src": "2341:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3368,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2341:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2340:17:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3371,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2367:0:13"
+            },
+            "scope": 3448,
+            "src": "2322:85:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3386,
+              "nodeType": "Block",
+              "src": "2573:37:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3383,
+                        "name": "_link",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3379,
+                        "src": "2598:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3382,
+                      "name": "setChainlinkToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3104,
+                      "src": "2580:17:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 3384,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2580:24:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3385,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2580:24:13"
+                }
+              ]
+            },
+            "documentation": "@notice Sets the LINK token address\r\n@param _link The address of the LINK token contract\r",
+            "id": 3387,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setLinkToken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3380,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3379,
+                  "name": "_link",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3387,
+                  "src": "2549:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3378,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2549:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2548:15:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3381,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2573:0:13"
+            },
+            "scope": 3448,
+            "src": "2527:83:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3395,
+              "nodeType": "Block",
+              "src": "2811:43:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 3392,
+                      "name": "chainlinkTokenAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3126,
+                      "src": "2825:21:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                        "typeString": "function () view returns (address)"
+                      }
+                    },
+                    "id": 3393,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2825:23:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 3391,
+                  "id": 3394,
+                  "nodeType": "Return",
+                  "src": "2818:30:13"
+                }
+              ]
+            },
+            "documentation": "@notice Retrieves the stored address of the LINK token\r\n@return The address of the LINK token\r",
+            "id": 3396,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "chainlinkToken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3388,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2758:2:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3391,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3390,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3396,
+                  "src": "2799:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3389,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2799:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2798:9:13"
+            },
+            "scope": 3448,
+            "src": "2735:119:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3404,
+              "nodeType": "Block",
+              "src": "3064:44:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 3401,
+                      "name": "chainlinkOracleAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3136,
+                      "src": "3078:22:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                        "typeString": "function () view returns (address)"
+                      }
+                    },
+                    "id": 3402,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3078:24:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 3400,
+                  "id": 3403,
+                  "nodeType": "Return",
+                  "src": "3071:31:13"
+                }
+              ]
+            },
+            "documentation": "@notice Retrieves the stored address of the oracle contract\r\n@return The address of the oracle contract\r",
+            "id": 3405,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "oracleAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3397,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3011:2:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3400,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3399,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3405,
+                  "src": "3052:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3398,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3052:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3051:9:13"
+            },
+            "scope": 3448,
+            "src": "2989:119:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3413,
+              "nodeType": "Block",
+              "src": "3510:2:13",
+              "statements": []
+            },
+            "documentation": "@notice Ensures that the fulfillment is valid for this contract\r\n@dev Use if the contract developer prefers methods instead of modifiers for validation\r\n@param _requestId The request ID for fulfillment\r",
+            "id": 3414,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 3410,
+                    "name": "_requestId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 3407,
+                    "src": "3445:10:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  }
+                ],
+                "id": 3411,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 3409,
+                  "name": "recordChainlinkFulfillment",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3293,
+                  "src": "3418:26:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$_t_bytes32_$",
+                    "typeString": "modifier (bytes32)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "3418:38:13"
+              }
+            ],
+            "name": "fulfillChainlinkRequest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3408,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3407,
+                  "name": "_requestId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3414,
+                  "src": "3379:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3406,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3379:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3378:20:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3412,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3510:0:13"
+            },
+            "scope": 3448,
+            "src": "3346:166:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3426,
+              "nodeType": "Block",
+              "src": "3851:45:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3422,
+                        "name": "_ens",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3416,
+                        "src": "3878:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3423,
+                        "name": "_node",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3418,
+                        "src": "3884:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 3421,
+                      "name": "useChainlinkWithENS",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3200,
+                      "src": "3858:19:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_bytes32_$returns$__$",
+                        "typeString": "function (address,bytes32)"
+                      }
+                    },
+                    "id": 3424,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3858:32:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3425,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3858:32:13"
+                }
+              ]
+            },
+            "documentation": "@notice Sets the stored oracle and LINK token contracts with the addresses resolved by ENS\r\n@dev Accounts for subnodes having different resolvers\r\n@param _ens The address of the ENS contract\r\n@param _node The ENS node hash\r",
+            "id": 3427,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setChainlinkWithENS",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3419,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3416,
+                  "name": "_ens",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3427,
+                  "src": "3805:12:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3415,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3805:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3418,
+                  "name": "_node",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3427,
+                  "src": "3819:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3417,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3819:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3804:29:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3420,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3851:0:13"
+            },
+            "scope": 3448,
+            "src": "3776:120:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3433,
+              "nodeType": "Block",
+              "src": "4141:43:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 3430,
+                      "name": "updateChainlinkOracleWithENS",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3230,
+                      "src": "4148:28:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 3431,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4148:30:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3432,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4148:30:13"
+                }
+              ]
+            },
+            "documentation": "@notice Sets the stored oracle contract with the address resolved by ENS\r\n@dev This may be called on its own as long as `setChainlinkWithENS` has been called previously\r",
+            "id": 3434,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setOracleWithENS",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3428,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4121:2:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3429,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4141:0:13"
+            },
+            "scope": 3448,
+            "src": "4096:88:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3446,
+              "nodeType": "Block",
+              "src": "4545:61:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3442,
+                        "name": "_oracle",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3436,
+                        "src": "4580:7:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3443,
+                        "name": "_requestId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3438,
+                        "src": "4589:10:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 3441,
+                      "name": "addChainlinkExternalRequest",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3153,
+                      "src": "4552:27:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_bytes32_$returns$__$",
+                        "typeString": "function (address,bytes32)"
+                      }
+                    },
+                    "id": 3444,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4552:48:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3445,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4552:48:13"
+                }
+              ]
+            },
+            "documentation": "@notice Allows for a request which was created on another contract to be fulfilled\r\non this contract\r\n@param _oracle The address of the oracle contract that will fulfill the request\r\n@param _requestId The request ID used for the response\r",
+            "id": 3447,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addExternalRequest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3439,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3436,
+                  "name": "_oracle",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3447,
+                  "src": "4491:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3435,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4491:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3438,
+                  "name": "_requestId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3447,
+                  "src": "4508:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3437,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4508:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4490:37:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3440,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4545:0:13"
+            },
+            "scope": 3448,
+            "src": "4463:143:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3449,
+        "src": "280:4329:13"
+      }
+    ],
+    "src": "0:4611:13"
+  },
+  "legacyAST": {
+    "absolutePath": "/D/xborder/xborder/src/contracts/v0.4/Chainlinked.sol",
+    "exportedSymbols": {
+      "Chainlinked": [
+        3448
+      ]
+    },
+    "id": 3449,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3313,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:13"
+      },
+      {
+        "absolutePath": "/D/xborder/xborder/src/contracts/v0.4/ChainlinkClient.sol",
+        "file": "./ChainlinkClient.sol",
+        "id": 3314,
+        "nodeType": "ImportDirective",
+        "scope": 3449,
+        "sourceUnit": 3312,
+        "src": "28:31:13",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 3315,
+              "name": "ChainlinkClient",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3311,
+              "src": "304:15:13",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ChainlinkClient_$3311",
+                "typeString": "contract ChainlinkClient"
+              }
+            },
+            "id": 3316,
+            "nodeType": "InheritanceSpecifier",
+            "src": "304:15:13"
+          }
+        ],
+        "contractDependencies": [
+          3311
+        ],
+        "contractKind": "contract",
+        "documentation": "@title The Chainlinked contract\r\n@notice Contract writers can inherit this contract in order to create requests for the\r\nChainlink network. ChainlinkClient is an alias of the Chainlinked contract.\r",
+        "fullyImplemented": true,
+        "id": 3448,
+        "linearizedBaseContracts": [
+          3448,
+          3311
+        ],
+        "name": "Chainlinked",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 3333,
+              "nodeType": "Block",
+              "src": "897:96:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3328,
+                        "name": "_specId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3318,
+                        "src": "933:7:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3329,
+                        "name": "_callbackAddress",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3320,
+                        "src": "942:16:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3330,
+                        "name": "_callbackFunctionSignature",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3322,
+                        "src": "960:26:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes4",
+                          "typeString": "bytes4"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes4",
+                          "typeString": "bytes4"
+                        }
+                      ],
+                      "id": 3327,
+                      "name": "buildChainlinkRequest",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2970,
+                      "src": "911:21:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_pure$_t_bytes32_$_t_address_$_t_bytes4_$returns$_t_struct$_Request_$2647_memory_ptr_$",
+                        "typeString": "function (bytes32,address,bytes4) pure returns (struct Chainlink.Request memory)"
+                      }
+                    },
+                    "id": 3331,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "911:76:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                      "typeString": "struct Chainlink.Request memory"
+                    }
+                  },
+                  "functionReturnParameters": 3326,
+                  "id": 3332,
+                  "nodeType": "Return",
+                  "src": "904:83:13"
+                }
+              ]
+            },
+            "documentation": "@notice Creates a request that can hold additional parameters\r\n@param _specId The Job Specification ID that the request will be created for\r\n@param _callbackAddress The callback address that the response will be sent to\r\n@param _callbackFunctionSignature The callback function signature to use for the callback address\r\n@return A Chainlink Request struct in memory\r",
+            "id": 3334,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "newRequest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3323,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3318,
+                  "name": "_specId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3334,
+                  "src": "756:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3317,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "756:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3320,
+                  "name": "_callbackAddress",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3334,
+                  "src": "778:24:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3319,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "778:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3322,
+                  "name": "_callbackFunctionSignature",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3334,
+                  "src": "809:33:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 3321,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "809:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "749:98:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3326,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3325,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3334,
+                  "src": "871:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                    "typeString": "struct Chainlink.Request"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3324,
+                    "name": "Chainlink.Request",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2647,
+                    "src": "871:17:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Request_$2647_storage_ptr",
+                      "typeString": "struct Chainlink.Request"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "870:26:13"
+            },
+            "scope": 3448,
+            "src": "730:263:13",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3348,
+              "nodeType": "Block",
+              "src": "1418:56:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3344,
+                        "name": "_req",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3336,
+                        "src": "1453:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                          "typeString": "struct Chainlink.Request memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3345,
+                        "name": "_payment",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3338,
+                        "src": "1459:8:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                          "typeString": "struct Chainlink.Request memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 3343,
+                      "name": "sendChainlinkRequest",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2986,
+                      "src": "1432:20:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_struct$_Request_$2647_memory_ptr_$_t_uint256_$returns$_t_bytes32_$",
+                        "typeString": "function (struct Chainlink.Request memory,uint256) returns (bytes32)"
+                      }
+                    },
+                    "id": 3346,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1432:36:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 3342,
+                  "id": 3347,
+                  "nodeType": "Return",
+                  "src": "1425:43:13"
+                }
+              ]
+            },
+            "documentation": "@notice Creates a Chainlink request to the stored oracle address\r\n@dev Calls `sendChainlinkRequestTo` with the stored oracle address\r\n@param _req The initialized Chainlink Request\r\n@param _payment The amount of LINK to send for the request\r\n@return The request ID\r",
+            "id": 3349,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "chainlinkRequest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3339,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3336,
+                  "name": "_req",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3349,
+                  "src": "1329:29:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                    "typeString": "struct Chainlink.Request"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3335,
+                    "name": "Chainlink.Request",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2647,
+                    "src": "1329:17:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Request_$2647_storage_ptr",
+                      "typeString": "struct Chainlink.Request"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3338,
+                  "name": "_payment",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3349,
+                  "src": "1360:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3337,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1360:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1328:49:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3342,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3341,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3349,
+                  "src": "1406:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3340,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1406:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1405:9:13"
+            },
+            "scope": 3448,
+            "src": "1303:171:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3366,
+              "nodeType": "Block",
+              "src": "2134:67:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3361,
+                        "name": "_oracle",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3351,
+                        "src": "2171:7:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3362,
+                        "name": "_req",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3353,
+                        "src": "2180:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                          "typeString": "struct Chainlink.Request memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3363,
+                        "name": "_payment",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3355,
+                        "src": "2186:8:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                          "typeString": "struct Chainlink.Request memory"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 3360,
+                      "name": "sendChainlinkRequestTo",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3042,
+                      "src": "2148:22:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_struct$_Request_$2647_memory_ptr_$_t_uint256_$returns$_t_bytes32_$",
+                        "typeString": "function (address,struct Chainlink.Request memory,uint256) returns (bytes32)"
+                      }
+                    },
+                    "id": 3364,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2148:47:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "functionReturnParameters": 3359,
+                  "id": 3365,
+                  "nodeType": "Return",
+                  "src": "2141:54:13"
+                }
+              ]
+            },
+            "documentation": "@notice Creates a Chainlink request to the specified oracle address\r\n@dev Generates and stores a request ID, increments the local nonce, and uses `transferAndCall` to\r\nsend LINK which creates a request on the target oracle contract.\r\nEmits ChainlinkRequested event.\r\n@param _oracle The address of the oracle for the request\r\n@param _req The initialized Chainlink Request\r\n@param _payment The amount of LINK to send for the request\r\n@return The request ID\r",
+            "id": 3367,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "chainlinkRequestTo",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3356,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3351,
+                  "name": "_oracle",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3367,
+                  "src": "2018:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3350,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2018:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3353,
+                  "name": "_req",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3367,
+                  "src": "2035:29:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Request_$2647_memory_ptr",
+                    "typeString": "struct Chainlink.Request"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 3352,
+                    "name": "Chainlink.Request",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2647,
+                    "src": "2035:17:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Request_$2647_storage_ptr",
+                      "typeString": "struct Chainlink.Request"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3355,
+                  "name": "_payment",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3367,
+                  "src": "2066:16:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3354,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2066:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2017:66:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3359,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3358,
+                  "name": "requestId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3367,
+                  "src": "2112:17:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3357,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2112:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2111:19:13"
+            },
+            "scope": 3448,
+            "src": "1990:211:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3376,
+              "nodeType": "Block",
+              "src": "2367:40:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3373,
+                        "name": "_oracle",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3369,
+                        "src": "2393:7:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3372,
+                      "name": "setChainlinkOracle",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3092,
+                      "src": "2374:18:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 3374,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2374:27:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3375,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2374:27:13"
+                }
+              ]
+            },
+            "documentation": "@notice Sets the stored oracle address\r\n@param _oracle The address of the oracle contract\r",
+            "id": 3377,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setOracle",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3370,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3369,
+                  "name": "_oracle",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3377,
+                  "src": "2341:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3368,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2341:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2340:17:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3371,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2367:0:13"
+            },
+            "scope": 3448,
+            "src": "2322:85:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3386,
+              "nodeType": "Block",
+              "src": "2573:37:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3383,
+                        "name": "_link",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3379,
+                        "src": "2598:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 3382,
+                      "name": "setChainlinkToken",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3104,
+                      "src": "2580:17:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 3384,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2580:24:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3385,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2580:24:13"
+                }
+              ]
+            },
+            "documentation": "@notice Sets the LINK token address\r\n@param _link The address of the LINK token contract\r",
+            "id": 3387,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setLinkToken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3380,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3379,
+                  "name": "_link",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3387,
+                  "src": "2549:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3378,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2549:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2548:15:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3381,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2573:0:13"
+            },
+            "scope": 3448,
+            "src": "2527:83:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3395,
+              "nodeType": "Block",
+              "src": "2811:43:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 3392,
+                      "name": "chainlinkTokenAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3126,
+                      "src": "2825:21:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                        "typeString": "function () view returns (address)"
+                      }
+                    },
+                    "id": 3393,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2825:23:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 3391,
+                  "id": 3394,
+                  "nodeType": "Return",
+                  "src": "2818:30:13"
+                }
+              ]
+            },
+            "documentation": "@notice Retrieves the stored address of the LINK token\r\n@return The address of the LINK token\r",
+            "id": 3396,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "chainlinkToken",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3388,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2758:2:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3391,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3390,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3396,
+                  "src": "2799:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3389,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2799:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2798:9:13"
+            },
+            "scope": 3448,
+            "src": "2735:119:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3404,
+              "nodeType": "Block",
+              "src": "3064:44:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 3401,
+                      "name": "chainlinkOracleAddress",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3136,
+                      "src": "3078:22:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_address_$",
+                        "typeString": "function () view returns (address)"
+                      }
+                    },
+                    "id": 3402,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3078:24:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 3400,
+                  "id": 3403,
+                  "nodeType": "Return",
+                  "src": "3071:31:13"
+                }
+              ]
+            },
+            "documentation": "@notice Retrieves the stored address of the oracle contract\r\n@return The address of the oracle contract\r",
+            "id": 3405,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "oracleAddress",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3397,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3011:2:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3400,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3399,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3405,
+                  "src": "3052:7:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3398,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3052:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3051:9:13"
+            },
+            "scope": 3448,
+            "src": "2989:119:13",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3413,
+              "nodeType": "Block",
+              "src": "3510:2:13",
+              "statements": []
+            },
+            "documentation": "@notice Ensures that the fulfillment is valid for this contract\r\n@dev Use if the contract developer prefers methods instead of modifiers for validation\r\n@param _requestId The request ID for fulfillment\r",
+            "id": 3414,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 3410,
+                    "name": "_requestId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 3407,
+                    "src": "3445:10:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  }
+                ],
+                "id": 3411,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 3409,
+                  "name": "recordChainlinkFulfillment",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3293,
+                  "src": "3418:26:13",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$_t_bytes32_$",
+                    "typeString": "modifier (bytes32)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "3418:38:13"
+              }
+            ],
+            "name": "fulfillChainlinkRequest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3408,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3407,
+                  "name": "_requestId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3414,
+                  "src": "3379:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3406,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3379:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3378:20:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3412,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3510:0:13"
+            },
+            "scope": 3448,
+            "src": "3346:166:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3426,
+              "nodeType": "Block",
+              "src": "3851:45:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3422,
+                        "name": "_ens",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3416,
+                        "src": "3878:4:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3423,
+                        "name": "_node",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3418,
+                        "src": "3884:5:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 3421,
+                      "name": "useChainlinkWithENS",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3200,
+                      "src": "3858:19:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_bytes32_$returns$__$",
+                        "typeString": "function (address,bytes32)"
+                      }
+                    },
+                    "id": 3424,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "3858:32:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3425,
+                  "nodeType": "ExpressionStatement",
+                  "src": "3858:32:13"
+                }
+              ]
+            },
+            "documentation": "@notice Sets the stored oracle and LINK token contracts with the addresses resolved by ENS\r\n@dev Accounts for subnodes having different resolvers\r\n@param _ens The address of the ENS contract\r\n@param _node The ENS node hash\r",
+            "id": 3427,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setChainlinkWithENS",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3419,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3416,
+                  "name": "_ens",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3427,
+                  "src": "3805:12:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3415,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3805:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3418,
+                  "name": "_node",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3427,
+                  "src": "3819:13:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3417,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3819:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3804:29:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3420,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3851:0:13"
+            },
+            "scope": 3448,
+            "src": "3776:120:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3433,
+              "nodeType": "Block",
+              "src": "4141:43:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 3430,
+                      "name": "updateChainlinkOracleWithENS",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3230,
+                      "src": "4148:28:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
+                        "typeString": "function ()"
+                      }
+                    },
+                    "id": 3431,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4148:30:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3432,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4148:30:13"
+                }
+              ]
+            },
+            "documentation": "@notice Sets the stored oracle contract with the address resolved by ENS\r\n@dev This may be called on its own as long as `setChainlinkWithENS` has been called previously\r",
+            "id": 3434,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "setOracleWithENS",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3428,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4121:2:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3429,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4141:0:13"
+            },
+            "scope": 3448,
+            "src": "4096:88:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 3446,
+              "nodeType": "Block",
+              "src": "4545:61:13",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 3442,
+                        "name": "_oracle",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3436,
+                        "src": "4580:7:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 3443,
+                        "name": "_requestId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 3438,
+                        "src": "4589:10:13",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "id": 3441,
+                      "name": "addChainlinkExternalRequest",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3153,
+                      "src": "4552:27:13",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_bytes32_$returns$__$",
+                        "typeString": "function (address,bytes32)"
+                      }
+                    },
+                    "id": 3444,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "4552:48:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 3445,
+                  "nodeType": "ExpressionStatement",
+                  "src": "4552:48:13"
+                }
+              ]
+            },
+            "documentation": "@notice Allows for a request which was created on another contract to be fulfilled\r\non this contract\r\n@param _oracle The address of the oracle contract that will fulfill the request\r\n@param _requestId The request ID used for the response\r",
+            "id": 3447,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "addExternalRequest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3439,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3436,
+                  "name": "_oracle",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3447,
+                  "src": "4491:15:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 3435,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4491:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3438,
+                  "name": "_requestId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3447,
+                  "src": "4508:18:13",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 3437,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4508:7:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4490:37:13"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 3440,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4545:0:13"
+            },
+            "scope": 3448,
+            "src": "4463:143:13",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 3449,
+        "src": "280:4329:13"
+      }
+    ],
+    "src": "0:4611:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-05-24T16:02:10.978Z",
+  "devdoc": {
+    "methods": {},
+    "title": "The Chainlinked contract\r"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

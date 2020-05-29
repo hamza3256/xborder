@@ -1,3 +1,0 @@
-#!/bin/bash
-source .env
-mocha -r ts-node/register src/**/*.spec.ts
