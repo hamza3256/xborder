@@ -236,40 +236,37 @@ class Section5 extends Component {
   
   
       return (
-        <div className="hero-body bg-lb">
-        <div className="container has-text-centered">
-        <h1 className="title is-3">
-            Contact Us
-        </h1>
-        <p>Feel free to reach out if you have any questions, feedback or suggestion. Reach us at: </p>
-                    <br/>
-                    <p className="buttons is-centered">
-                        <a className="button is-info is-outlined">
-            Reddit
-          </a>
-          <a className="button is-info is-outlined" href="https://bitcointalk.org/index.php?action=profile;u=960616" target="_blank">
-            Bitcointalk
-          </a>
-          <a className="button is-info is-outlined">
-          Email
-        </a>          
-        <a className="button is-info is-outlined" href="https://www.linkedin.com/in/cheung-ka-yin-7b058180/" target="_blank">
-            Linkedin
-          </a>
-                    </p>
-        <br/>
-        <b>Email</b><br/> XBORDER@gmail.com
-        <br/>
-        <br/>
-        <b>Reddit</b><br/>
-        https://www.reddit.com/r/XBORDER
-        <br/>
-        <br/>
-       
+        
+<div className="hero-body bg-lb">
+<div className="container has-text-centered">
+<h1 className="title is-3">
+    Contact Us
+</h1>
+<p>Feel free to reach out if you have any questions, feedback or suggestion. Reach us on my social media: </p>
+            <br/>
+            <p className="buttons is-centered">
+<SocialMediaIconsReact icon={"reddit"} size={44} roundness={30} url="https://www.reddit.com/r/XBORDER"/>
+<SocialMediaIconsReact icon="twitter" size={44} roundness={30}  url="https://twitter.com/XBORDER5"/>
+<SocialMediaIconsReact icon="mail" size={44} roundness={30}  url="mailto:xborderofficial@gmail.com"/>
+<SocialMediaIconsReact icon="linkedin" size={44} roundness={30} url="https://www.linkedin.com/in/-muhammadhamza"/>
+<SocialMediaIconsReact icon="github" size={44} roundness={30} url="https://github.com/hamza3256"/>
+        
+            </p>
+<br/>
+<b>Email</b><br/> xborderofficial@gmail.com
+<br/>
+<br/>
+<b>Reddit</b><br/>
+https://www.reddit.com/r/XBORDER
+<br/>
+<br/>
+<b>Twitter</b><br/>
+https://twitter.com/XBORDER5
+<br/><br/>
 
-                    
-        </div>
-    </div>
+            
+</div>
+</div>
       );
     }
     

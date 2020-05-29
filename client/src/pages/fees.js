@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { Link } from "react-router-dom";
+import {SocialMediaIconsReact} from 'social-media-icons-react';
 
 
 class Fees extends Component {
@@ -14,84 +15,44 @@ class Fees extends Component {
             <div class="hero-body">
                 <div class="container">
                     <h1 class="title">
-                    Fees & Info
+                    More information
                     </h1>
                     <h2 class="subtitle">
-                    How fees and escrow fund release works
+                    How XBORDER was intended to work
                     </h2>
                 </div>
             </div>
-            <div class="tabs is-boxed is-centered main-menu" id="nav">
-                <ul>
-                    <li data-target="pane-1" id="1">
-                       <Link to="/"> <p>
-                            <span class="icon is-small"><i class="fa fa-image"></i></span>
-                            <span>Home</span>
-                        </p>
-                        </Link>
-                    </li>
-                    <li data-target="pane-2" id="2" class="is-active">
-                        <a>
-                            <span class="icon is-small"><i class="fab fa-empire"></i></span>
-                            <span>Fees & Info</span>
-                        </a>
-                    </li>
-
-                    
-                    
-                </ul>
-            </div>
+            
             
     </section>
     <div class="content container" style={{width:800}}>
     <br/>
-    <h1>Seller Fees</h1>
-    <p>Flat 1% fee for all transactions.</p>
+    <h1>Main idea</h1>
+    <p>This project began with the intention of implementing smart contracts which would have enabled peer-to-peer fiat transfers outside the current jurisdiction of the smart contract caller. The transaction was planned to involve series of processes that includes Fiat-Ether conversion, peer-to-peer Ether transfers, subsequently converting the received Ether into receiver’s fiat currency. This decentralized application makes the use of Ethereum blockchain.</p>
 
-    <h1>Buyer Fees</h1>
-    <p>None. Gas fees from creating transactions on the blockchain only, usually less than 1 cent.</p>
+    <h1>The inevitable issue of smart contracts</h1>
+    <p>upon further researching of the several ways this project would be implemented and having undergone several trial-and-errors. Several drawbacks of smart contracts were discovered— for each apropos features that were being implemented. The major issue with the project was discovering the fact that smart contracts cannot directly interact with external data outside the blockchain. This reemphasized how immutable smart contracts really are.</p>
 
-    <h1>Escrow duration</h1>
-    <p>Funds from buyer are held in escrow once transaction is created.
-    Buyer should release funds after confirming receiving of working product.</p>
+    <h1>Current and future work</h1>
+    <p>external adapters were implemented that would operate on Chainlink’s node operators. These external adapters will acts as the 'bridge' between smart contracts and the external world thus enabling the XBORDER's true intention. Each node job is verified by series of decentralized oracles provided by Chainlink. These oracles provide the same security as a smart contract.</p>
     
     <h1></h1>
-
-
-    <h1>Dispute resolution</h1>
-    <p>Buyers should raise a dispute if item has not arrived in 30 days, or did not arrive as described.<br/>
-    Sellers should raise a dispute if buyer refuses to release funds after 30 days and the product is received.</p>
-
-    <br/>
-    We will review evidence provided by both parties and get in touch. 
-    We may require proof of address before starting the dispute resolution process;
-     it involves sending an empty message (or sending a 0 Ether transaction) to an address we specify.
-
-    <h1>Transaction process</h1>
-    For stronger protection against fradulent buyers and sellers, please involve XBORDER in your conversations with the buyer or seller.
-    <br/>
-    <br/>
-    <h4>If you are communicating by email</h4>
-    CC XBORDER@gmail.com in all emails
-   
-
-    <br/>
-    <br/>
-    <h4>If you are communicating on other channels</h4>
-    If it has a group chat feature, let us know and we will create an account. Contact us at XBORDER@gmail.com
-
-
-<br/><br/>
-    <b>
-    This allows us to get a full transcript of evidence and greatly accelerates the dispute resolution process.
-    </b>
-
+    
+    <h4>To get in touch use the following social media platforms.</h4>
+    
+    <p className="buttons is-centered">
+<SocialMediaIconsReact icon={"reddit"} size={44} roundness={30} url="https://www.reddit.com/r/XBORDER"/>
+<SocialMediaIconsReact icon="twitter" size={44} roundness={30}  url="https://twitter.com/XBORDER5"/>
+<SocialMediaIconsReact icon="mail" size={44} roundness={30}  url="mailto:xborderofficial@gmail.com"/>
+<SocialMediaIconsReact icon="linkedin" size={44} roundness={30} url="https://www.linkedin.com/in/-muhammadhamza"/>
+<SocialMediaIconsReact icon="github" size={44} roundness={30} url="https://github.com/hamza3256"/>
+        
+            </p>
 
     </div>
     <br/>
     
-    <br/>
-    <br/>
+   
     </div>
     );
   }

@@ -21,7 +21,7 @@ class TxConfirmation extends Component {
       <button class="delete" aria-label="close"></button>
     </header>
     <section class="modal-card-body">
-      Your transaction has been sent to the blockchain and is pending confirmation. <br/>
+      Your transaction has been sent to the blockchain and the confirmation is currently pending. <br/>
       When confirmed refresh your browser to view the updates.<br/><br/>
       Transaction id: {this.props.txid}
       {content}

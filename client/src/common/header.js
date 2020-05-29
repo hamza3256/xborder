@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-
 import { Link } from "react-router-dom";
 import Web3 from 'web3';
 
@@ -40,9 +39,7 @@ class Header extends Component {
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation" >
         <div className="navbar-brand">
-          <Link to="/"><p className="navbar-item">
-            XBORDER
-          </p></Link>
+         
       
           <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -64,19 +61,16 @@ class Header extends Component {
             View Profile
           </p></Link>
   
-          <div className="navbar-dropdown">
-          <Link to="/activity/set_profile"><a className="navbar-item">
+          <div className="navbaAnonymous3256r-dropdown">
+          <Link to="/activity/set_profile" className="navbar-item">
               Update Profile
-            </a></Link>     
+            </Link>     
           </div>
       </div>
       <Link to="/activity/send_payment">
       <p className="navbar-item">
             Send Payment
             </p></Link>  
-
-
-
            
           </div>
       

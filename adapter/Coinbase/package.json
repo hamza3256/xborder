@@ -32,7 +32,7 @@
     "real-time",
     "payments"
   ],
-  "homepage": "https://github.com/coinbase/coinbase-node",
+
   "license": "MIT",
   "main": "index.js",
   "repository": {

@@ -3,6 +3,7 @@ import '../App.css';
 import Web3 from 'web3';
 import constants from '../common/constant.js'
 import { Link } from "react-router-dom";
+import {Spinner} from '@blueprintjs/core'
 
 import Header from '../common/header.js'
 
@@ -39,7 +40,8 @@ class InitializeProfile extends Component {
   constructor(props){
     super(props)
     this.state = {
-        address: ''
+        address: '',
+        loading: false
     }
 }
 
@@ -70,7 +72,7 @@ class InitializeProfile extends Component {
      }
 
      else {
-       // window.location.href = "/login";
+       //window.location.href = "/login";
         this.props.history.push('/login')
 
      }
@@ -79,8 +81,8 @@ class InitializeProfile extends Component {
   SetProfile(){
     const name = document.getElementById('nameinput').value
     const info = document.getElementById('infoinput').value
-
-    
+    console.log(name)
+    this.setState({loading: true})
     this.state.profile_contract.SetProfile.sendTransaction(
       name,
       info,
@@ -90,12 +92,18 @@ class InitializeProfile extends Component {
       },
       (error, result) => {
         console.log(result)
+        this.setState({name: name,
+        info: info})
+        console.log(error)
+        
       }
     )
+    this.setState({loading: false})
+
     }
 
     render() {
-
+      
       return (
         <div>
          
@@ -151,6 +159,7 @@ class InitializeProfile extends Component {
           <div className="has-text-centered">
           <button className="button is-primary" onClick={() => this.SetProfile()}>Update Profile</button>
           </div>
+
           </div>
           
           </div>

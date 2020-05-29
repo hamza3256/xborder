@@ -5,7 +5,11 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
-import '../App.css';
+//import '../App.css';
+import MainNav from './MainNav'
+import {SocialMediaIconsReact} from 'social-media-icons-react';
+
+
 const MainJumbotron = styled(Jumbotron)`
 background: #f9f8fd;
 `;
@@ -33,7 +37,7 @@ const MainImage = styled(Image)`
   width: 450px;
 }
 @media (min-width: 1200px) {
-  width: 500px;
+  width: 100%;
 }
 `;
 
@@ -55,7 +59,7 @@ export default function Home() {
 
 
 <section >
-  
+
     <Section1/>
 
   <Section3/>
@@ -130,13 +134,13 @@ return (
             </div>
             <div className="card-content">
                 <div className="content">
-                    <h4>Secure Crypto Payments</h4>
+                    <h4>Secure Payments</h4>
                     <p>
-                        Payment with crypto is safer than ever. Unlike normal crypto transactions,
+                        Money transfer using Ether will make remittance payment safer than ever. Unlike normal normal remittance payments,
                         payments are held in escrow using an Ethereum smart contract.
                         <br/><br/>
                         
-                        Funds from transactions are released by the buyer once product is received. 
+                        Funds from transactions are released when the system is absolutely sure it can make the transactions.
                         
                     </p>
                 </div>
@@ -149,10 +153,11 @@ return (
             </div>
             <div className="card-content">
                 <div className="content">
-                    <h4>1% transaction fee</h4>
+                    <h4>No bank account need</h4>
                     <p>
-                    We leverage the Ethereum Blockchain for our back-end systems. <br/><br/>
-                    Because we don't incur costs of inter-bank transfers and expensive datacenters, our fees are the industry's lowest, at just 1%.
+                    Another key obstacle to the payment of remittances via formal banking channels is that the recipient needs to have a banking account to receive the payment. <br/><br/>
+                    
+                    The unfortunate reality is that the vast majority of people receiving the money do not have bank accounts. Even if they do, many live in rural areas and have to travel long distances to get to the nearest bank branch to collect their money.  As a result, many remittances are made using informal channels.
                     <br/><br/>
                     </p>
                 </div>
@@ -165,10 +170,10 @@ return (
             </div>
             <div className="card-content">
                 <div className="content">
-                    <h4>Secure fund ownership</h4>
+                    <h4>Maximum security with minimised costs</h4>
                     <p>
-                        Your funds, even funds within the smart contract, can only be controlled with your Ethereum address.<br/><br/>
-                        This means no entity can ever withhold your funds or freeze your account.<br/><br/>
+                    Exclusion of third parties reduces cost of processing payment and turnaround time for settlement (TAT), also eliminating the risk of discrepancies in record keeping. This is because the decentralised ledger, a feature of Blockchain inherited by smart contracts, holds irreversible and distributed record of every transaction available for all peers to see—enabling real time security<br/><br/>
+                        <br/><br/>
                     </p>
                     
                 </div>
@@ -183,27 +188,6 @@ return (
 
 }
 
-/*<p>We were founded because we could not find good solutions for transacting safely with cryptocurrency.
-                Before XBORDER, crypto payments require the buyer to first send payment to the merchant, with no way to get money back if seller does not deliver. </p><br/>
-            <p>Some escrow solutions exist; on Bitcointalk, buyers to first send payment to an escrow agent. The escrow agent then tells the sellers that funds are received,
-                and to deliver the goods. This process can easily take more than a day due to different timezones.<br/><br/>
-
-                Imaging paying $10 of crypto for a game product key, and only getting the key after a day with multiple back and forth communications.
-                Or imagine being the seller, where you will only get that $10 an additional day after the buyer gets his key.
-                
-                <br/><br/>
-                There is also counterparty risk; the escrow agent could lose the funds or his private keys.<br/><br/>
-
-            Hence we built XBORDER, to provide a platform for honest merchants and buyers to transact with a peace of mind.
-             Crypto payments can now be sent with escrow protection, and displayed on the seller's dashboard within 15 seconds.
-
-            <br/>
-            
-
-                
-            </p>
-
-*/
 
 class Section3 extends Component {
 
@@ -220,12 +204,9 @@ return (
             </h1>
             <h2 className="subtitle is-5">
             </h2>
-            <p>XBORDER is the world's first payment processor built on Ethereum smart contracts.
-            We leverage blockchain technology to offer the industry's lowest transaction fee and highest funds security.
+            <p>XBORDER is the world's first cross-border payment processor built on Ethereum smart contracts.
+            This application leverage blockchain technology to minimise cost of international money transfer whilst providing highest security standards.
             </p>
-
-     
-            
         </div>
         
     </div>
@@ -288,21 +269,15 @@ return (
 <h1 className="title is-3">
     Contact Us
 </h1>
-<p>Feel free to reach out if you have any questions, feedback or suggestion. Reach us at: </p>
+<p>Feel free to reach out if you have any questions, feedback or suggestion. Reach us on my social media: </p>
             <br/>
             <p className="buttons is-centered">
-                <a className="button is-info is-outlined">
-    Reddit
-  </a>
-  <a className="button is-info is-outlined" href="https://bitcointalk.org/index.php?action=profile;u=960616" target="_blank">
-    Bitcointalk
-  </a>
-  <a className="button is-info is-outlined">
-  Email
-</a>          
-<a className="button is-info is-outlined" href="https://www.linkedin.com/in/cheung-ka-yin-7b058180/" target="_blank">
-    Linkedin
-  </a>
+<SocialMediaIconsReact icon={"reddit"} size={44} roundness={30} url="https://www.reddit.com/r/XBORDER"/>
+<SocialMediaIconsReact icon="twitter" size={44} roundness={30}  url="https://twitter.com/XBORDER5"/>
+<SocialMediaIconsReact icon="mail" size={44} roundness={30}  url="mailto:xborderofficial@gmail.com"/>
+<SocialMediaIconsReact icon="linkedin" size={44} roundness={30} url="https://www.linkedin.com/in/-muhammadhamza"/>
+<SocialMediaIconsReact icon="github" size={44} roundness={30} url="https://github.com/hamza3256"/>
+        
             </p>
 <br/>
 <b>Email</b><br/> xborderofficial@gmail.com
@@ -338,10 +313,10 @@ return (
 </h1>
 <p>View our open sourced smart contracts and technical documents.</p>
 <br/>
-<p><b>XBORDER</b><br/>Mainnet | <a href="https://ropsten.etherscan.io/address/0xa4f1032d9b1485b9384f7061d95c732edb9c1527" target="_blank">Ropsten</a></p><br/>
-<p><b>XBORDER Profile</b><br/>Mainnet | <a href="https://ropsten.etherscan.io/address/0xe54c0168d2e75c7f68fcf40b0ab5793115dd2a92" target="_blank">Ropsten</a></p><br/>
-<p><b>Github</b></p>
+<p><b>XBORDER Profile</b><br/><a href="https://rinkeby.etherscan.io/address/0xbB5A380E585155592Ff33dF4c50E9ff9921dC4df">Rinkeby </a>| <a href="https://ropsten.etherscan.io/address/0xebEc2EAf1325bCbd0Df07cdeae57aE00bD3C6728" target="_blank">Ropsten</a></p><br/>
 </div>
+
+
 </div>
 );
 }
@@ -364,21 +339,22 @@ render() {
     <p>
        
       
-        Buyer first makes payment on XBORDER's platform, either by sending payment to an Ethereum address in the dashboard,
-        or paying via a invoice link provided by seller.<br/><br/>
+       XBORDER initally set out to be a platform which enables cross-border payment transfers from any fiat currency, converting to Ether then transferring those Ethers to receiver's wallet. The received Ethers are then converted into a different fiat currency corresponding to the receiver.<br/><br/>
         
 
-        The payment is held in escrow in our Ethereum smart contract. 
-        When the seller fulfills his obligations, the buyer can release funds to the seller. 
+        The transaction involves holding Ethers in escrow in the Ethereum smart contract. 
+        When the necessary checks are performed to ensure that the Ethers can be converted without any problems, the Ethers are release onto the subsequent part of the operation. 
         The seller also has the ability to refund the buyer.
         <br/><br/>
-        If a dispute occurs, either party can contact us for dispute resolution. 
-        For further info on dispute resolution process, visit our <Link to="/login">fees & info page</Link>.
+        If a dispute occurs, the transaction immediately stops and Ethers are held at the current place of where the error occurred. 
+        For further information on how this application works, please visit our <Link to="/login">info page</Link>.
     </p>
             </div>
         </div>
 
-        <img src="https://user-images.githubusercontent.com/24837709/30773541-3d81c506-a0a5-11e7-9e4c-28e322cdc5b8.png" width="800"/>
+        
+        <br/>
+        <img src="https://hackernoon.com/photos/81XqUPpcXvVvRMiScfSezcRqKy33-572349p" width="800"/>
     
                 <br/>
                

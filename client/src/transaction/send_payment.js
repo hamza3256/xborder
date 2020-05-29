@@ -19,8 +19,8 @@ class SendPayment extends Component {
             ethAmount: 0,
             sellerAddress: '',
             addressInputText: <p className="help"></p>,
-            name: '',
-            info: ''
+            name: 'Hamza',
+            info: 'User'
         }
         this.loadProfileInfo = this.loadProfileInfo.bind(this);
         
