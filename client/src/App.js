@@ -11,6 +11,7 @@ import MainNav from './home/MainNav'
 import Info from './pages/info';
 import Login from './getstarted/login';
 
+
 import CreateInvoice from './transaction/create_invoice';
 import 'bulma'
 import SendPayment from './transaction/send_payment';
@@ -53,7 +54,6 @@ class App extends Component {
   
       <Route path="/profile" exact component={ProfilePage} />
       
-  
       <Route component={Page404} />
   
       </Switch>

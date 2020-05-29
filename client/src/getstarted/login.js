@@ -37,7 +37,7 @@ class Login extends Component {
          }
 
          else {
-            window.location.href = "/login";
+            window.location.href = "/GetMetamask";
          }
     }
 

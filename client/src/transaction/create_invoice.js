@@ -37,12 +37,12 @@ class CreateInvoice extends Component {
                window.ethereum.enable().then(() => {
                    // User has allowed account access to DApp...
                   const contract = web3.eth.contract(constants.abi).at(constants.address)
-                  const profile_contract = web3.eth.contract(constants.profile_abi).at(constants.profile_address)
+                  const user_contract = web3.eth.contract(constants.profile_abi).at(constants.profile_address)
                   
 
                   this.setState({
                       address: web3.eth.accounts[0],
-                      profile_contract: profile_contract
+                      user_contract: user_contract
 
                     })
                   setInterval(() => {
@@ -152,7 +152,7 @@ class CreateInvoice extends Component {
         return
     }
 
-    this.state.profile_contract.getProfileLength.call(address, (error, result) => {
+    this.state.user_contract.getProfileLength.call(address, (error, result) => {
         console.log(`Length of profile info ${result}`);
         console.log(`${address}`);
         if (parseInt(result) === 0)
@@ -169,7 +169,7 @@ class CreateInvoice extends Component {
       
       
       //Then load profile info. Get last profile from array 
-      this.state.profile_contract.ProfileDB.call(address, (result - 1), (error, result) => {
+      this.state.user_contract.ProfileDB.call(address, (result - 1), (error, result) => {
         this.setState({
           name: "hamza",
           info: result[1],
@@ -312,10 +312,10 @@ componentDidMount(){
            window.ethereum.enable().then(() => {
                // User has allowed account access to DApp...
               const contract = web3.eth.contract(constants.abi).at(constants.address)
-              const profile_contract = web3.eth.contract(constants.profile_abi).at(constants.profile_address)
+              const user_contract = web3.eth.contract(constants.profile_abi).at(constants.profile_address)
               this.setState({
                 contract: contract,
-                profile_contract: profile_contract
+                user_contract: user_contract
               })
 
               this.loadProfileName('buyer', web3.eth.accounts[0])
@@ -365,14 +365,14 @@ SendPayment(){
 }
 
 loadProfileName(userType,address){
-    this.state.profile_contract.getProfileLength.call(address, (error, result) => {
+    this.state.user_contract.getProfileLength.call(address, (error, result) => {
       if (parseInt(result) === 0){
         
         return
       }
 
       console.log('bb')
-      this.state.profile_contract.ProfileDB.call(address, (result - 1), (error, result) => {
+      this.state.user_contract.ProfileDB.call(address, (result - 1), (error, result) => {
         switch(userType){
           case 'buyer': 
               this.setState({buyerName: result})

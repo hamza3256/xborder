@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     border-radius: 5px ;
     border: none;
     font-weight: 500;
+    display: inline-block;
   }
  
 

@@ -36,12 +36,12 @@ componentDidMount(){
          window.ethereum.enable().then(() => {
              // User has allowed account access to DApp...
             const contract = web3.eth.contract(constants.abi).at(constants.address)
-            const profile_contract = web3.eth.contract(constants.profile_abi).at(constants.profile_address)
+            const user_contract = web3.eth.contract(constants.profile_abi).at(constants.profile_address)
              
             this.setState({
               address: web3.eth.accounts[0],
               contract: contract,
-              profile_contract: profile_contract
+              user_contract: user_contract
             })
 
             console.log(web3.eth.accounts[0])
@@ -86,12 +86,12 @@ componentDidMount(){
 }
 
   loadProfileName(userType,address){
-    this.state.profile_contract.getProfileLength.call(address, (error, result) => {
+    this.state.user_contract.getProfileLength.call(address, (error, result) => {
       if (parseInt(result) === 0){
         
         return
       }
-      this.state.profile_contract.ProfileDB.call(address, (result - 1), (error, result) => {
+      this.state.user_contract.ProfileDB.call(address, (result - 1), (error, result) => {
         switch(userType){
           case 'buyer': 
               this.setState({buyerName: result})

@@ -42,7 +42,7 @@ export default function MainNav() {
   </Navbar.Brand>
   <Nav >
     <ButtonGroup
-      className="d-none d-lg-block d-xl-block ml-3"
+      className="d-none d-lg-block d-xl-block ml-3 "
       variant="primary"
     >
       <Button href="/">Home</Button>
