@@ -190,12 +190,12 @@ componentDidMount(){
         //For individual transaction id, get the transaction from TransactionLedger
         this.state.contract.getTransaction.call(id, (error, result) => {
 
-          const tx = util.returnTxMap(i,result)
+          const transact = util.returnTxMap(i,result)
           let newLedger = this.state.merchantLedger;
-          newLedger.push(tx);
+          newLedger.push(transact);
           
 
-          //After loading the final tx, sort the tx array 
+          //After loading the final transact, sort the transact array 
           if (newLedger.length === (1 + this.state.merchantStart - this.state.merchantEnd)){
             //console.log(newLedger.length)
             // newLedger = _.sortBy(newLedger, "id").reverse()
@@ -235,12 +235,12 @@ componentDidMount(){
         //For individual transaction id, get the transaction from TransactionLedger
         this.state.contract.getTransaction.call(id, (error, result) => {
 
-          const tx = util.returnTxMap(i,result)
+          const transact = util.returnTxMap(i,result)
           let newLedger = this.state.customerLedger;
-          newLedger.push(tx);
+          newLedger.push(transact);
           
 
-          //After loading the final tx, sort the tx array 
+          //After loading the final transact, sort the transact array 
           if (newLedger.length === (1 + customerStart - customerEnd)){
             //console.log(newLedger.length)
             // newLedger = _.sortBy(newLedger, "id").reverse()
@@ -258,12 +258,12 @@ componentDidMount(){
   }
 
   loadBuyerUserNames222(){
-    console.log('tx len' + this.state.merchantLedger.length)
+    console.log('transact len' + this.state.merchantLedger.length)
    // console.log(txs)
     for (let i = 0; i < this.state.merchantLedger.length; i++){
 
     //get the profile info of address
-    this.state.profile_contract.getProfileLength.call(this.state.merchantLedger[i].seller, (error, result) => {
+    this.state.profile_contract.getProfileLength.call(this.state.merchantLedger[i].Receiver, (error, result) => {
     //console.log(`Length of profile info ${result}`);
     if (parseInt(result) === 0)
       {
@@ -274,7 +274,7 @@ componentDidMount(){
     
     else {
     //Then load profile info. Get last profile from array 
-    this.state.profile_contract.ProfileDB.call(this.state.merchantLedger[i].seller, (result - 1), (error, result) => {
+    this.state.profile_contract.ProfileDB.call(this.state.merchantLedger[i].Receiver, (result - 1), (error, result) => {
       this.state.merchantLedger[i].sellerName = result[0]
       let a = this.state.merchantLedgerName
       a.push(this.state.merchantLedger[i])
@@ -297,12 +297,12 @@ componentDidMount(){
 
 
   loadSellerUserNames(){
-    console.log('tx len' + this.state.customerLedger.length)
+    console.log('transact len' + this.state.customerLedger.length)
    // console.log(txs)
     for (let i = 0; i < this.state.customerLedger.length; i++){
 
     //get the profile info of address
-    this.state.profile_contract.getProfileLength.call(this.state.customerLedger[i].seller, (error, result) => {
+    this.state.profile_contract.getProfileLength.call(this.state.customerLedger[i].Receiver, (error, result) => {
     //console.log(`Length of profile info ${result}`);
     if (parseInt(result) === 0)
       {
@@ -313,7 +313,7 @@ componentDidMount(){
     
     else {
     //Then load profile info. Get last profile from array 
-    this.state.profile_contract.ProfileDB.call(this.state.customerLedger[i].seller, (result - 1), (error, result) => {
+    this.state.profile_contract.ProfileDB.call(this.state.customerLedger[i].Receiver, (result - 1), (error, result) => {
       this.state.customerLedger[i].sellerName = result[0]
       let a = this.state.customerLedgerName
       a.push(this.state.customerLedger[i])
@@ -553,7 +553,7 @@ class SendPayment extends Component {
         <div className="box">
   
         <p className="is-size-4 has-text-weight-semibold">Payments</p><br/>
-        <p>Send payment for goods or services with buyer protection.</p><br/>
+        <p>Send payment for goods or services with Senderprotection.</p><br/>
         <Link to="/activity/send_payment"><button className="button is-primary" disabled>Send Payment</button></Link>
         <p className="is-size-7">Please set your profile info to use XBORDER</p>
         </div>
@@ -567,7 +567,7 @@ class SendPayment extends Component {
         <div className="box">
   
         <p className="is-size-4 has-text-weight-semibold">Payments</p><br/>
-        <p>Send payment for goods or services with buyer protection.</p><br/>
+        <p>Send payment for goods or services with Senderprotection.</p><br/>
         <Link to="/activity/send_payment"><p className="button is-primary">Send Payment</p></Link>
         </div>
    

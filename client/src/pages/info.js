@@ -31,10 +31,10 @@ class Info extends Component {
     <p>This project began with the intention of implementing smart contracts which would have enabled peer-to-peer fiat transfers outside the current jurisdiction of the smart contract caller. The transaction was planned to involve series of processes that includes Fiat-Ether conversion, peer-to-peer Ether transfers, subsequently converting the received Ether into receiver’s fiat currency. This decentralized application makes the use of Ethereum blockchain.</p>
 
     <h1>The inevitable issue of smart contracts</h1>
-    <p>upon further researching of the several ways this project would be implemented and having undergone several trial-and-errors. Several drawbacks of smart contracts were discovered— for each apropos features that were being implemented. The major issue with the project was discovering the fact that smart contracts cannot directly interact with external data outside the blockchain. This reemphasized how immutable smart contracts really are.</p>
+    <p>Further research was done in order to find the absolute way of implementing this project and several trial-and-errors were done. Several drawbacks of smart contracts were discovered—for each apropos features that were being implemented. The major issue with the project was discovering the fact that smart contracts cannot directly interact with external data outside the blockchain. This reemphasized how immutable smart contracts really are.</p>
 
     <h1>Current and future work</h1>
-    <p>external adapters were implemented that would operate on Chainlink’s node operators. These external adapters will acts as the 'bridge' between smart contracts and the external world thus enabling the XBORDER's true intention. Each node job is verified by series of decentralized oracles provided by Chainlink. These oracles provide the same security as a smart contract.</p>
+    <p>External adapters were implemented that would operate on Chainlink’s node operators. These external adapters will acts as the 'bridge' between smart contracts and the external world thus enabling the XBORDER's true intention. Each node job is verified by series of decentralized oracles provided by Chainlink. These oracles provide the same security as a smart contract.</p>
     
     <h1></h1>
     

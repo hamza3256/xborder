@@ -15,18 +15,17 @@ class ProfilePage extends Component {
           name: '',
           info: '',
 
-
-          totalPurchaseComplete: 0,
-          totalPurchaseEth: 0,
+          totalSentComplete: 0,
+          totalSentEth: 0,
           
-          totalPurchaseInEscrow: 0,          
-          totalPurchaseInEscrowEth: 0,          
+          totalSentInEscrow: 0,          
+          totalSentInEscrowEth: 0,          
           
-          totalSalesEth: 0,          
-          totalSalesComplete: 0,   
+          totalTransfersEth: 0,          
+          totalTransfersComplete: 0,   
 
-          totalSalesInEscrow: 0,          
-          totalSalesInEscrowEth: 0,
+          totalTransfersInEscrow: 0,          
+          totalTransfersInEscrowEth: 0,
 
           customerLedgerLength: 0,
           customerLedger: [],
@@ -60,7 +59,7 @@ class ProfilePage extends Component {
                   profile_contract: profile_contract
                 })
 
-                //Load tx history
+                //Load transact history
 
                 
                 this.loadProfileInfo()
@@ -77,41 +76,41 @@ class ProfilePage extends Component {
                 //For individual transaction id, get the transaction from TransactionLedger
                 contract.getTransaction.call(id, (error, result) => {
 
-                  const tx = util.returnTxMap(id,result)
+                  const transact = util.returnTxMap(id,result)
                   let newLedger = this.state.customerLedger;
-                  newLedger.push(tx);
+                  newLedger.push(transact);
                   
                   this.setState({customerLedger: newLedger})
 
-                  //After loading the final tx
+                  //After loading the final transact
                   if (newLedger.length === this.state.customerLedgerLength){
                    //Compute the totals
-                   let total_completed_eth = 0
-                   let total_completed_tx = 0
-                   let total_inescrow_eth = 0
-                   let total_inescrow_tx = 0
+                   let sum_transacted_eth = 0
+                   let sum_transacted_transact = 0
+                   let sum_in_escrow_eth = 0
+                   let sum_in_escrow_transact = 0
                     for (let i = 0; i < this.state.customerLedgerLength; i++){
 
-                      //If tx in escrow and incomplete
+                      //If transact in escrow and incomplete
                       if (this.state.customerLedger[i]["status"] === util.status()[0] ||
                           this.state.customerLedger[i]["status"] === util.status()[3])
                       {
-                          total_inescrow_tx++
-                          total_inescrow_eth += this.state.customerLedger[i]["value"]
+                          sum_in_escrow_transact++
+                          sum_in_escrow_eth += this.state.customerLedger[i]["value"]
                       }
 
                       else{
-                        total_completed_tx++
-                        total_completed_eth += this.state.customerLedger[i]["value"]
+                        sum_transacted_transact++
+                        sum_transacted_eth += this.state.customerLedger[i]["value"]
                       }
                     }
 
                   this.setState({
-                    totalPurchaseEth: total_completed_eth,
-                    totalPurchaseComplete: total_completed_tx,
+                    totalSentEth: sum_transacted_eth,
+                    totalSentComplete: sum_transacted_transact,
 
-                    totalPurchaseInEscrowEth: total_inescrow_eth,
-                    totalPurchaseInEscrow: total_inescrow_tx
+                    totalSentInEscrowEth: sum_in_escrow_eth,
+                    totalSentInEscrow: sum_in_escrow_transact
                   })
 
                   }
@@ -131,41 +130,41 @@ class ProfilePage extends Component {
 
                 //For individual transaction id, get the transaction from TransactionLedger
                 contract.getTransaction.call(id, (error, result) => {
-                  const tx = util.returnTxMap(id,result)
-                  //console.log(tx);
+                  const transact = util.returnTxMap(id,result)
+                  //console.log(transact);
                   let newLedger = this.state.merchantLedger;
-                  newLedger.push(tx);
+                  newLedger.push(transact);
 
                   this.setState({merchantLedger: newLedger})
-                  //After loading the final tx
+                  //After loading the final transact
                   if (newLedger.length === this.state.merchantLedgerLength){
                     //Compute the totals
-                    let total_completed_eth = 0
-                    let total_completed_tx = 0
-                    let total_inescrow_eth = 0
-                    let total_inescrow_tx = 0
+                    let sum_transacted_eth = 0
+                    let sum_transacted_transact = 0
+                    let sum_in_escrow_eth = 0
+                    let sum_in_escrow_transact = 0
                       for (let i = 0; i < this.state.merchantLedgerLength; i++){
   
-                        //If tx in escrow and incomplete
+                        //If transact in escrow and incomplete
                         if (this.state.merchantLedger[i]["status"] === util.status()[0] ||
                             this.state.merchantLedger[i]["status"] === util.status()[3])
                         {
-                            total_inescrow_tx++
-                            total_inescrow_eth += this.state.merchantLedger[i]["value"]
+                            sum_in_escrow_transact++
+                            sum_in_escrow_eth += this.state.merchantLedger[i]["value"]
                         }
   
                         else{
-                          total_completed_tx++
-                          total_completed_eth += this.state.merchantLedger[i]["value"]
+                          sum_transacted_transact++
+                          sum_transacted_eth += this.state.merchantLedger[i]["value"]
                         }
                       }
   
                     this.setState({
-                      totalSalesEth: total_completed_eth,
-                      totalSalesComplete: total_completed_tx,
+                      totalTransfersEth: sum_transacted_eth,
+                      totalTransfersComplete: sum_transacted_transact,
   
-                      totalSalesInEscrowEth: total_inescrow_eth,
-                      totalSalesInEscrow: total_inescrow_tx
+                      totalTransfersInEscrowEth: sum_in_escrow_eth,
+                      totalTransfersInEscrow: sum_in_escrow_transact
                     })
   
                     }
@@ -238,9 +237,9 @@ this.state.profile_contract.getProfileLength.call(this.state.address, (error, re
 
         <div className="column has-text-left">
        
-        <b>Buyer History</b>
-        <p>Total ETH spent: {this.state.totalPurchaseEth} ETH</p>
-        <p>Transactions Completed: {this.state.totalPurchaseComplete}</p>
+        <b>SenderHistory</b>
+        <p>Total ETH spent: {this.state.totalSentEth} ETH</p>
+        <p>Transactions Completed: {this.state.totalSentComplete}</p>
 
         </div>
         <div className="column is-narrow"><br/>
@@ -248,9 +247,9 @@ this.state.profile_contract.getProfileLength.call(this.state.address, (error, re
           </div>
         <div className="column has-text-right"> 
        
-        <b>Seller History</b>
-        <p>Total ETH received: {this.state.totalSalesEth} ETH</p>
-        <p>Transactions Completed: {this.state.totalSalesComplete}</p>
+        <b>Receiver History</b>
+        <p>Total ETH received: {this.state.totalTransfersEth} ETH</p>
+        <p>Transactions Completed: {this.state.totalTransfersComplete}</p>
         </div>
         </div>
 
@@ -262,8 +261,8 @@ this.state.profile_contract.getProfileLength.call(this.state.address, (error, re
         <div className="column has-text-left">
        
         <b>Buyer</b>
-        <p>Amount unreleased: {this.state.totalPurchaseInEscrowEth} ETH</p>
-        <p>Transactions In Escrow: {this.state.totalPurchaseInEscrow}</p>
+        <p>Amount unreleased: {this.state.totalSentInEscrowEth} ETH</p>
+        <p>Transactions In Escrow: {this.state.totalSentInEscrow}</p>
         
         </div>
         <div className="column is-narrow"><br/>
@@ -271,9 +270,9 @@ this.state.profile_contract.getProfileLength.call(this.state.address, (error, re
         </div>
         <div className="column has-text-right"> 
        
-        <b>Seller</b>
-        <p>Amount receivable: {this.state.totalSalesInEscrowEth} ETH</p>
-        <p>Transactions in Escrow: {this.state.totalSalesInEscrow}</p>
+        <b>Receiver</b>
+        <p>Amount receivable: {this.state.totalTransfersInEscrowEth} ETH</p>
+        <p>Transactions in Escrow: {this.state.totalTransfersInEscrow}</p>
         </div>
         </div>
 

@@ -15,7 +15,7 @@ class TransactionDetails extends Component {
       buyerName: '',
       sellerName: '',
       escrowName: '',
-      tx: new util.txTemplate(),
+      transact: new util.txTemplate(),
       txid: 0,
       buyerTxCount: '',
       sellerTxCount: '',
@@ -52,17 +52,17 @@ componentDidMount(){
                 //For individual transaction id, get the transaction from TransactionLedger
                 contract.getTransaction.call(id, (error, result) => {
                 console.log(result)
-                const tx = util.returnTxMap(id,result)
+                const transact = util.returnTxMap(id,result)
                 this.setState({
-                  tx: tx,
+                  transact: transact,
                   ledgerid: id
                 })
 
-                console.log(tx)
-                this.loadProfileName('buyer', tx.buyer)
-                this.loadProfileName('seller', tx.seller)
-                this.loadProfileName('escrow', tx.escrow)
-                this.loadCount(tx.buyer, tx.seller, tx.escrow)
+                console.log(transact)
+                this.loadProfileName('buyer', transact.buyer)
+                this.loadProfileName('Receiver', transact.Receiver)
+                this.loadProfileName('escrow', transact.escrow)
+                this.loadCount(transact.buyer, transact.Receiver, transact.escrow)
 
               
                 })
@@ -96,7 +96,7 @@ componentDidMount(){
           case 'buyer': 
               this.setState({buyerName: result})
               break
-          case 'seller':
+          case 'Receiver':
               this.setState({sellerName: result})
               break
           case 'escrow':
@@ -109,11 +109,11 @@ componentDidMount(){
     })
   }
 
-  loadCount(buyer, seller, escrow){
+  loadCount(buyer, Receiver, escrow){
     this.state.contract.getCustomerLedgerLength.call(buyer, (error, result) => {
       this.setState({buyerTxCount: parseInt(result)})
     })
-    this.state.contract.getMerchantLedgerLength.call(seller, (error, result) => {
+    this.state.contract.getMerchantLedgerLength.call(Receiver, (error, result) => {
       this.setState({sellerTxCount: parseInt(result)})
     })
     this.state.contract.getEscrowLedgerLength.call(escrow, (error, result) => {
@@ -131,19 +131,19 @@ componentDidMount(){
       contract={this.state.contract}
       address={this.state.address}
       ledgerid={this.state.ledgerid}
-      tx={this.state.tx}
+      transact={this.state.transact}
       />
     } else {
       TransactionAction = <TxActionSeller 
       contract={this.state.contract}
       address={this.state.address}
       ledgerid={this.state.ledgerid}
-      tx={this.state.tx}
+      transact={this.state.transact}
       />
     }
 
-    const buyer_profile_url = `/profile?address=${this.state.tx['buyer']}`
-    const seller_profile_url = `/profile?address=${this.state.tx['seller']}`
+    const buyer_profile_url = `/profile?address=${this.state.transact['buyer']}`
+    const seller_profile_url = `/profile?address=${this.state.transact['Receiver']}`
 
     return (
       <div>
@@ -173,7 +173,7 @@ componentDidMount(){
         </div>
         </nav>
         <hr></hr>
-        <p className="has-text-centered is-size-3">{this.state.tx.value} ETH</p>
+        <p className="has-text-centered is-size-3">{this.state.transact.value} ETH</p>
 
         <div className="columns">
 
@@ -206,7 +206,7 @@ componentDidMount(){
           <span className="icon">
           <i className="far fa-user"></i>
           </span>
-          <span>View Buyer Profile</span>
+          <span>View SenderProfile</span>
         </p></Link>
         &nbsp;
         <Link to={seller_profile_url}>
@@ -214,7 +214,7 @@ componentDidMount(){
           <span className="icon">
           <i className="far fa-user"></i>
           </span>
-          <span>View Seller Profile</span>
+          <span>View Receiver Profile</span>
         </p></Link>
       
         </div>
@@ -229,23 +229,23 @@ componentDidMount(){
           <tbody>
           <tr>
           <th style={{width:150}}>Gross Amount</th>
-          <td>{this.state.tx.value} ETH</td>
+          <td>{this.state.transact.value} ETH</td>
           </tr>
           <tr>
           <th>Fee</th>
-          <td>{this.state.tx.fee} ETH</td>
+          <td>{this.state.transact.fee} ETH</td>
           </tr>
       
           <tr>
           <th>Net amount</th>
-          <td>{this.state.tx.value - this.state.tx.fee} ETH</td>
+          <td>{this.state.transact.value - this.state.transact.fee} ETH</td>
           </tr>
 
           
           <tr>
           <th>Note from buyer</th>
           <td>
-            {this.state.tx.notes}
+            {this.state.transact.notes}
           </td>
           </tr>
           </tbody>
@@ -260,7 +260,7 @@ componentDidMount(){
           <span className="icon">
           <i className="fas fa-plane"></i>
           </span>
-          <span>{this.state.tx.status}</span>
+          <span>{this.state.transact.status}</span>
         </button>
         </p>
         <hr/>
@@ -289,13 +289,13 @@ class TxActionSeller extends Component {
       contract={this.props.contract}
       address={this.props.address}
       txid={this.props.ledgerid}
-      tx={this.props.tx}/>
+      transact={this.props.transact}/>
 
       <RaiseDisputeButton
        contract={this.props.contract} 
        address={this.props.address} 
        txid={this.props.ledgerid}
-       tx={this.props.tx}/>
+       transact={this.props.transact}/>
 
        </p>
       </div>
@@ -316,13 +316,13 @@ class TxActionBuyer extends Component {
       contract={this.props.contract}
       address={this.props.address}
       txid={this.props.ledgerid}
-      tx={this.props.tx}
+      transact={this.props.transact}
       />
       <RaiseDisputeButton 
       contract={this.props.contract}
       address={this.props.address}
       txid={this.props.ledgerid}
-      tx={this.props.tx}
+      transact={this.props.transact}
       />
 
        </p>
@@ -349,7 +349,7 @@ class ReleaseFundsButton extends Component {
   
     render() {
 
-      if (this.props.tx.status === util.status()[0] || this.props.tx.status === util.status()[3]){
+      if (this.props.transact.status === util.status()[0] || this.props.transact.status === util.status()[3]){
         return (
           <button className="button is-primary" onClick={this.releaseFunds.bind(this)}>
           <span className="icon">
@@ -393,7 +393,7 @@ class ReleaseFundsButton extends Component {
     
       render() {
 
-        if (this.props.tx.status === util.status()[0] || this.props.tx.status === util.status()[3]){
+        if (this.props.transact.status === util.status()[0] || this.props.transact.status === util.status()[3]){
           return (
             <a className="button is-primary" onClick={this.refund.bind(this)}>
             <span className="icon">
@@ -437,7 +437,7 @@ class RaiseDisputeButton extends Component {
     
       render() {
 
-        if (this.props.tx.status === util.status()[0] || this.props.tx.status === util.status()[3]){
+        if (this.props.transact.status === util.status()[0] || this.props.transact.status === util.status()[3]){
           return ( 
             <a className="button is-info" onClick={this.raiseDispute.bind(this)}>
             <span className="icon">

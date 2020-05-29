@@ -15,17 +15,17 @@ class StatusButton extends Component {
 }
 
 const util = {
-    returnTxMap: (id,tx) => {  
+    returnTxMap: (id,transact) => {  
         
         return {
             id: parseInt(id),
-            buyer: tx[0],
-            seller: tx[1],
-            escrow: tx[2],
-            fee: tx[3]/(10**18),
-            value: tx[4]/(10**18),
-            status: status[parseInt(tx[5])],
-            notes: tx[6]
+            buyer: transact[0],
+            Receiver: transact[1],
+            escrow: transact[2],
+            fee: transact[3]/(10**18),
+            value: transact[4]/(10**18),
+            status: status[parseInt(transact[5])],
+            notes: transact[6]
         }
     },
 
@@ -37,7 +37,7 @@ const util = {
         return{
         id: '',
         buyer: '',
-        seller: '',
+        Receiver: '',
         escrow: '',
         fee: '',
         value: '',

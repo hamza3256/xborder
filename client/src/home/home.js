@@ -343,7 +343,7 @@ render() {
 
         The transaction involves holding Ethers in escrow in the Ethereum smart contract. 
         When the necessary checks are performed to ensure that the Ethers can be converted without any problems, the Ethers are release onto the subsequent part of the operation. 
-        The seller also has the ability to refund the buyer.
+        The Receiver also has the ability to refund the buyer.
         <br/><br/>
         If a dispute occurs, the transaction immediately stops and Ethers are held at the current place of where the error occurred. 
         For further information on how this application works, please visit our <Link to="/login">info page</Link>.

@@ -131,7 +131,7 @@ class SendPayment extends Component {
     console.log(this.state.name)
     if (this.state.name === 'Unregistered User'){
         this.setState({
-            addressInputText: <p className="help is-danger">Address is not registered. Please ask seller to set profile name.</p>
+            addressInputText: <p className="help is-danger">Address is not registered. Please ask Receiver to set profile name.</p>
         })
         return
     }
@@ -164,7 +164,7 @@ class SendPayment extends Component {
           this.setState({
           name: 'Unregistered User',
           info: '',
-          addressInputText: <p className="help is-danger">Unregistered User. Please ask seller to register before sending payment.</p>
+          addressInputText: <p className="help is-danger">Unregistered User. Please ask Receiver to register before sending payment.</p>
           
         
         })
@@ -178,7 +178,7 @@ class SendPayment extends Component {
           name: result[0],
           info: result[1],
           sellerAddress: address,
-          addressInputText: <p className="help is-info">Seller name: {result[0]}</p>
+          addressInputText: <p className="help is-info">Receiver name: {result[0]}</p>
         })
       })
       
@@ -281,7 +281,7 @@ class SendPayment extends Component {
           <span className="icon">
           <i className="far fa-user"></i>
           </span>
-          <span>View Seller's Profile</span>
+          <span>View Receiver's Profile</span>
         </p></Link>
     </div>
     <br/>
@@ -345,7 +345,7 @@ componentDidMount(){
               })
 
               this.loadProfileName('buyer', web3.eth.accounts[0])
-              this.loadProfileName('seller', this.props.sellerAddress)
+              this.loadProfileName('Receiver', this.props.sellerAddress)
               this.loadProfileName('escrow', constants.escrowAddress)
               this.loadCount(web3.eth.accounts[0], this.props.sellerAddress, constants.escrowAddress)
            
@@ -363,7 +363,7 @@ componentDidMount(){
 }
 
 componentWillReceiveProps(){
-    this.loadProfileName('seller', this.props.sellerAddress)
+    this.loadProfileName('Receiver', this.props.sellerAddress)
 }
 
 SendPayment(){
@@ -416,7 +416,7 @@ loadProfileName(userType,address){
           case 'buyer': 
               this.setState({buyerName: result})
               break
-          case 'seller':
+          case 'Receiver':
               this.setState({sellerName: result})
               break
           case 'escrow':
@@ -429,11 +429,11 @@ loadProfileName(userType,address){
     })
   }
 
-  loadCount(buyer, seller, escrow){
+  loadCount(buyer, Receiver, escrow){
     this.state.contract.getCustomerLedgerLength.call(buyer, (error, result) => {
       this.setState({buyerTxCount: parseInt(result)})
     })
-    this.state.contract.getMerchantLedgerLength.call(seller, (error, result) => {
+    this.state.contract.getMerchantLedgerLength.call(Receiver, (error, result) => {
       this.setState({sellerTxCount: parseInt(result)})
     })
     this.state.contract.getEscrowLedgerLength.call(escrow, (error, result) => {
@@ -506,7 +506,7 @@ loadProfileName(userType,address){
         <hr/>
         <p className="is-size-7">
             After payment, funds will be locked in escrow<br/>
-            When your item is received, please release funds to seller in your dashboard<br/>
+            When your item is received, please release funds to Receiver in your dashboard<br/>
             If you require assistance, contact us at XBORDER@gmail.com
             </p>
         </div>

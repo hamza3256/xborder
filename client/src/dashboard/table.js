@@ -26,7 +26,7 @@ class Table extends Component {
           <tr key={this.props.customerLedger[i]['id']}>
             <td>{this.props.customerLedger[i]['id']}</td>
             <td><Link to={url}>Payment to {this.props.customerLedger[i]['sellerName']}</Link>
-            <p className="is-size-7">{this.props.customerLedger[i]['seller']}</p>
+            <p className="is-size-7">{this.props.customerLedger[i]['Receiver']}</p>
             {this.props.customerLedger[i]['status']}
             </td>
             <td>{this.props.customerLedger[i]['value']} ETH</td>
@@ -35,7 +35,7 @@ class Table extends Component {
       }
     } else {
       for (let i = 0; i < this.props.merchantLedger.length; i++){
-        const url = `/activity/transaction/seller/${this.props.merchantLedger[i]['id']}`
+        const url = `/activity/transaction/Receiver/${this.props.merchantLedger[i]['id']}`
         tableRows.push(
           <tr key={this.props.merchantLedger[i]['id']}>
             <td>{this.props.merchantLedger[i]['id']}</td>
