@@ -59,7 +59,7 @@ contract Ownable {
 
 
 
-contract ERCPay is Ownable {
+contract XBORDER is Ownable {
     enum TransactionStatus { FundsReceived, FundsReleased, Refunded, AwaitingResolution }
     enum Entity { Customer, Merchant, EscrowAgent }
 

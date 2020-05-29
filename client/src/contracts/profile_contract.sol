@@ -1,6 +1,6 @@
 pragma solidity ^0.5.6;
 
-contract ERCPayProfile {
+contract XBORDERProfile {
 
     struct Profile{
         string name;

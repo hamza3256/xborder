@@ -258,7 +258,7 @@ class Section5 extends Component {
           </a>
                     </p>
         <br/>
-        <b>Email</b><br/> ercpayescrow@gmail.com
+        <b>Email</b><br/> XBORDER@gmail.com
         <br/>
         <br/>
         <b>Reddit</b><br/>

@@ -507,7 +507,7 @@ loadProfileName(userType,address){
         <p className="is-size-7">
             After payment, funds will be locked in escrow<br/>
             When your item is received, please release funds to seller in your dashboard<br/>
-            If you require assistance, contact us at ercpayescrow@gmail.com
+            If you require assistance, contact us at XBORDER@gmail.com
             </p>
         </div>
         </div>

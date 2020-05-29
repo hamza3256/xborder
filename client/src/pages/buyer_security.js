@@ -58,7 +58,7 @@ class Buyer_Security extends Component {
 
     <h1>Communication</h1>
     <p>Include XBORDER in your communications with the seller. For email communication, CC escrow@XBORDER.com. 
-    For reddit transactions, instead of private message, create a group chat with yourself, the seller and /u/ERCPay_KY.</p>
+    For reddit transactions, instead of private message, create a group chat with yourself, the seller and /u/XBORDER_KY.</p>
     <p>Having an unmodified transcript of communications provides a trail of evidence that greatly helps in case of disputes.</p>
 
     <h1>Confirming the product (Used electronics)</h1>
@@ -69,7 +69,7 @@ class Buyer_Security extends Component {
     If possible, take an unboxing video.</p>
 
     <h1>If more help is needed</h1>
-    <p>Feel free to contact us at @XBORDER.com, or message /u/ERCPay_Kayin on reddit.<br/>
+    <p>Feel free to contact us at @XBORDER.com, or message /u/XBORDER_Kayin on reddit.<br/>
     </p>
    
     <h1>When to raise a dispute</h1>
