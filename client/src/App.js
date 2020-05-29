@@ -8,8 +8,7 @@ import Dashboard from './dashboard/body.js'
 import TransactionDetails from './transaction/tx_details'
 import Home from './home/home';
 import MainNav from './home/MainNav'
-import Fees from './pages/fees';
-import Faq from './pages/faq';
+import Info from './pages/info';
 import Login from './getstarted/login';
 
 import CreateInvoice from './transaction/create_invoice';
@@ -40,8 +39,7 @@ class App extends Component {
        
       <Route path="/dashboard" exact component={Dashboard} />
   
-      <Route path="/info" exact component={Fees} />
-      <Route path="/faq" exact component={Faq} />
+      <Route path="/info" exact component={Info} />
   
       <Route path="/login" exact component={Login} />
   

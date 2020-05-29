@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import {SocialMediaIconsReact} from 'social-media-icons-react';
 
 
-class Fees extends Component {
+class Info extends Component {
 
   render() {
 
@@ -58,4 +58,4 @@ class Fees extends Component {
   }
 }
 
-export default Fees;
+export default Info;

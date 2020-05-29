@@ -85,8 +85,6 @@ contract Escrow {
 	}
 
 
-
-
 		// Handle no transfer response
 	function no_transfer_response(bytes32 _no_id_hash)
 	public openEscrow

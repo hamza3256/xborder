@@ -5,6 +5,7 @@ import Jumbotron from "react-bootstrap/Jumbotron";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
+
 //import '../App.css';
 import MainNav from './MainNav'
 import {SocialMediaIconsReact} from 'social-media-icons-react';
@@ -69,8 +70,6 @@ export default function Home() {
   <Section6/>
   <DevSection/>
   <Section5/>
-
-
 </section>
 
 );
