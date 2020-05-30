@@ -344,7 +344,7 @@ SendPayment(){
 
   this.state.contract.createPayment.sendTransaction(
     this.props.sellerAddress,
-    constants.escrowAddress,
+     this.state.address,   //constants.escrowAddress,
     '', //notes. leave empty for now
     {
       from: this.props.address,

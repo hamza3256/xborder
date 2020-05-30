@@ -1,8 +1,9 @@
-const escrowAddress = '0xa20b04647F5A0099E71Cf4AFE5c7eCFb2EA86f45'
+const escrowAddress = '0xC3B6eB22682d8D6620eb745e690E311d2dCCA0C2'
 
 //smart contract address
-const address = '0xa4f1032d9b1485b9384f7061d95c732edb9c1527'
-const profile_address = '0xE54C0168D2e75c7F68fcf40b0aB5793115Dd2a92'
+const address = '0x0ea09dBF45047aD3C522435ffdEe4F5E08e18eC9'
+
+const profile_address = '0x6Fb62221Dd1DD8d2f8CF50714d403148913a09B9'
 
 const profile_abi = [
 	{

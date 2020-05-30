@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 
 import constants from '../common/constant.js'
 import util from '../common/util.js'
-class TransactionDetails extends Component {
+
+export default class TransactionDetails extends Component {
 
   constructor(props){
     super(props)
@@ -15,7 +16,7 @@ class TransactionDetails extends Component {
       buyerName: '',
       sellerName: '',
       escrowName: '',
-      transact: new util.txTemplate(),
+      transact: util.txTemplate(),
       txid: 0,
       buyerTxCount: '',
       sellerTxCount: '',
@@ -167,7 +168,7 @@ componentDidMount(){
         </div>
         <div className="level-right">
         <div className="level-item">
-        <p>Payment sent 20/2/2019 8.56pm</p>
+        <p>Payment sent 08/6/2020 11:56am</p>
         
         </div>
         </div>
@@ -273,7 +274,7 @@ componentDidMount(){
   }
 }
 
-export default TransactionDetails;
+
 
 
 class TxActionSeller extends Component {
@@ -339,7 +340,9 @@ class ReleaseFundsButton extends Component {
     contract.releaseFunds.sendTransaction(
       this.props.txid,
       {
-        from: this.props.address
+        from: this.props.address,
+        gas:350000,
+      gasPrice: 80000000000
       },
       (error, result) => {
         console.log(result)

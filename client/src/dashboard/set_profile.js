@@ -78,34 +78,39 @@ class InitializeProfile extends Component {
      }
 }
 
-  SetProfile = (name, info) => {
-    name = document.getElementById('nameinput').value
-    info = document.getElementById('infoinput').value
+  SetProfile () {
+    const name = document.getElementById('nameinput').value
+    const info = document.getElementById('infoinput').value
     
     this.setState({loading: true})
-    return this.state.profile_contract.SetProfile.sendTransaction(
+
+    this.state.profile_contract.SetProfile.sendTransaction(
       name,
       info,
       {
-        from: this.state.address,
-        gas: 350000
+        from: this.state.address, 
+        gas: 350000,
+      gasPrice: 80000000000
       },
       (error, result) => {
-        if (result != null){
-        window.web3.eth.getTransactionReceipt(result, function (error, result) {
-          if (!error) {
-            this.setState({name: name,
-              info: info})
-              console.log(error)
-
-              window.location.href =  `/profile?address=${this.state.address}`;
+          console.log("result" + result)
+          console.log("error" + error)
+        window.web3.eth.getTransaction(result, (error, result) => {
+          if (result) {
+            console.log("result" + result)
+            console.log("error" + error)
+            // this.setState({
+            //   name: name,
+            //   info: info
+            // })
+             window.location.href =  `/profile?address=${this.state.address}`;
           } 
-        }.bind(this)
+        }
         );
-      }
+        
       }
     )
-   
+    
     }
 
 

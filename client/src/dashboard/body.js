@@ -531,7 +531,9 @@ class WithdrawFunds extends Component {
       <br/>
       <a className="button is-primary" onClick={() => {
         this.props.contract.withdraw.sendTransaction({
-          from: this.props.address
+          from: this.props.address,
+          gas:350000,
+        gasPrice: 80000000000
         },
         (error, result) => {
           

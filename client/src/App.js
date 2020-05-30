@@ -5,7 +5,7 @@ import './App.css';
 //import Login from "./pages/Login";
 import Dashboard from './dashboard/body.js'
 
-import TransactionDetails from './transaction/tx_details'
+import TransactionDetails  from './transaction/tx_details'
 import Home from './home/home';
 import MainNav from './home/MainNav'
 import Info from './pages/info';
@@ -19,6 +19,7 @@ import SendPaymentConfirm from './transaction/send_payment_confirm';
 import ProfilePage from './profile/profile_page';
 import SetProfile from './dashboard/set_profile';
 import Page404 from './common/404';
+import getMetamask from 'pages/getmetamask'
 
 class App extends Component {
   handleAddress = (address) => {
@@ -53,6 +54,8 @@ class App extends Component {
       <Route path="/activity/set_profile" exact component={SetProfile} />
   
       <Route path="/profile" exact component={ProfilePage} />
+
+      <Route path="/getMetamask" exact component={getMetamask} />
       
       <Route component={Page404} />
   

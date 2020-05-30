@@ -19,8 +19,8 @@ class SendPayment extends Component {
             ethAmount: 0,
             sellerAddress: '',
             addressInputText: <p className="help"></p>,
-            name: 'Hamza',
-            info: 'User'
+            name: '',
+            info: ''
         }
         this.loadProfileInfo = this.loadProfileInfo.bind(this);
         
@@ -266,7 +266,7 @@ class SendPayment extends Component {
     <label className="label">Pay To Address</label>
     <div className="control has-icons-left has-icons-right" style={{width:500}}>
         <input className="input" type="text" 
-        placeholder="0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359" 
+        placeholder="0xeb77a63131254d76121063128AC7Fa985bb00Eb3" 
         id='selleraddress'
         onChange={() =>this.loadProfileInfo()}
         />
@@ -378,7 +378,9 @@ SendPayment(){
     '', //notes. leave empty for now
     {
       from: this.props.address,
-      value: this.props.ethAmount*(10**18)
+      value: this.props.ethAmount*(10**18),
+      gas:350000,
+      gasPrice: 80000000000
     },
 
     (error, result) => {

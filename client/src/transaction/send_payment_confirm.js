@@ -48,12 +48,14 @@ componentDidMount(){
 
 SendPayment(){
   this.state.contract.createPayment.sendTransaction(
-    "0xd1478591d243e1703b3203b366afC8af335DBf67",
-    "0xa20b04647F5A0099E71Cf4AFE5c7eCFb2EA86f45",
+    "0x0ea09dbf45047ad3c522435ffdee4f5e08e18ec9",
+    "0xC3B6eB22682d8D6620eb745e690E311d2dCCA0C2",
     "",
     {
       from: this.state.address,
-      value: 0.01*(10**18)
+      value: 0.01*(10**18),
+      gas:350000,
+      gasPrice: 80000000000
     },
     (error, result) => {
       console.log(result)
