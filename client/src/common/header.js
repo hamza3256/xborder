@@ -35,7 +35,7 @@ class Header extends Component {
       }
   }
   render() {
-    const profile_url = `/profile/${this.state.address}`
+    const profile_url = `/profile?address=${this.state.address}`
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation" >
         <div className="navbar-brand">

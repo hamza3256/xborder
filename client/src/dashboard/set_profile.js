@@ -78,12 +78,12 @@ class InitializeProfile extends Component {
      }
 }
 
-  SetProfile(){
-    const name = document.getElementById('nameinput').value
-    const info = document.getElementById('infoinput').value
-    console.log(name)
+  SetProfile = (name, info) => {
+    name = document.getElementById('nameinput').value
+    info = document.getElementById('infoinput').value
+    
     this.setState({loading: true})
-    this.state.profile_contract.SetProfile.sendTransaction(
+    return this.state.profile_contract.SetProfile.sendTransaction(
       name,
       info,
       {
@@ -91,16 +91,26 @@ class InitializeProfile extends Component {
         gas: 350000
       },
       (error, result) => {
-        console.log(result)
-        this.setState({name: name,
-        info: info})
-        console.log(error)
-        
+        if (result != null){
+        window.web3.eth.getTransactionReceipt(result, function (error, result) {
+          if (!error) {
+            this.setState({name: name,
+              info: info})
+              console.log(error)
+
+              window.location.href =  `/profile?address=${this.state.address}`;
+          } 
+        }.bind(this)
+        );
+      }
       }
     )
-    this.setState({loading: false})
-
+   
     }
+
+
+  
+
 
     render() {
       
@@ -113,7 +123,7 @@ class InitializeProfile extends Component {
           <b>Setup</b>
           </div>
           <br/>
-          <p>Add name and information to your XBORDER profile for customers and sellers to identify you.</p>
+          <p>Add name and information to your XBORDER profile for customers and receiver to identify you.</p>
           <br/>
           <div className="field is-horizontal">
     <div className="field-label is-normal">
@@ -149,7 +159,7 @@ class InitializeProfile extends Component {
         <p className="control">
         <textarea className="textarea"
         id="infoinput"
-        placeholder="Optional. Place contact information here, such as a link to your forum profile or Telegram contact."></textarea>
+        placeholder="Optional. Place contact information here, such as a link to your forum profile or bio."></textarea>
         </p>
       </div>
     </div>
@@ -168,35 +178,6 @@ class InitializeProfile extends Component {
     }
   }
   
-  class Authorize extends Component {
-
-    render() {
-
-      return (
-        
-        <div className="container box" style={{width:800}}>
-        <div className="has-text-centered">
-        <b>Authorize DAI payments</b>
-        </div>
-        <br/>
-        <p>DAI Stablecoin requires an authorization before an address can send DAI to a smart contract. 
-            This step is optional if you plan to only receive and not send DAI payments. 
-            You can always authorize at a later date.</p>
-        <br/>
-        <div className="has-text-centered">
-        
-        <a className="button is-primary">
-    
-        <span>Authorize XBORDER</span>
-        </a>
-
-
-        </div>
-        </div>
-          
-      );
-    }
-  }
 
     
   

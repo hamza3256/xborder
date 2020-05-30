@@ -8,7 +8,7 @@ import Web3 from 'web3';
 
 import constants from '../common/constant.js'
 import util from '../common/util.js'
-import TxConfirmation from '../common/txconfirmation.js'
+
 import _ from 'lodash'
 
 class Dashboard extends Component {

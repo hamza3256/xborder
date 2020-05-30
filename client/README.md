@@ -1,23 +1,7 @@
-![alt text](https://github.com/hamza3256/xborder/blob/master/public/cover2.png?raw=true)
+It is recommended you test this using a Windows based machine. To run the frontend of the application please go through the following instructions:
 
-# Cross-border value transfer system
+run the following in the terminal:
 
-## Problem
+ 1. npm install
 
-
-## Solution
-
-
-## Procedure
-
-
-## How it Works
-
-
-### The Adapter
-
-
-### The Smart Contracts
-
-
-### Future Work
+ 2. npm start

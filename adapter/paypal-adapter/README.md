@@ -8,7 +8,7 @@
 
 * Set up [Environment variables](#environment-variables)
 
-* *Optional:* Run tests `yarn test`. Please read [Testing](#testing) first!
+*  Run tests `yarn test`. Please read [Testing](#testing) first!
 
 * Run this adapter using a serverless provider:
     * use the `handler()` wrapper for AWS Lambda
