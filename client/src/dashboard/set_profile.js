@@ -90,7 +90,7 @@ class InitializeProfile extends Component {
       {
         from: this.state.address, 
         gas: 350000,
-      gasPrice: 80000000000
+      gasPrice: 88000000000
       },
       (error, result) => {
           console.log("result" + result)

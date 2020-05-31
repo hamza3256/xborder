@@ -533,7 +533,7 @@ class WithdrawFunds extends Component {
         this.props.contract.withdraw.sendTransaction({
           from: this.props.address,
           gas:350000,
-        gasPrice: 80000000000
+        gasPrice: 88000000000
         },
         (error, result) => {
           

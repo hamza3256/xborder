@@ -342,7 +342,7 @@ class ReleaseFundsButton extends Component {
       {
         from: this.props.address,
         gas:350000,
-      gasPrice: 80000000000
+      gasPrice: 88000000000
       },
       (error, result) => {
         console.log(result)

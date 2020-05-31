@@ -55,7 +55,7 @@ SendPayment(){
       from: this.state.address,
       value: 0.01*(10**18),
       gas:350000,
-      gasPrice: 80000000000
+      gasPrice: 88000000000
     },
     (error, result) => {
       console.log(result)

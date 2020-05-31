@@ -380,7 +380,7 @@ SendPayment(){
       from: this.props.address,
       value: this.props.ethAmount*(10**18),
       gas:350000,
-      gasPrice: 80000000000
+      gasPrice: 88000000000
     },
 
     (error, result) => {
