@@ -1,5 +1,5 @@
 
-This directory is a truffle project with the following sub-directories:
+This directory is a truffle project:
 
 Build (compiled contracts)
 migrations (instructions for deployment)
