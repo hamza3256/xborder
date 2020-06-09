@@ -238,9 +238,9 @@ return (
        </p>
         <br/>
             <p className="buttons is-centered">
-            <Link to="/login"><p className="button is-info is-outlined">
+            <Link to="/login" className=" button is-info is-outlined">
     View Dashboard
-  </p></Link>
+  </Link>
   
   </p>
  

@@ -2,8 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 
-import { Provider } from "react-redux";
-import * as serviceWorker from "./serviceWorker";
 import registerServiceWorker from './registerServiceWorker';
 //import "./utilities/theme.scss";
 
