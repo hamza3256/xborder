@@ -8,5 +8,4 @@ An execution file was not created because this project requires following specif
 If failures are to arise when running the project, please follow the instructions on the terminal to fix the issue. Otherwise,
 please refer to the following link for more instruction on how to run this project:
 
-hamza3256.github.io
 
